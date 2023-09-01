@@ -118,7 +118,7 @@
             {
                 "param": "nav_menu",
                 "operator": "==",
-                "value": "30"
+                "value": "location\/footer"
             }
         ]
     ],
@@ -137,5 +137,5 @@
     "graphql_types": [
         "Menu"
     ],
-    "modified": 1691713548
+    "modified": 1693530773
 }
