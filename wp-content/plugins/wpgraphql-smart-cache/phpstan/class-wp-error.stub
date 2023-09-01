@@ -1,6 +1,0 @@
-<?php
-
-/**
- * @property string $type
- */
-class WP_Error {}

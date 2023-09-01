@@ -1,4 +1,4 @@
-# NextWord.php
+# ncccs-api
 
 ## DDEV Setup
 ```bash
