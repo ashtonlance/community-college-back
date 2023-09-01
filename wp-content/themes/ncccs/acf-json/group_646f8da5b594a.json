@@ -296,7 +296,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/heroevent"
+                "value": "nextword\/heroevent"
             }
         ]
     ],
@@ -312,8 +312,6 @@
     "show_in_graphql": 1,
     "graphql_field_name": "heroEventBlock",
     "map_graphql_types_from_location_rules": 1,
-    "graphql_types": [
-        "Resource"
-    ],
-    "modified": 1690309922
+    "graphql_types": "",
+    "modified": 1693532294
 }

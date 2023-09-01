@@ -239,7 +239,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/hero"
+                "value": "nextword\/hero"
             }
         ]
     ],
@@ -256,9 +256,7 @@
     "graphql_field_name": "heroPageBlock",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": [
-        "Careers",
-        "Page",
-        "Resource"
+        "Page"
     ],
-    "modified": 1691002879
+    "modified": 1693531066
 }

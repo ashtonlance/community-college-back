@@ -262,7 +262,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/generalcards"
+                "value": "nextword\/generalcards"
             }
         ]
     ],
@@ -279,5 +279,5 @@
     "graphql_field_name": "general_cards",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1690999221
+    "modified": 1693532273
 }

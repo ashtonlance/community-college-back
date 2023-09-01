@@ -207,7 +207,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/pageheading"
+                "value": "nextword\/pageheading"
             }
         ]
     ],
@@ -224,5 +224,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1690999261
+    "modified": 1693532282
 }

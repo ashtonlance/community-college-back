@@ -224,7 +224,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/links"
+                "value": "nextword\/links"
             }
         ]
     ],
@@ -241,5 +241,5 @@
     "graphql_field_name": "link_block",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1690998937
+    "modified": 1693532305
 }

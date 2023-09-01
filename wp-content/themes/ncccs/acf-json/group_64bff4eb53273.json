@@ -199,7 +199,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/button"
+                "value": "nextword\/button"
             }
         ]
     ],
@@ -216,5 +216,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1690999078
+    "modified": 1693532089
 }

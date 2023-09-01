@@ -87,7 +87,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/resourcedownload"
+                "value": "nextword\/resourcedownload"
             }
         ]
     ],
@@ -103,8 +103,6 @@
     "show_in_graphql": 1,
     "graphql_field_name": "download_form",
     "map_graphql_types_from_location_rules": 1,
-    "graphql_types": [
-        "Resource"
-    ],
-    "modified": 1690910055
+    "graphql_types": "",
+    "modified": 1693532337
 }

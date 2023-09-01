@@ -27,7 +27,8 @@
             "return_format": "object",
             "multiple": 0,
             "allow_null": 0,
-            "ui": 1
+            "ui": 1,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -35,7 +36,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/resourcefeaturedcard"
+                "value": "nextword\/resourcefeaturedcard"
             }
         ]
     ],
@@ -51,8 +52,6 @@
     "show_in_graphql": 1,
     "graphql_field_name": "featured_resources",
     "map_graphql_types_from_location_rules": 1,
-    "graphql_types": [
-        "Resource"
-    ],
-    "modified": 1682605164
+    "graphql_types": "",
+    "modified": 1693532245
 }

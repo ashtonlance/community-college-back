@@ -371,7 +371,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/text"
+                "value": "nextword\/text"
             }
         ]
     ],
@@ -388,5 +388,5 @@
     "graphql_field_name": "text_block",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1692635097
+    "modified": 1693532415
 }

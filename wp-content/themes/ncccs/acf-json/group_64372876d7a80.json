@@ -149,7 +149,8 @@
                     "multiple": 0,
                     "allow_null": 0,
                     "ui": 1,
-                    "parent_repeater": "field_643728777e9be"
+                    "parent_repeater": "field_643728777e9be",
+                    "bidirectional_target": []
                 }
             ]
         }
@@ -159,7 +160,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "gmt\/relatedresourcesblock"
+                "value": "nextword\/relatedresourcesblock"
             }
         ]
     ],
@@ -176,5 +177,5 @@
     "graphql_field_name": "related_resources_block",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1691003302
+    "modified": 1693532326
 }
