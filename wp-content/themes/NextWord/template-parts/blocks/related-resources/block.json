@@ -1,0 +1,13 @@
+{
+    "name": "nextword/relatedresourcesblock",
+    "title": "Related Resources",
+    "description": "Allow you to create/edit a related resource to your page.",
+    "category": "design",
+    "keywords": ["related resources", "related", "resources"],
+    "icon": "images-alt",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./related-resources.php",
+        "mode": "preview"
+    }
+}

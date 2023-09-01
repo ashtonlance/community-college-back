@@ -1,0 +1,13 @@
+{
+    "name": "nextword/stats",
+    "title": "Stats block",
+    "description": "Allow you to create/edit a stats block.",
+    "category": "design",
+    "keywords": ["stats", "stats module", "landing stats"],
+    "icon": "chart-bar",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./stats.php",
+        "mode": "preview"
+    }
+}

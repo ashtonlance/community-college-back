@@ -1,0 +1,13 @@
+{
+    "name": "nextword/testimonial",
+    "title": "Testimonial Block",
+    "description": "Allow you to create/edit a testimonial block.",
+    "category": "design",
+    "keywords": ["testimonial", "testimonial module", "landing testimonial"],
+    "icon": "awards",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./testimonial.php",
+        "mode": "preview"
+    }
+}

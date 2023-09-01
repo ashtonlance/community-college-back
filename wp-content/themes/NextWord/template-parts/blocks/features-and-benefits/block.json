@@ -1,0 +1,13 @@
+{
+    "name": "nextword/featuresandbenefits",
+    "title": "Features and Benefits",
+    "description": "Allow you to create/edit a features and benefits block on your page.",
+    "category": "design",
+    "keywords": ["features and benefits", "features", "benefits"],
+    "icon": "format-aside",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./features-and-benefits.php",
+        "mode": "preview"
+    }
+}

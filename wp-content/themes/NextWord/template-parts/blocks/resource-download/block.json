@@ -1,0 +1,13 @@
+{
+    "name": "nextword/resourcedownload",
+    "title": "Resource Download",
+    "description": "Allow you to add a module to download a resorce.",
+    "category": "design",
+    "keywords": ["download resource", "download", "resource"],
+    "icon": "images-alt",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./resource-download.php",
+        "mode": "preview"
+    }
+}

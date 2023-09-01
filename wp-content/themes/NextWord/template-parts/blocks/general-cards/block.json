@@ -1,0 +1,13 @@
+{
+    "name": "nextword/generalcards",
+    "title": "General Cards",
+    "description": "Allow you to create/edit a general cards on your page.",
+    "category": "design",
+    "keywords": ["general cards", "cards", "general"],
+    "icon": "screenoptions",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./general-cards.php",
+        "mode": "preview"
+    }
+}

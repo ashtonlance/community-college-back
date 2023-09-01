@@ -1,0 +1,13 @@
+{
+    "name": "nextword/hero",
+    "title": "Hero block",
+    "description": "Allow you to create/edit a hero for your page.",
+    "category": "design",
+    "keywords": ["hero", "hero module", "landing hero"],
+    "icon": "format-image",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./hero.php",
+        "mode": "preview"
+    }
+}

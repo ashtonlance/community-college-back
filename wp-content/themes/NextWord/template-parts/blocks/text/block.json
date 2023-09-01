@@ -1,0 +1,13 @@
+{
+    "name": "nextword/text",
+    "title": "Text block",
+    "description": "Allow you to create/edit a text block for your page.",
+    "category": "design",
+    "keywords": ["text", "text module", "landing text"],
+    "icon": "media-text",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./text.php",
+        "mode": "preview"
+    }
+}

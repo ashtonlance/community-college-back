@@ -1,0 +1,13 @@
+{
+    "name": "nextword/externalevent",
+    "title": "External Event Information",
+    "description": "Allow you to create/edit an external event.",
+    "category": "design",
+    "keywords": ["external", "event", "external event"],
+    "icon": "button",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./external-event.php",
+        "mode": "preview"
+    }
+}

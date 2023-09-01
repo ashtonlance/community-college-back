@@ -1,0 +1,13 @@
+{
+    "name": "nextword/contactblock",
+    "title": "Contact Block",
+    "description": "Allow you to create/edit a contact block to your page.",
+    "category": "design",
+    "keywords": ["contact block", "contact"],
+    "icon": "admin-site-alt3",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./contact-block.php",
+        "mode": "preview"
+    }
+}

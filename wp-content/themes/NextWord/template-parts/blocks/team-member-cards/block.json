@@ -1,0 +1,13 @@
+{
+    "name": "nextword/teammembercards",
+    "title": "Team member cards",
+    "description": "Allow you to create/edit informations for a team member.",
+    "category": "design",
+    "keywords": ["team member", "team", "member"],
+    "icon": "admin-users",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./team-member-cards.php",
+        "mode": "preview"
+    }
+}
