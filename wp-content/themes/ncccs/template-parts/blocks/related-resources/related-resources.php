@@ -2,13 +2,14 @@
     $blockName = "related-resources-block";
     $cards = get_field('related_resources');
     $spacing = get_field('component_spacing');
+    $heading = get_field('heading');
 ?>
 
 <div class='<?php echo $blockName; ?>' data-spacing-bottom=<?php if ($spacing)
     echo $spacing['bottom_spacing'] ?> data-spacing-top=<?php if ($spacing)
     echo $spacing['top_spacing'] ?> >
     <?php if(is_array($cards)): ?>
-        <h4> Related Resources</h4>
+        <h4><?php echo $heading; ?></h4>
         <div class="row">
         <?php foreach ($cards as $card){ ?>
             <div class="card"><?php echo $card['resource_item']->post_title; ?></div>
