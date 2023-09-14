@@ -238,3 +238,14 @@ add_filter( 'graphql_request_results', function( $response ) {
 	return $response;
 }, 99, 1 );
 
+function add_menus() {
+  register_nav_menus(
+    array(
+      'faculty-and-staff' => __( 'Faculty and Staff' ),
+      'employers' => __( 'Employers' ),
+			'system-office' => __( 'System Office' )
+    )
+  );
+}
+add_action( 'init', 'add_menus' );
+

@@ -1,12 +1,17 @@
 <?php
     $blockName = "stats-block";
     $title = get_field('stats_title');
+    $copy = get_field('stats_copy');
     $items = get_field('stats');
 ?>
 
 <div class=<?php echo $blockName; ?>>
     <?php if($title): ?>
         <h2><?php echo $title; ?></h2>
+    <?php endif; ?>
+
+    <?php if($copy): ?>
+        <div class="copy"><?php echo $copy; ?></h2>
     <?php endif; ?>
 
     <?php if($items):?>
@@ -71,6 +76,11 @@
         text-align: center;
         letter-spacing: -0.01em;
         color: #EBEBEB;
+    }
+
+    .<?php echo $blockName; ?> .copy{
+        color: #fff;
+        text-align: center;
     }
 
 </style>

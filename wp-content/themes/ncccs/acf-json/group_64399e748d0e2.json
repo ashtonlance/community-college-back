@@ -174,7 +174,7 @@
                     "label": "Optional Link",
                     "name": "optional_link",
                     "aria-label": "",
-                    "type": "url",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -184,8 +184,7 @@
                         "id": ""
                     },
                     "show_in_graphql": 1,
-                    "default_value": "",
-                    "placeholder": "",
+                    "return_format": "array",
                     "parent_repeater": "field_64399e7417529"
                 },
                 {
@@ -269,5 +268,5 @@
     "graphql_field_name": "features_and_benefits",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1693532259
+    "modified": 1694701363
 }

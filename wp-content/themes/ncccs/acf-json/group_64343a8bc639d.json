@@ -196,9 +196,9 @@
             },
             "show_in_graphql": 1,
             "choices": {
-                "emerald": "Emerald"
+                "grey": "Grey"
             },
-            "default_value": "emerald",
+            "default_value": "grey",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
@@ -258,5 +258,5 @@
     "graphql_types": [
         "Page"
     ],
-    "modified": 1693531066
+    "modified": 1694651293
 }

@@ -61,8 +61,8 @@
         padding: 100px 150px;
         gap: 60px;
         isolation: isolate;
-        width: 600px;
-        background-color: <?php echo $bgcolor; ?>;
+        width: 100%;
+        background-color: var(--<?php echo $bgcolor; ?>);
         background-repeat:no-repeat;
         background-size:cover;
     }
@@ -74,8 +74,8 @@
         padding: 100px 150px;
         gap: 60px;
         isolation: isolate;
-        width: 600px;
-        background-color: <?php echo $bgcolor; ?>;
+        width: 100%;
+        background-color: var(--<?php echo $bgcolor; ?>);
         background-repeat:no-repeat;
         background-size:cover;
     }

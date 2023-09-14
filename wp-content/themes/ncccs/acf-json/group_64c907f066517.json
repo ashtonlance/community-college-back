@@ -3,11 +3,11 @@
     "title": "Utility Navigation",
     "fields": [
         {
-            "key": "field_64c907f0f6423",
-            "label": "Login link",
-            "name": "login_link",
+            "key": "field_64f8ad35486c7",
+            "label": "Navigation Items",
+            "name": "navigation_items",
             "aria-label": "",
-            "type": "link",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,24 +17,33 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "return_format": "array"
-        },
-        {
-            "key": "field_64c90819f6424",
-            "label": "CTA Button Link",
-            "name": "cta_button_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "return_format": "array"
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_64f8ad5c486c8",
+            "button_label": "Add Nav Item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64f8ad5c486c8",
+                    "label": "Nav Item",
+                    "name": "nav_item",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "return_format": "array",
+                    "parent_repeater": "field_64f8ad35486c7"
+                }
+            ]
         }
     ],
     "location": [
@@ -46,7 +55,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": -1,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -62,5 +71,5 @@
         "Menu",
         "MenuItem"
     ],
-    "modified": 1690897693
+    "modified": 1694019243
 }

@@ -13,6 +13,7 @@ $spacing = get_field('component_spacing');
             <div class="card-features">
                 <h3><?php echo $card['heading']; ?></h3>
                 <p><?php echo $card['body_copy']; ?></p>
+                <p class="link"><?php echo $card['optional_link']['title']; ?></p>
             </div>
         <?php } ?>
     <?php endif; ?>
@@ -21,7 +22,9 @@ $spacing = get_field('component_spacing');
 <style>
     .<?php echo $blockName . $bg_color; ?> {
         display: flex;
+        justify-content: space-around;
         gap: 20px;
+        width: 100%;
     }
 
     .<?php echo $blockName . $bg_color; ?> .card-features{
@@ -52,6 +55,17 @@ $spacing = get_field('component_spacing');
         line-height: 160%;
         text-align: center;
         color: #555555;
+    }
+
+    .<?php echo $blockName . $bg_color; ?> p.link{
+        margin:0;
+        font-family: "proxima-nova", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 160%;
+        text-align: center;
+        color: var(--navy);
     }
 
     .features-and-benefits-cardslight{

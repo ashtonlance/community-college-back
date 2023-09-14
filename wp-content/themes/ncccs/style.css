@@ -16,7 +16,19 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 NCCCS WordPress Theme, (C) 2021 WordPress.org
 NCCCS is distributed under the terms of the GNU GPL.
 */
-@import url("https://use.typekit.net/bgb5bly.css");
+@import url("https://use.typekit.net/baf1lym.css");
+
+:root {
+  --navy: #14435B;
+  --gold: #E1AF00;
+  --darkGrey: #515255;
+  --lightBlue: #AED5E7;
+  --darkBeige: #807359;
+  --beige: #C2B59B;
+  --grey: #F5F5F5;
+  --black: #231F20;
+  --brown: #462F26;
+}
 
 /*
  * Font smoothing.

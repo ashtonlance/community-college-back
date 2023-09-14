@@ -18,11 +18,10 @@
             },
             "show_in_graphql": 1,
             "choices": {
-                "green": "Green",
-                "emerald": "Emerald",
-                "sky": "Sky"
+                "lightBlue": "Light Blue",
+                "gold": "Gold"
             },
-            "default_value": "green",
+            "default_value": "gold",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
@@ -45,9 +44,9 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_6470f59421a55",
-                    "label": "Bottom",
-                    "name": "bottom_spacing",
+                    "key": "field_6470f5b821a56",
+                    "label": "Top",
+                    "name": "top_spacing",
                     "aria-label": "",
                     "type": "select",
                     "instructions": "",
@@ -73,9 +72,9 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_6470f5b821a56",
-                    "label": "Top",
-                    "name": "top_spacing",
+                    "key": "field_6470f59421a55",
+                    "label": "Bottom",
+                    "name": "bottom_spacing",
                     "aria-label": "",
                     "type": "select",
                     "instructions": "",
@@ -178,29 +177,32 @@
                     "show_in_graphql": 1,
                     "default_value": "",
                     "placeholder": ""
-                },
-                {
-                    "key": "field_646fbb1475989",
-                    "label": "Request an invite",
-                    "name": "request_invite",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "show_in_graphql": 1,
-                    "message": "Toggle this on if you want to show the popup to request an invite",
-                    "default_value": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
                 }
             ]
+        },
+        {
+            "key": "field_65033ab4673fe",
+            "label": "Type",
+            "name": "type",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "choices": {
+                "inset": "Inset",
+                "fullWidth": "Full Width"
+            },
+            "default_value": "fullWidth",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
         }
     ],
     "location": [
@@ -225,5 +227,5 @@
     "graphql_field_name": "cta_banner",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1693532202
+    "modified": 1694710716
 }
