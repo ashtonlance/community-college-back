@@ -3,9 +3,10 @@
     $cards = get_field('related_resources');
     $spacing = get_field('component_spacing');
     $heading = get_field('heading');
+    $bg_color = get_field('background_color');
 ?>
 
-<div class='<?php echo $blockName; ?>' data-spacing-bottom=<?php if ($spacing)
+<div class='<?php echo $blockName; ?> <?php echo $bg_color; ?>' data-spacing-bottom=<?php if ($spacing)
     echo $spacing['bottom_spacing'] ?> data-spacing-top=<?php if ($spacing)
     echo $spacing['top_spacing'] ?> >
     <?php if(is_array($cards)): ?>
@@ -20,6 +21,9 @@
 
 
 <style>
+    .<?php echo $blockName; ?>{
+        background-color: var(--<?php echo $bg_color; ?>);
+    }
     .<?php echo $blockName; ?> .row{
         display:flex;
         gap: 20px;
@@ -34,7 +38,11 @@
         gap: 24px;
         width: 610px;
         height: 273px;
-        background: #F8F8F8;
+        background: var(--grey);
+    }
+
+    .<?php echo $blockName; ?>.grey .card{
+        background-color: white;
     }
 
     .<?php echo $blockName; ?> h4{
