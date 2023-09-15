@@ -70,8 +70,10 @@ function acf_init_block_types(){
 		register_block_type(get_template_directory() . "/template-parts/blocks/resource-download/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/page-heading/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/button/block.json");
+		register_block_type(get_template_directory() . "/template-parts/blocks/wysiwyg/block.json");
 	}
 }
+
 
 if (!function_exists("twentytwentytwo_support")):
   /**
@@ -209,7 +211,8 @@ function wpcc_allowed_block_types() {
 			'nextword/textandimage',
 			'nextword/teammembercards',
 			'nextword/contactblock',
-			'nextword/pageheading'
+			'nextword/pageheading',
+			'nextword/wysiwyg'
 		);
 	} else {
 		return array(

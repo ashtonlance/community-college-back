@@ -1,0 +1,15 @@
+{
+  "name": "nextword/wysiwyg",
+  "title": "WYSIWYG",
+  "description": "Add WYSIWYG content",
+  "category": "text",
+  "keywords": [
+    "wysiwyg"
+  ],
+  "icon": "editor-kitchensink",
+  "apiVersion": 2,
+  "acf": {
+    "renderTemplate": "./wysiwyg.php",
+    "mode": "preview"
+  }
+}

@@ -1,6 +1,7 @@
 # ncccs-api
 
 ## DDEV Setup
+
 ```bash
 # (Primary URL automatically set to `https://<folder>.ddev.site`)
 ddev start
@@ -20,37 +21,43 @@ ddev launch wp-admin/
 ```
 
 ## Sync Script
-Inside the `sync` folder there's a `sync.sh` script that's responsible for syncing the database, uploads and plugins between remote and local environments without the need to manually importing thing using phpMyAdmin. 
+
+Inside the `sync` folder there's a `sync.sh` script that's responsible for syncing the database, uploads and plugins between remote and local environments without the need to manually importing thing using phpMyAdmin.
 
 ### Setup Script
+
 1. Make the bash scripts executable by running the following on project's root folder:
-    ```bash
-    chmod +x sync/sync.sh
-    ```
 
-    ```bash
-    chmod +x sync/sync-config.sh
-    ```
+   ```bash
+   chmod +x sync/sync.sh
+   ```
 
-2. Go to the `sync-config.sh` file and change `example` with the appropriate names from WP Engine and you local setup. 
-    ```sh
-    # sync/sync-config.sh
+   ```bash
+   chmod +x sync/sync-config.sh
+   ```
 
-    prodenv="sfexample"                     # WP Engine production env name
-    stagingenv="sfexamplestg"               # WP Engine staging env name
-    localenv="example"                      # Local environment name
-    localurl="http://example.ddev.site"     # DDEV local URL
-    ```
+2. Go to the `sync-config.sh` file and change `example` with the appropriate names from WP Engine and you local setup.
 
+   ```sh
+   # sync/sync-config.sh
+   
+   prodenv="sfexample"                     # WP Engine production env name
+   stagingenv="sfexamplestg"               # WP Engine staging env name
+   localenv="example"                      # Local environment name
+   localurl="http://example.ddev.site"     # DDEV local URL
+   ```
 
 ### Running the Script
+
 Run the script using the following command:
+
 ```bash
 sync/sync-config.sh <environment> <action>
 ```
 
 OPTIONS
-```bash 
+
+```bash
 [<environment>]
         Set the target environment for syncing.
         - options:
@@ -67,7 +74,8 @@ OPTIONS
 ```
 
 Examples
-```bash 
+
+```bash
 sync/sync.sh production db:pull          # Pulling the db from production
 sync/sync.sh staging db:push             # Pushing the db to staging
 sync/sync.sh production uploads:pull     # Pulling the uploads from production
