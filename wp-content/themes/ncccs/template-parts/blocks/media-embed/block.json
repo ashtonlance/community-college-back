@@ -1,0 +1,15 @@
+{
+  "name": "nextword/mediaembed",
+  "title": "Media Embed",
+  "description": "Add an Image or Video to your page",
+  "category": "Media",
+  "keywords": [
+    "media"
+  ],
+  "icon": "media-interactive",
+  "apiVersion": 2,
+  "acf": {
+    "renderTemplate": "./wysiwyg.php",
+    "mode": "preview"
+  }
+}

@@ -11,44 +11,6 @@
 
 add_action('acf/init', 'acf_init_block_types');
 
-// add_action( 'graphql_register_types', function() {
-
-// 	register_graphql_connection([
-// 		'fromType' => 'RootQuery',
-// 		'toType' => 'resource',
-// 		'fromFieldName' => 'popularPosts',
-// 		'connectionTypeName' => 'RootQueryToPopularPostsConnection',
-// 		'resolve' => function( $root, $args, \WPGraphQL\AppContext $context, $info ) {
-
-// 			$resolver = new \WPGraphQL\Data\Connection\PostObjectConnectionResolver( $root, $args, $context, $info );
-
-// 			// Get the query amount from the resolver.
-// 			// This takes into account the arguments for `first` and `last` on the connection
-// 			// and determines how many items to ask for
-// 			$per_page = $resolver->get_query_amount();
-
-// 			// Query for the popular posts. It's important to JUST get the ids
-// 			$popular_post_ids = new WP_Query( [
-// 				'posts_per_page' => $per_page,
-// 				'meta_key' => 'wpb_post_views_count',
-// 				'orderby' => 'meta_value_num',
-// 				'order' => 'DESC',
-// 				'fields' => 'ids', // Just ask for the IDs. WPGraphQL connection resolver will get the full objects for you
-// 				'no_found_rows' => true,
-// 			] );
-
-// 			// If there are no popular posts, return null for the connection
-// 			if ( empty( $popular_post_ids->posts ) ) {
-// 				return null;
-// 			}
-
-// 			$resolver->set_query_arg( 'post__in', $popular_post_ids->posts );
-// 			return $resolver->get_connection();
-// 		}
-// 	]);
-
-// } );
-
 function acf_init_block_types(){
 	if(function_exists('register_block_type')){
 		register_block_type(get_template_directory() . "/template-parts/blocks/hero/block.json");
@@ -71,6 +33,7 @@ function acf_init_block_types(){
 		register_block_type(get_template_directory() . "/template-parts/blocks/page-heading/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/button/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/wysiwyg/block.json");
+		register_block_type(get_template_directory() . "/template-parts/blocks/media-embed/block.json");
 	}
 }
 
@@ -136,100 +99,100 @@ endif;
 // Add block patterns
 require get_template_directory() . "/inc/block-patterns.php";
 
-function wpcc_allowed_block_types() {
-	$post_type = get_post_type();
-	if ( $post_type === 'resource' ) {
-		return array(
-			'core/paragraph',
-			'core/heading',
-			'core/list',
-			'core/quote',
-			'core/table', //SHOW THIS ONLY FOR RESOURCE
-			'core/image',
-			'core/gallery',
-			'core/video',
-			'core/buttons',
-			'core/separator',
-			'core/shortcode',
-			'nextword/resourcefeaturedcard',
-			'nextword/resourcedownload'
-		);
-	} else if ( $post_type === 'event' ) {
-		return array(
-			'core/paragraph',
-			'core/heading',
-			'core/list',
-			'core/quote',
-			'core/table',
-			'core/image',
-			'core/gallery',
-			'core/video',
-			'core/buttons',
-			'core/separator',
-			'core/shortcode',
-			'nextword/resourcefeaturedcard',
-			'nextword/heroevent',
-			'nextword/text',
-			'nextword/stats',
-			'nextword/featuresandbenefits',
-			'nextword/testimonialslider',
-			'nextword/testimonial',
-			'nextword/relatedresourcesblock',
-			'nextword/links',
-			'nextword/cta',
-			'nextword/generalcards',
-			'nextword/eventcards',
-			'nextword/textandimage',
-			'nextword/teammembercards',
-			'nextword/contactblock',
-			'nextword/pageheading',
-			'nextword/externalevent'
-		);
-	} else if( $post_type === 'page'){
-		return array(
-			'core/paragraph',
-			'core/image',
-			'core/heading',
-			'core/list',
-			'core/quote',
-			'core/shortcode',
-			'core/gallery',
-			'core/video',
-			'core/buttons',
-			'core/separator',
-			'nextword/hero',
-			'nextword/text',
-			'nextword/stats',
-			'nextword/featuresandbenefits',
-			'nextword/testimonialslider',
-			'nextword/testimonial',
-			'nextword/relatedresourcesblock',
-			'nextword/links',
-			'nextword/cta',
-			'nextword/generalcards',
-			'nextword/eventcards',
-			'nextword/textandimage',
-			'nextword/teammembercards',
-			'nextword/contactblock',
-			'nextword/pageheading',
-			'nextword/wysiwyg'
-		);
-	} else {
-		return array(
-			'core/paragraph',
-			'core/image',
-			'core/heading',
-			'core/list',
-			'core/quote',
-			'core/gallery',
-			'core/video',
-			'core/buttons',
-			'core/separator',
-			'core/shortcode',
-		);
-	}
-}
-add_filter( 'allowed_block_types', 'wpcc_allowed_block_types' );
+// function wpcc_allowed_block_types() {
+// 	$post_type = get_post_type();
+// 	if ( $post_type === 'resource' ) {
+// 		return array(
+// 			'core/paragraph',
+// 			'core/heading',
+// 			'core/list',
+// 			'core/quote',
+// 			'core/table', //SHOW THIS ONLY FOR RESOURCE
+// 			'core/image',
+// 			'core/gallery',
+// 			'core/video',
+// 			'core/buttons',
+// 			'core/separator',
+// 			'core/shortcode',
+// 			'nextword/resourcefeaturedcard',
+// 			'nextword/resourcedownload'
+// 		);
+// 	} else if ( $post_type === 'event' ) {
+// 		return array(
+// 			'core/paragraph',
+// 			'core/heading',
+// 			'core/list',
+// 			'core/quote',
+// 			'core/table',
+// 			'core/image',
+// 			'core/gallery',
+// 			'core/video',
+// 			'core/buttons',
+// 			'core/separator',
+// 			'core/shortcode',
+// 			'nextword/resourcefeaturedcard',
+// 			'nextword/heroevent',
+// 			'nextword/text',
+// 			'nextword/stats',
+// 			'nextword/featuresandbenefits',
+// 			'nextword/testimonialslider',
+// 			'nextword/testimonial',
+// 			'nextword/relatedresourcesblock',
+// 			'nextword/links',
+// 			'nextword/cta',
+// 			'nextword/generalcards',
+// 			'nextword/eventcards',
+// 			'nextword/textandimage',
+// 			'nextword/teammembercards',
+// 			'nextword/contactblock',
+// 			'nextword/pageheading',
+// 			'nextword/externalevent'
+// 		);
+// 	} else if( $post_type === 'page'){
+// 		return array(
+// 			'core/paragraph',
+// 			'core/image',
+// 			'core/heading',
+// 			'core/list',
+// 			'core/quote',
+// 			'core/shortcode',
+// 			'core/gallery',
+// 			'core/video',
+// 			'core/buttons',
+// 			'core/separator',
+// 			'nextword/hero',
+// 			'nextword/text',
+// 			'nextword/stats',
+// 			'nextword/featuresandbenefits',
+// 			'nextword/testimonialslider',
+// 			'nextword/testimonial',
+// 			'nextword/relatedresourcesblock',
+// 			'nextword/links',
+// 			'nextword/cta',
+// 			'nextword/generalcards',
+// 			'nextword/eventcards',
+// 			'nextword/textandimage',
+// 			'nextword/teammembercards',
+// 			'nextword/contactblock',
+// 			'nextword/pageheading',
+// 			'nextword/wysiwyg'
+// 		);
+// 	} else {
+// 		return array(
+// 			'core/paragraph',
+// 			'core/image',
+// 			'core/heading',
+// 			'core/list',
+// 			'core/quote',
+// 			'core/gallery',
+// 			'core/video',
+// 			'core/buttons',
+// 			'core/separator',
+// 			'core/shortcode',
+// 		);
+// 	}
+// }
+// add_filter( 'allowed_block_types', 'wpcc_allowed_block_types' );
 
 add_filter( 'graphql_request_results', function( $response ) {
 	if ( is_array( $response ) && isset( $response['extensions'] ) ) {
@@ -251,4 +214,22 @@ function add_menus() {
   );
 }
 add_action( 'init', 'add_menus' );
+
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init() {
+
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+
+        // Register options page.
+        $option_page = acf_add_options_page(array(
+            'page_title'    => __('Settings'),
+            'menu_title'    => __('Settings'),
+            'menu_slug'     => 'settings',
+            'capability'    => 'edit_posts',
+            'redirect'      => false,
+						'show_in_graphql' => true
+        ));
+    }
+}
 

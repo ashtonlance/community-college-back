@@ -1,27 +1,30 @@
 <?php
     $blockName = "contact-block";
     $title = get_field('title');
-    $address = get_field('address');
-    $directions = get_field('directions_link');
-    $map = get_field('map');
+    $jobTitle = get_field('job_title');
+    $phoneNumber = get_field('phone_number');
+    $link = get_field('link');
+    $image = get_field('image');
 ?>
 <div class="<?php echo $blockName; ?> position-image-<?php echo $imgPosition; ?>">
-    <div>
+    <?php if($image): ?>
+        <img style="height:250px;width:400px;object-fit:cover;" src="<?php echo $image["url"]; ?>" alt="">
+    <?php endif; ?>
+    <div style="display:flex;flex-direction:column;padding-left:1rem;">
         <?php if($title): ?>
             <h2><?php echo $title; ?></h2>
         <?php endif; ?>
 
-        <?php if($address): ?>
-            <h4><?php echo $address; ?></h4>
+        <?php if($jobTitle): ?>
+            <h4><?php echo $jobTitle; ?></h4>
         <?php endif; ?>
 
-        <?php if($directions): ?>
-            <a href=<?php echo $directions; ?>> Get Directions </a>
+        <?php if($phoneNumber): ?>
+            <div><?php echo $phoneNumber; ?></div>
         <?php endif; ?>
-    </div>
-    <div>
-        <?php if($map): ?>
-            <?php echo $map; ?>
+
+        <?php if($link): ?>
+            <div><?php echo $link["title"]; ?></div>
         <?php endif; ?>
     </div>
 </div>
