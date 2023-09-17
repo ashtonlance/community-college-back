@@ -3,6 +3,7 @@
     $quote = get_field('quote');
     $person = get_field('persons_name');
     $business = get_field('business_name');
+    $background = get_field('background_color');
 ?>
 
 <div class=<?php echo $blockName; ?>>
@@ -22,9 +23,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding: 80px 205px 100px;
         gap: 30px;
-        background: #555555;
+        background: var(--<?php echo $background; ?>);
     }
 
     .<?php echo $blockName; ?> h2{
@@ -33,7 +35,7 @@
         font-weight: 700;
         font-size: 16px;
         line-height: 150%;
-        color: #FFFFFF;
+        color: var(--darkGrey);
     }
 
     .<?php echo $blockName; ?> h3{
@@ -43,7 +45,7 @@
         font-size: 20px;
         line-height: 160%;
         text-align: center;
-        color: #FFFFFF;
+        color: var(--darkGrey);
     }
 
     .<?php echo $blockName; ?> .author{
@@ -56,7 +58,7 @@
         font-size: 12px;
         line-height: 140%;
         text-align: center;
-        color: #F8F8F8;
+        color: var(--navy);
         gap:15px;
     }
 

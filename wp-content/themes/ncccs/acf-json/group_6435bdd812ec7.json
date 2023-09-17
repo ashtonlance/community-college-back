@@ -18,9 +18,8 @@
             },
             "show_in_graphql": 1,
             "choices": {
-                "white": "White",
-                "stone": "Stone",
-                "sky": "Sky"
+                "blue": "Blue",
+                "grey": "Grey"
             },
             "default_value": "white",
             "return_format": "value",
@@ -117,7 +116,7 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "default_value": "Customer Testimonial",
+            "default_value": "Testimonial",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -209,5 +208,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1693532377
+    "modified": 1694971873
 }
