@@ -9,6 +9,8 @@
  * @since NextWord 1.0
  */
 
+ require_once get_template_directory() . '/custom-post-types.php';
+
 add_action('acf/init', 'acf_init_block_types');
 
 function acf_init_block_types(){
@@ -34,6 +36,7 @@ function acf_init_block_types(){
 		register_block_type(get_template_directory() . "/template-parts/blocks/button/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/wysiwyg/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/media-embed/block.json");
+		register_block_type(get_template_directory() . "/template-parts/blocks/location/block.json");
 	}
 }
 

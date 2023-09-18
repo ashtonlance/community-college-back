@@ -1,0 +1,15 @@
+{
+  "name": "nextword/location",
+  "title": "Location",
+  "description": "Adds a map and contact info to the page",
+  "category": "Media",
+  "keywords": [
+    "media"
+  ],
+  "icon": "media-interactive",
+  "apiVersion": 2,
+  "acf": {
+    "renderTemplate": "./location.php",
+    "mode": "preview"
+  }
+}

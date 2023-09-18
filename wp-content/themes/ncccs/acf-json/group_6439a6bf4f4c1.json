@@ -18,11 +18,10 @@
             },
             "show_in_graphql": 1,
             "choices": {
-                "white": "White",
-                "stone": "Stone",
-                "sky": "Sky"
+                "grey": "Grey",
+                "blue": "Blue"
             },
-            "default_value": "white",
+            "default_value": "grey",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
@@ -238,5 +237,5 @@
     "graphql_field_name": "testimonial_slider",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1693532391
+    "modified": 1694973444
 }

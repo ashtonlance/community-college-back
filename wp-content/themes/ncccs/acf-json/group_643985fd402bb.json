@@ -1,6 +1,6 @@
 {
     "key": "group_643985fd402bb",
-    "title": "Contact Block",
+    "title": "Location Block",
     "fields": [
         {
             "key": "field_64cb05c1029cd",
@@ -19,7 +19,8 @@
             "show_in_graphql": 1,
             "choices": {
                 "white": "White",
-                "grey": "Grey"
+                "stone": "Stone",
+                "sky": "Sky"
             },
             "default_value": "white",
             "return_format": "value",
@@ -102,34 +103,8 @@
             ]
         },
         {
-            "key": "field_65064ef72d925",
-            "label": "Image",
-            "name": "image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
             "key": "field_643985fd68dbb",
-            "label": "Headline",
+            "label": "Block Title",
             "name": "title",
             "aria-label": "",
             "type": "text",
@@ -142,16 +117,58 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "default_value": "",
+            "default_value": "Our location",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_65064e18ba3dd",
-            "label": "Job Title",
-            "name": "job_title",
+            "key": "field_6439864268dbc",
+            "label": "Address",
+            "name": "address",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_650742aed5c46",
+            "label": "Mailing Address",
+            "name": "mailing_address",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_64398656bdaee",
+            "label": "Directions link",
+            "name": "directions_link",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -170,12 +187,12 @@
             "append": ""
         },
         {
-            "key": "field_65064e2fba3de",
-            "label": "Phone Number",
-            "name": "phone_number",
+            "key": "field_64398665bdaef",
+            "label": "Map",
+            "name": "map",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Follow the steps at this link to generate your embed iframe\r\n---\r\nhttps:\/\/blog.hubspot.com\/website\/how-to-embed-google-map-in-html",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -189,23 +206,6 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_65064e3fba3df",
-            "label": "Link",
-            "name": "link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "return_format": "array"
         }
     ],
     "location": [
@@ -213,7 +213,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "nextword\/contactblock"
+                "value": "nextword\/location"
             }
         ]
     ],
@@ -227,8 +227,8 @@
     "description": "",
     "show_in_rest": 0,
     "show_in_graphql": 1,
-    "graphql_field_name": "contact_block",
+    "graphql_field_name": "location",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1694912269
+    "modified": 1694975615
 }
