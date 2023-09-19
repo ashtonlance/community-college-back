@@ -40,12 +40,16 @@ add_filter('acf/fields/wysiwyg/toolbars', 'my_toolbars');
 function my_toolbars($toolbars)
 {
   $toolbars['Very Simple'] = array();
-  $toolbars['Very Simple'][1] = array('bold', 'italic', 'underline', 'link','alignleft', 'aligncenter', 'alignright');
+  $toolbars['Very Simple'][1] = array('bold', 'italic', 'link', 'unlink','bullist', 'numlist', 'undo', 'redo', 'removeformat');
+
+  $toolbars['Simple'] = array();
+  $toolbars['Simple'][1] = array('bold', 'italic',  'link', 'unlink','bullist', 'numlist', 'undo', 'redo', 'removeformat', 'table', 'formatselect', 'alignleft', 'aligncenter', 'alignright');
+
+
   // remove the 'Basic' toolbar completely
   unset($toolbars['Full']);
   // remove the 'Basic' toolbar completely
   unset($toolbars['Basic']);
-  // return $toolbars - IMPORTANT!
   return $toolbars;
 }
 

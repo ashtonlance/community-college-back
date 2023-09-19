@@ -117,9 +117,9 @@
             },
             "show_in_graphql": 1,
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "very_simple",
-            "media_upload": 0,
+            "tabs": "visual",
+            "toolbar": "simple",
+            "media_upload": 1,
             "delay": 0
         }
     ],
@@ -145,5 +145,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695153333
+    "modified": 1695157900
 }

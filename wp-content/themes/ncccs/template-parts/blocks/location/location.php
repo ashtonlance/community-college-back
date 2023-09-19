@@ -1,33 +1,33 @@
 <?php
-    $blockName = "location";
-    $title = get_field('title');
-    $address = get_field('address');
-    $mailing_address = get_field('mailing_address');
-    $directions = get_field('directions_link');
-    $map = get_field('map');
+$blockName = "location";
+$title = get_field('title');
+$address = get_field('address');
+$mailing_address = get_field('mailing_address');
+$directions = get_field('directions_link');
+$map = get_field('map');
 ?>
 <div class="<?php echo $blockName; ?> position-image-<?php echo $imgPosition; ?>">
     <div>
-        <?php if($title): ?>
-            <h2><?php echo $title; ?></h2>
+        <?php if ($title): ?>
+                <h2><?php echo $title; ?></h2>
         <?php endif; ?>
 
-        <?php if($address): ?>
-            <h4><?php echo $address; ?></h4>
+        <?php if ($address): ?>
+                <h4><?php echo $address; ?></h4>
         <?php endif; ?>
 
-        <?php if($mailing_address): ?>
-            <p>Mailing Address</p>
-            <h5><?php echo $mailing_address; ?></h5>
+        <?php if ($mailing_address): ?>
+                <p>Mailing Address</p>
+                <h5><?php echo $mailing_address; ?></h5>
         <?php endif; ?>
 
-        <?php if($directions): ?>
-            <a href=<?php echo $directions; ?>> Get Directions </a>
+        <?php if ($directions): ?>
+                <a href=<?php echo $directions; ?>> Get Directions </a>
         <?php endif; ?>
     </div>
     <div>
-        <?php if($map): ?>
-            <?php echo $map; ?>
+        <?php if ($map): ?>
+                <?php echo $map; ?>
         <?php endif; ?>
     </div>
 </div>
@@ -77,5 +77,8 @@
     letter-spacing: 0.01em;
     text-transform: capitalize;
     color: #555555;
+}
+.mce-container.mce-menubar.mce-toolbar.mce-first{
+    display:none;
 }
 </style>

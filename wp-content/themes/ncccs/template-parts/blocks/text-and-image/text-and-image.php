@@ -101,5 +101,7 @@
     [data-spacing-top='large']{
         margin-top:80px;
     }
-
+    .mce-container.mce-menubar.mce-toolbar.mce-first{
+        display:none;
+    }
 </style>
