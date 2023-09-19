@@ -9,30 +9,44 @@
  * @since NextWord 1.0
  */
 
- require_once get_template_directory() . '/custom-post-types.php';
+require_once get_template_directory() . '/custom-post-types.php';
 
 add_action('acf/init', 'acf_init_block_types');
 
-function acf_init_block_types(){
-	if(function_exists('register_block_type')){
-		register_block_type(get_template_directory() . "/template-parts/blocks/hero/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/text/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/stats/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/testimonial/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/links/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/cta/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/general-cards/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/related-resources/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/text-and-image/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/contact-block/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/features-and-benefits/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/testimonial-slider/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/page-heading/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/button/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/wysiwyg/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/media-embed/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/location/block.json");
-	}
+function acf_init_block_types()
+{
+  if (function_exists('register_block_type')) {
+    register_block_type(get_template_directory() . "/template-parts/blocks/hero/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/text/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/stats/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/testimonial/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/links/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/cta/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/general-cards/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/related-resources/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/text-and-image/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/contact-block/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/features-and-benefits/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/testimonial-slider/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/page-heading/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/button/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/wysiwyg/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/media-embed/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/location/block.json");
+  }
+}
+
+add_filter('acf/fields/wysiwyg/toolbars', 'my_toolbars');
+function my_toolbars($toolbars)
+{
+  $toolbars['Very Simple'] = array();
+  $toolbars['Very Simple'][1] = array('bold', 'italic', 'underline', 'link','alignleft', 'aligncenter', 'alignright');
+  // remove the 'Basic' toolbar completely
+  unset($toolbars['Full']);
+  // remove the 'Basic' toolbar completely
+  unset($toolbars['Basic']);
+  // return $toolbars - IMPORTANT!
+  return $toolbars;
 }
 
 
@@ -97,137 +111,45 @@ endif;
 // Add block patterns
 require get_template_directory() . "/inc/block-patterns.php";
 
-// function wpcc_allowed_block_types() {
-// 	$post_type = get_post_type();
-// 	if ( $post_type === 'resource' ) {
-// 		return array(
-// 			'core/paragraph',
-// 			'core/heading',
-// 			'core/list',
-// 			'core/quote',
-// 			'core/table', //SHOW THIS ONLY FOR RESOURCE
-// 			'core/image',
-// 			'core/gallery',
-// 			'core/video',
-// 			'core/buttons',
-// 			'core/separator',
-// 			'core/shortcode',
-// 			'nextword/resourcefeaturedcard',
-// 			'nextword/resourcedownload'
-// 		);
-// 	} else if ( $post_type === 'event' ) {
-// 		return array(
-// 			'core/paragraph',
-// 			'core/heading',
-// 			'core/list',
-// 			'core/quote',
-// 			'core/table',
-// 			'core/image',
-// 			'core/gallery',
-// 			'core/video',
-// 			'core/buttons',
-// 			'core/separator',
-// 			'core/shortcode',
-// 			'nextword/resourcefeaturedcard',
-// 			'nextword/heroevent',
-// 			'nextword/text',
-// 			'nextword/stats',
-// 			'nextword/featuresandbenefits',
-// 			'nextword/testimonialslider',
-// 			'nextword/testimonial',
-// 			'nextword/relatedresourcesblock',
-// 			'nextword/links',
-// 			'nextword/cta',
-// 			'nextword/generalcards',
-// 			'nextword/eventcards',
-// 			'nextword/textandimage',
-// 			'nextword/teammembercards',
-// 			'nextword/contactblock',
-// 			'nextword/pageheading',
-// 			'nextword/externalevent'
-// 		);
-// 	} else if( $post_type === 'page'){
-// 		return array(
-// 			'core/paragraph',
-// 			'core/image',
-// 			'core/heading',
-// 			'core/list',
-// 			'core/quote',
-// 			'core/shortcode',
-// 			'core/gallery',
-// 			'core/video',
-// 			'core/buttons',
-// 			'core/separator',
-// 			'nextword/hero',
-// 			'nextword/text',
-// 			'nextword/stats',
-// 			'nextword/featuresandbenefits',
-// 			'nextword/testimonialslider',
-// 			'nextword/testimonial',
-// 			'nextword/relatedresourcesblock',
-// 			'nextword/links',
-// 			'nextword/cta',
-// 			'nextword/generalcards',
-// 			'nextword/eventcards',
-// 			'nextword/textandimage',
-// 			'nextword/teammembercards',
-// 			'nextword/contactblock',
-// 			'nextword/pageheading',
-// 			'nextword/wysiwyg'
-// 		);
-// 	} else {
-// 		return array(
-// 			'core/paragraph',
-// 			'core/image',
-// 			'core/heading',
-// 			'core/list',
-// 			'core/quote',
-// 			'core/gallery',
-// 			'core/video',
-// 			'core/buttons',
-// 			'core/separator',
-// 			'core/shortcode',
-// 		);
-// 	}
-// }
-// add_filter( 'allowed_block_types', 'wpcc_allowed_block_types' );
+add_filter('graphql_request_results', function ($response) {
+  if (is_array($response) && isset($response['extensions'])) {
+    unset($response['extensions']);
+  }
+  if (is_object($response) && isset($response->extensions)) {
+    unset($response->extensions);
+  }
+  return $response;
+}, 99, 1);
 
-add_filter( 'graphql_request_results', function( $response ) {
-	if ( is_array( $response ) && isset( $response['extensions'] ) ) {
-		unset( $response['extensions'] );
-	}
-	if ( is_object( $response ) && isset( $response->extensions ) ) {
-		unset( $response->extensions );
-	}
-	return $response;
-}, 99, 1 );
-
-function add_menus() {
+function add_menus()
+{
   register_nav_menus(
     array(
-      'faculty-and-staff' => __( 'Faculty and Staff' ),
-      'employers' => __( 'Employers' ),
-			'system-office' => __( 'System Office' )
+      'faculty-and-staff' => __('Faculty and Staff'),
+      'employers' => __('Employers'),
+      'system-office' => __('System Office')
     )
   );
 }
-add_action( 'init', 'add_menus' );
+add_action('init', 'add_menus');
 
 add_action('acf/init', 'my_acf_op_init');
-function my_acf_op_init() {
+function my_acf_op_init()
+{
 
-    // Check function exists.
-    if( function_exists('acf_add_options_page') ) {
+  // Check function exists.
+  if (function_exists('acf_add_options_page')) {
 
-        // Register options page.
-        $option_page = acf_add_options_page(array(
-            'page_title'    => __('Settings'),
-            'menu_title'    => __('Settings'),
-            'menu_slug'     => 'settings',
-            'capability'    => 'edit_posts',
-            'redirect'      => false,
-						'show_in_graphql' => true
-        ));
-    }
+    // Register options page.
+    $option_page = acf_add_options_page(
+      array(
+        'page_title' => __('Settings'),
+        'menu_title' => __('Settings'),
+        'menu_slug' => 'settings',
+        'capability' => 'edit_posts',
+        'redirect' => false,
+        'show_in_graphql' => true
+      )
+    );
+  }
 }
-
