@@ -13,7 +13,9 @@ $spacing = get_field('component_spacing');
             <div class="card-features">
                 <h3><?php echo $card['heading']; ?></h3>
                 <p><?php echo $card['body_copy']; ?></p>
+                <?php if ($card['optional_link']) { ?>
                 <p class="link"><?php echo $card['optional_link']['title']; ?></p>
+                <?php } ?>
             </div>
         <?php } ?>
     <?php endif; ?>
