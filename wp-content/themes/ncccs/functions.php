@@ -16,8 +16,6 @@ add_action('acf/init', 'acf_init_block_types');
 function acf_init_block_types(){
 	if(function_exists('register_block_type')){
 		register_block_type(get_template_directory() . "/template-parts/blocks/hero/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/hero-event/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/external-event/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/text/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/stats/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/testimonial/block.json");
@@ -26,12 +24,9 @@ function acf_init_block_types(){
 		register_block_type(get_template_directory() . "/template-parts/blocks/general-cards/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/related-resources/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/text-and-image/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/team-member-cards/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/contact-block/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/features-and-benefits/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/testimonial-slider/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/resource-featured-card/block.json");
-		register_block_type(get_template_directory() . "/template-parts/blocks/resource-download/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/page-heading/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/button/block.json");
 		register_block_type(get_template_directory() . "/template-parts/blocks/wysiwyg/block.json");
