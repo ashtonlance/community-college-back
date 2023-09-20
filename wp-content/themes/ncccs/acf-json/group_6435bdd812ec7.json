@@ -19,7 +19,8 @@
             "show_in_graphql": 1,
             "choices": {
                 "blue": "Blue",
-                "grey": "Grey"
+                "grey": "Grey",
+                "white": "White"
             },
             "default_value": "white",
             "return_format": "value",
@@ -63,7 +64,7 @@
                         "medium": "Medium",
                         "large": "Large"
                     },
-                    "default_value": "none",
+                    "default_value": "large",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -91,7 +92,7 @@
                         "medium": "Medium",
                         "large": "Large"
                     },
-                    "default_value": "none",
+                    "default_value": "large",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -208,5 +209,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1694971873
+    "modified": 1695212640
 }

@@ -63,7 +63,7 @@
                         "medium": "Medium",
                         "large": "Large"
                     },
-                    "default_value": "none",
+                    "default_value": "large",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -91,7 +91,7 @@
                         "medium": "Medium",
                         "large": "Large"
                     },
-                    "default_value": "none",
+                    "default_value": "large",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -208,5 +208,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1694916740
+    "modified": 1695212487
 }

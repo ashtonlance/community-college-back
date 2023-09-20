@@ -19,9 +19,10 @@
             "show_in_graphql": 1,
             "choices": {
                 "grey": "Grey",
-                "blue": "Blue"
+                "blue": "Blue",
+                "white": "White"
             },
-            "default_value": "grey",
+            "default_value": "white",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
@@ -63,7 +64,7 @@
                         "medium": "Medium",
                         "large": "Large"
                     },
-                    "default_value": "none",
+                    "default_value": "large",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -91,7 +92,7 @@
                         "medium": "Medium",
                         "large": "Large"
                     },
-                    "default_value": "none",
+                    "default_value": "large",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -237,5 +238,5 @@
     "graphql_field_name": "testimonial_slider",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1694973444
+    "modified": 1695212656
 }
