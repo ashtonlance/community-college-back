@@ -32,7 +32,7 @@ $spacing = get_field('component_spacing');
         <p><?php echo $description; ?></p>
     <?php endif; ?>
 
-    <?php if ($ctabtn['button_text']): ?>
+    <?php if ($ctabtn and $ctabtn['button_text']): ?>
         <button href="<?php echo $ctabtn['button_link']; ?>">
             <?php echo $ctabtn['button_text']; ?>
         </button>
