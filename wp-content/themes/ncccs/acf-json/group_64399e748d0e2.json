@@ -164,8 +164,8 @@
                     "show_in_graphql": 1,
                     "default_value": "",
                     "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
+                    "toolbar": "very_simple",
+                    "media_upload": 0,
                     "delay": 0,
                     "parent_repeater": "field_64399e7417529"
                 },
@@ -268,5 +268,5 @@
     "graphql_field_name": "features_and_benefits",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1694701363
+    "modified": 1695154559
 }

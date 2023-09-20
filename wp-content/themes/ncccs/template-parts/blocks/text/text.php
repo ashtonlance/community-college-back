@@ -132,5 +132,7 @@ $spacing = get_field('component_spacing');
         text-transform: uppercase;
         color: #FFF;
     }
-
+    .mce-container.mce-menubar.mce-toolbar.mce-first{
+        display:none;
+    }
 </style>
