@@ -40,10 +40,10 @@ add_filter('acf/fields/wysiwyg/toolbars', 'my_toolbars');
 function my_toolbars($toolbars)
 {
   $toolbars['Very Simple'] = array();
-  $toolbars['Very Simple'][1] = array('bold', 'italic', 'link', 'unlink','bullist', 'numlist', 'undo', 'redo', 'removeformat');
+  $toolbars['Very Simple'][1] = array('bold', 'italic', 'link', 'unlink', 'bullist', 'numlist', 'undo', 'redo', 'removeformat');
 
   $toolbars['Simple'] = array();
-  $toolbars['Simple'][1] = array('bold', 'italic',  'link', 'unlink','bullist', 'numlist', 'undo', 'redo', 'removeformat', 'table', 'formatselect', 'alignleft', 'aligncenter', 'alignright');
+  $toolbars['Simple'][1] = array('bold', 'italic', 'link', 'unlink', 'bullist', 'numlist', 'undo', 'redo', 'removeformat', 'table', 'formatselect', 'alignleft', 'aligncenter', 'alignright');
 
 
   // remove the 'Basic' toolbar completely
@@ -158,7 +158,13 @@ function my_acf_op_init()
   }
 }
 
-function my_acf_google_map_api( $api ){
+add_action( 'after_setup_theme', function() {
+  remove_theme_support( 'core-block-patterns' );
+  add_theme_support( 'disable-layout-styles' );
+} );
+
+function my_acf_google_map_api($api)
+{
   $api['key'] = 'AIzaSyAqTeKtK62XIK_hlHvL8OO31nmDVseH0fk
   ';
   return $api;
