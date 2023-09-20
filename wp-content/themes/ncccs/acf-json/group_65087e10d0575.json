@@ -24,11 +24,11 @@
             "append": ""
         },
         {
-            "key": "field_65087e622ae7f",
-            "label": "Physical Address",
-            "name": "physical_address",
+            "key": "field_6509bd8daa018",
+            "label": "Map",
+            "name": "map",
             "aria-label": "",
-            "type": "textarea",
+            "type": "google_map",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,11 +38,10 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": 7,
+            "height": ""
         },
         {
             "key": "field_650883d361f64",
@@ -290,5 +289,5 @@
     "graphql_field_name": "collegeDetails",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695057244
+    "modified": 1695144022
 }
