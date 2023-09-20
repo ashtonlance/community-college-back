@@ -158,10 +158,16 @@ function my_acf_op_init()
   }
 }
 
-add_action( 'after_setup_theme', function() {
-  remove_theme_support( 'core-block-patterns' );
-  add_theme_support( 'disable-layout-styles' );
-} );
+add_action( 'admin_print_scripts', 'remove_layout_option' );
+
+
+function remove_layout_option() {
+  echo "<style type='text/css'>";
+  echo ".gb-toolbar-insert-layout { display: none; }";
+  echo "#tab-panel-0-patterns { display: none; }";
+  echo "</style>";
+}
+
 
 function my_acf_google_map_api($api)
 {
