@@ -84,7 +84,7 @@
         font-size: 72px;
         line-height: 110%;
         letter-spacing: -0.02em;
-        color: #FFFFFF;
+        color: black;
         margin:0;
         font-family: "proxima-nova", sans-serif;
     }
@@ -95,7 +95,7 @@
         font-weight: 700;
         font-size: 16px;
         line-height: 150%;
-        color: #FFFFFF;
+        color: black;
         margin:0;
     }
 
@@ -105,7 +105,7 @@
         font-weight: 500;
         font-size: 20px;
         line-height: 160%;
-        color: #FFFFFF;
+        color: black;
         margin:0;
     }
 
@@ -118,7 +118,7 @@
         gap: 12px;
         width: 259px;
         height: 51px;
-        background: #FFFFFF;
+        background: black;
         border-radius: 3px;
         border:none;
         font-style: normal;
