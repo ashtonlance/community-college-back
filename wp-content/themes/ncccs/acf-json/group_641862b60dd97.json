@@ -41,7 +41,8 @@
             ],
             "return_format": "array",
             "multiple": 1,
-            "allow_null": 0
+            "allow_null": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_641868c9a194e",
@@ -92,5 +93,5 @@
     "graphql_field_name": "webinar",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1683556391
+    "modified": 1695301766
 }

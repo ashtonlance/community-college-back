@@ -4,7 +4,6 @@
     $subheading = get_field('sub-heading');
     $description = get_field('description');
     $bgimg = get_field('background_image');
-    $bgcolor = get_field('background_color');
     $ctabtn = get_field('cta_button');
     $type = get_field('hero_design')
 ?>
@@ -62,7 +61,6 @@
         gap: 60px;
         isolation: isolate;
         width: 100%;
-        background-color: var(--<?php echo $bgcolor; ?>);
         background-repeat:no-repeat;
         background-size:cover;
     }
@@ -75,7 +73,6 @@
         gap: 60px;
         isolation: isolate;
         width: 100%;
-        background-color: var(--<?php echo $bgcolor; ?>);
         background-repeat:no-repeat;
         background-size:cover;
     }

@@ -19,7 +19,6 @@
             "show_in_graphql": 1,
             "choices": {
                 "default": "Default",
-                "home": "Home",
                 "landing": "Landing"
             },
             "default_value": "default",
@@ -181,29 +180,6 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_64343b81d4d2a",
-            "label": "Background Color",
-            "name": "background_color",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "choices": {
-                "grey": "Grey"
-            },
-            "default_value": "grey",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
-        },
-        {
             "key": "field_64c9a6b86e8ad",
             "label": "Background Image Position",
             "name": "background_image_position",
@@ -258,5 +234,5 @@
     "graphql_types": [
         "Page"
     ],
-    "modified": 1694651293
+    "modified": 1695312686
 }
