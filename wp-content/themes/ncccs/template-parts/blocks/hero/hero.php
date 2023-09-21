@@ -1,57 +1,95 @@
 <?php
-    $blockName = "hero-block";
-    $heading = get_field('heading');
-    $subheading = get_field('sub-heading');
-    $description = get_field('description');
-    $bgimg = get_field('background_image');
-    $ctabtn = get_field('cta_button');
-    $type = get_field('hero_design')
+$blockName = "hero-block";
+$heading = get_field('heading');
+$subheading = get_field('sub-heading');
+$description = get_field('description');
+$bgimg = get_field('background_image');
+$ctabtn = get_field('cta_button');
+$type = get_field('hero_design');
+$bgvideo = get_field('background_video');
 ?>
-<?php if($type == 'default'): ?>
-    <div class=<?php echo $blockName . $type; ?>>
-    <div>
-    <?php if($subheading): ?>
-        <h2><?php echo $subheading; ?></h2>
-    <?php endif; ?>
 
-    <h1><?php echo $heading; ?><h1>
+<?php if ($type == 'default'): ?>
+        <div class=<?php echo $blockName . $type; ?>>
+        <div>
+        <?php if ($subheading): ?>
+                <h2><?php echo $subheading; ?></h2>
+        <?php endif; ?>
 
-    <?php if($description): ?>
-        <p><?php echo $description; ?></p>
-    <?php endif; ?>
+        <h1><?php echo $heading; ?><h1>
 
-    <?php if($ctabtn['label']): ?>
-        <button href="<?php echo $ctabtn['link']; ?>">
-            <?php echo $ctabtn['label']; ?>
-        </button>
-    <?php endif; ?>
-    </div>
-    <?php if($bgimg): ?>
-        <div style='background-image: url(<?php echo $bgimg; ?>); width:300px; height: 300px'>
+        <?php if ($description): ?>
+                <p><?php echo $description; ?></p>
+        <?php endif; ?>
+
+        <?php if ($ctabtn['label']): ?>
+                <button href="<?php echo $ctabtn['link']; ?>">
+                    <?php echo $ctabtn['label']; ?>
+                </button>
+        <?php endif; ?>
         </div>
-    <?php endif; ?>
-</div>
+        <?php if ($bgimg): ?>
+                <div style='background-image: url(<?php echo $bgimg; ?>); width:300px; height: 300px'>
+                </div>
+        <?php endif; ?>
+
+    </div>
 <?php else: ?>
-<div class=<?php echo $blockName . $type; ?> style='background-image: url(<?php echo $bgimg; ?>);'>
-    <?php if($subheading): ?>
-        <h2><?php echo $subheading; ?></h2>
-    <?php endif; ?>
+        <?php if ($bgvideo): ?>
+            <div class="landing-video-bg" >
+                <?php echo $bgvideo['url']; ?>
+                <div style="position:absolute; top:100px; left: 100px">
+                    <?php if ($subheading): ?>
+                        <h2 style="margin:0"><?php echo $subheading; ?></h2>
+                    <?php endif; ?>
 
-    <h1><?php echo $heading; ?><h1>
+                    <h1 style="margin:0"><?php echo $heading; ?><h1>
 
-    <?php if($description): ?>
-        <p><?php echo $description; ?></p>
-    <?php endif; ?>
+                    <?php if ($description): ?>
+                            <p style="margin:0"><?php echo $description; ?></p>
+                    <?php endif; ?>
 
-    <?php if($ctabtn['label']): ?>
-        <button href="<?php echo $ctabtn['link']; ?>">
-            <?php echo $ctabtn['label']; ?>
-        </button>
-    <?php endif; ?>
-</div>
+                    <?php if ($ctabtn['label']): ?>
+                        <button style="margin:0" href="<?php echo $ctabtn['link']; ?>">
+                            <?php echo $ctabtn['label']; ?>
+                        </button>
+                    <?php endif; ?>
+                </div>
+         </div>
+
+        <?php elseif ($bgimg and $bgvideo == null): ?>
+            <div class=<?php echo $blockName . $type; ?> style='background-image: url(<?php echo $bgimg; ?>);'>
+                <?php if ($subheading): ?>
+                    <h2><?php echo $subheading; ?></h2>
+                <?php endif; ?>
+
+                <h1><?php echo $heading; ?><h1>
+
+                <?php if ($description): ?>
+                        <p><?php echo $description; ?></p>
+                <?php endif; ?>
+
+                <?php if ($ctabtn['label']): ?>
+                    <button href="<?php echo $ctabtn['link']; ?>">
+                        <?php echo $ctabtn['label']; ?>
+                    </button>
+                <?php endif; ?>
+        </div>
+        <?php endif; ?>
+
 <?php endif; ?>
 
 <style>
+    .landing-video-bg iframe{
+        width:1000px;
+        height:600px;
+        opacity:0.7;
+    }
+
+    .landing-video-bg{
+        position: relative;
+    }
+
     .hero-blockdefault{
         display: flex;
         flex-direction: row;
@@ -64,7 +102,7 @@
         background-repeat:no-repeat;
         background-size:cover;
     }
-    .hero-blocklanding, .hero-blockhome{
+    .hero-blocklanding{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -77,7 +115,7 @@
         background-size:cover;
     }
 
-    .<?php echo $blockName . $type;?> h1{
+    .<?php echo $blockName . $type; ?> h1,  .landing-video-bg h1{
         font-family: "proxima-nova", sans-serif;
         font-style: normal;
         font-weight: 800;
@@ -89,7 +127,7 @@
         font-family: "proxima-nova", sans-serif;
     }
 
-    .<?php echo $blockName . $type;?> h2{
+    .<?php echo $blockName . $type; ?> h2,  .landing-video-bg h2{
         font-family: "proxima-nova", sans-serif;
         font-style: normal;
         font-weight: 700;
@@ -99,7 +137,7 @@
         margin:0;
     }
 
-    .<?php echo $blockName . $type;?> p{
+    .<?php echo $blockName . $type; ?> p, .landing-video-bg p{
         font-family: "proxima-nova", sans-serif;
         font-style: normal;
         font-weight: 500;
@@ -109,7 +147,7 @@
         margin:0;
     }
 
-    .<?php echo $blockName . $type;?> button{
+    .<?php echo $blockName . $type; ?> button, .landing-video-bg button{
         display: flex;
         flex-direction: row;
         justify-content: center;
