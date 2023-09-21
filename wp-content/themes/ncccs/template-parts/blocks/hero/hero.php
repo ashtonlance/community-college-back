@@ -37,16 +37,21 @@ $bgvideo = get_field('background_video');
 <?php else: ?>
         <?php if ($bgvideo): ?>
             <div class="landing-video-bg" >
-                <?php echo $bgvideo['url']; ?>
+                <?php if($bgvideo['file_or_url']=='url'): ?>
+                    <?php echo $bgvideo['url']; ?>
+                <?php else: ?>
+                    <iframe src=<?php echo $bgvideo['uploaded']?> > </iframe>
+                <?php endif ;?>
+
                 <div style="position:absolute; top:100px; left: 100px">
                     <?php if ($subheading): ?>
-                        <h2 style="margin:0"><?php echo $subheading; ?></h2>
+                        <h2 style="margin:0; color:white"><?php echo $subheading; ?></h2>
                     <?php endif; ?>
 
-                    <h1 style="margin:0"><?php echo $heading; ?><h1>
+                    <h1 style="margin:0; color:white"><?php echo $heading; ?><h1>
 
                     <?php if ($description): ?>
-                            <p style="margin:0"><?php echo $description; ?></p>
+                            <p style="margin:0; color:white"><?php echo $description; ?></p>
                     <?php endif; ?>
 
                     <?php if ($ctabtn['label']): ?>
