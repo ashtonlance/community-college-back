@@ -3,81 +3,6 @@
     "title": "Features and Benefits",
     "fields": [
         {
-            "key": "field_64665aaff3b78",
-            "label": "Margins",
-            "name": "component_spacing",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_64665ac7f3b79",
-                    "label": "Top",
-                    "name": "top_spacing",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "show_in_graphql": 1,
-                    "choices": {
-                        "none": "None",
-                        "medium": "Medium",
-                        "large": "Large"
-                    },
-                    "default_value": "large",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_64665afef3b7a",
-                    "label": "Bottom",
-                    "name": "bottom_spacing",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "show_in_graphql": 1,
-                    "choices": {
-                        "none": "None",
-                        "medium": "Medium",
-                        "large": "Large"
-                    },
-                    "default_value": "large",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": ""
-                }
-            ]
-        },
-        {
             "key": "field_64665a6ef3b77",
             "label": "Background Color",
             "name": "background_color",
@@ -244,6 +169,81 @@
                     "parent_repeater": "field_64399e7417529"
                 }
             ]
+        },
+        {
+            "key": "field_64665aaff3b78",
+            "label": "Margins",
+            "name": "component_spacing",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_64665ac7f3b79",
+                    "label": "Top",
+                    "name": "top_spacing",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "choices": {
+                        "none": "None",
+                        "medium": "Medium",
+                        "large": "Large"
+                    },
+                    "default_value": "large",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_64665afef3b7a",
+                    "label": "Bottom",
+                    "name": "bottom_spacing",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "choices": {
+                        "none": "None",
+                        "medium": "Medium",
+                        "large": "Large"
+                    },
+                    "default_value": "large",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -268,5 +268,5 @@
     "graphql_field_name": "features_and_benefits",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1695212285
+    "modified": 1695301642
 }

@@ -3,6 +3,30 @@
     "title": "Contact Block",
     "fields": [
         {
+            "key": "field_65086b0f6096b",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "choices": {
+                "white": "White",
+                "grey": "Grey"
+            },
+            "default_value": "white",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_650869ed60966",
             "label": "Title",
             "name": "title",
@@ -107,30 +131,6 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
-        },
-        {
-            "key": "field_65086b0f6096b",
-            "label": "Background Color",
-            "name": "background_color",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "choices": {
-                "white": "White",
-                "grey": "Grey"
-            },
-            "default_value": "white",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
         }
     ],
     "location": [
@@ -155,5 +155,5 @@
     "graphql_field_name": "contactBlock",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695050564
+    "modified": 1695301611
 }
