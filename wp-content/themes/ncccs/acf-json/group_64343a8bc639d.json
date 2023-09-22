@@ -187,7 +187,15 @@
             "type": "group",
             "instructions": "Please add your video here using a url OR uploading it directly.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6466731b98eab",
+                        "operator": "==contains",
+                        "value": "landing"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -335,5 +343,5 @@
     "graphql_types": [
         "Page"
     ],
-    "modified": 1695330891
+    "modified": 1695387745
 }
