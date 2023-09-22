@@ -180,6 +180,115 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_650c7a026f7b7",
+            "label": "Background Video",
+            "name": "background_video",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Please add your video here using a url OR uploading it directly.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6466731b98eab",
+                        "operator": "==contains",
+                        "value": "landing"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_650ca880a7f47",
+                    "label": "File or URL?",
+                    "name": "file_or_url",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "choices": {
+                        "file": "File",
+                        "url": "URL"
+                    },
+                    "default_value": "url",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_650c7a256f7b8",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "oembed",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_650ca880a7f47",
+                                "operator": "==contains",
+                                "value": "url"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "width": "",
+                    "height": ""
+                },
+                {
+                    "key": "field_650c7ab56f7b9",
+                    "label": "Upload the video",
+                    "name": "uploaded",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_650ca880a7f47",
+                                "operator": "==contains",
+                                "value": "file"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        },
+        {
             "key": "field_64c9a6b86e8ad",
             "label": "Background Image Position",
             "name": "background_image_position",
@@ -234,5 +343,5 @@
     "graphql_types": [
         "Page"
     ],
-    "modified": 1695312686
+    "modified": 1695387745
 }
