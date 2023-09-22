@@ -148,7 +148,7 @@ function my_acf_op_init()
     $option_page = acf_add_options_page(
       array(
         'page_title' => __('Settings'),
-        'menu_title' => __('Settings'),
+        'menu_title' => __('Global Site Settings'),
         'menu_slug' => 'settings',
         'capability' => 'edit_posts',
         'redirect' => false,
