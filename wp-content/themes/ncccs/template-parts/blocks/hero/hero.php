@@ -11,28 +11,27 @@ $bgvideo = get_field('background_video');
 
 <?php if ($type == 'default'): ?>
         <div class=<?php echo $blockName . $type; ?>>
-        <div>
-        <?php if ($subheading): ?>
-                <h2><?php echo $subheading; ?></h2>
-        <?php endif; ?>
+            <div style="max-width:50%">
+                <?php if ($subheading): ?>
+                    <h2><?php echo $subheading; ?></h2>
+                <?php endif; ?>
 
-        <h1><?php echo $heading; ?><h1>
+                <h1><?php echo $heading; ?><h1>
 
-        <?php if ($description): ?>
-                <p><?php echo $description; ?></p>
-        <?php endif; ?>
+                <?php if ($description): ?>
+                    <p><?php echo $description; ?></p>
+                <?php endif; ?>
 
-        <?php if ($ctabtn['label']): ?>
-                <button href="<?php echo $ctabtn['link']; ?>">
-                    <?php echo $ctabtn['label']; ?>
-                </button>
-        <?php endif; ?>
-        </div>
+                <?php if ($ctabtn['label']): ?>
+                     <button href="<?php echo $ctabtn['link']; ?>">
+                        <?php echo $ctabtn['label']; ?>
+                    </button>
+                <?php endif; ?>
+            </div>
         <?php if ($bgimg): ?>
-                <div style='background-image: url(<?php echo $bgimg; ?>); width:300px; height: 300px'>
-                </div>
+            <div style='background-image: url(<?php echo $bgimg; ?>); width:300px; height: 300px'>
+            </div>
         <?php endif; ?>
-
     </div>
 <?php else: ?>
         <?php if ($bgvideo): ?>
