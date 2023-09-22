@@ -49,9 +49,9 @@
     "location": [
         [
             {
-                "param": "nav_menu",
+                "param": "options_page",
                 "operator": "==",
-                "value": "location\/primary"
+                "value": "settings"
             }
         ]
     ],
@@ -69,7 +69,8 @@
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": [
         "Menu",
-        "MenuItem"
+        "MenuItem",
+        "Settings"
     ],
-    "modified": 1695301560
+    "modified": 1695404351
 }
