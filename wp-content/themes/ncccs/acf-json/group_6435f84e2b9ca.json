@@ -45,9 +45,9 @@
             "layout": "block",
             "pagination": 0,
             "min": 0,
-            "max": 0,
+            "max": 1,
             "collapsed": "field_6435f84e95793",
-            "button_label": "Add Link",
+            "button_label": "Add new link list",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -93,7 +93,6 @@
                     "collapsed": "",
                     "button_label": "Add Row",
                     "rows_per_page": 20,
-                    "parent_repeater": "field_643600b02ef47",
                     "sub_fields": [
                         {
                             "key": "field_6435fab795795",
@@ -139,7 +138,8 @@
                             "append": "",
                             "parent_repeater": "field_6435fa7195794"
                         }
-                    ]
+                    ],
+                    "parent_repeater": "field_643600b02ef47"
                 }
             ]
         },
@@ -241,5 +241,5 @@
     "graphql_field_name": "link_block",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1695301709
+    "modified": 1695673724
 }
