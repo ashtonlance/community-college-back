@@ -1,5 +1,9 @@
 <?php
 function register_custom_post_type($post_type_name, $singular_name, $plural_name, $slug, $menu_icon, $taxonomy1_name = null, $taxonomy1_singular_name = null, $taxonomy1_plural_name = null, $taxonomy2_name = null, $taxonomy2_singular_name = null, $taxonomy2_plural_name = null) {
+
+    $singular_name_camel = lcfirst(str_replace(' ', '', ucwords($singular_name)));
+    $plural_name_camel = lcfirst(str_replace(' ', '', ucwords($plural_name)));
+
     $args = [
         'label' => esc_html__( $plural_name, 'twentytwentyone' ),
         'public' => true,
@@ -22,14 +26,18 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
         'query_var' => true,
         'supports' => [ 'title', 'editor', 'thumbnail' ],
         'show_in_graphql' => true,
-        'graphql_single_name' => $singular_name,
-        'graphql_plural_name' => $plural_name,
+        'graphql_single_name' => $singular_name_camel,
+        'graphql_plural_name' => $plural_name_camel,
         'menu_icon' => $menu_icon,
     ];
 
     register_post_type( $post_type_name, $args );
 
     if ($taxonomy1_name && $taxonomy1_singular_name && $taxonomy1_plural_name) {
+
+        $taxonomy1_singular_name_camel = lcfirst(str_replace(' ', '', ucwords($taxonomy1_singular_name)));
+        $taxonomy1_plural_name_camel = lcfirst(str_replace(' ', '', ucwords($taxonomy1_plural_name)));
+
         $taxonomy_args = [
             'label' => esc_html__( $taxonomy1_plural_name, 'twentytwentyone' ),
             'public' => true,
@@ -37,14 +45,19 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
             'hierarchical' => true,
             'show_in_rest' => true,
             'show_in_graphql' => true,
-            'graphql_single_name' => $taxonomy1_singular_name,
-            'graphql_plural_name' => $taxonomy1_plural_name,
+            'graphql_single_name' => $taxonomy1_singular_name_camel,
+            'graphql_plural_name' => $taxonomy1_plural_name_camel,
         ];
 
         register_taxonomy( $taxonomy1_name, $post_type_name, $taxonomy_args );
     }
 
     if ($taxonomy2_name && $taxonomy2_singular_name && $taxonomy2_plural_name) {
+
+        $taxonomy2_singular_name_camel = lcfirst(str_replace(' ', '', ucwords($taxonomy2_singular_name)));
+        $taxonomy2_plural_name_camel = lcfirst(str_replace(' ', '', ucwords($taxonomy2_plural_name)));
+
+
         $taxonomy_args = [
             'label' => esc_html__( $taxonomy2_plural_name, 'twentytwentyone' ),
             'public' => true,
@@ -52,8 +65,8 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
             'hierarchical' => true,
             'show_in_rest' => true,
             'show_in_graphql' => true,
-            'graphql_single_name' => $taxonomy2_singular_name,
-            'graphql_plural_name' => $taxonomy2_plural_name,
+            'graphql_single_name' => $taxonomy2_singular_name_camel,
+            'graphql_plural_name' => $taxonomy2_plural_name_camel,
         ];
 
         register_taxonomy( $taxonomy2_name, $post_type_name, $taxonomy_args );

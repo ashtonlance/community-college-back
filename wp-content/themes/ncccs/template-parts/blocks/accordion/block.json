@@ -1,0 +1,15 @@
+{
+  "name": "nextword/accordion",
+  "title": "Accordion",
+  "description": "Allows you to create/edit an accordion to your page.",
+  "category": "design",
+  "keywords": [
+    "accordion"
+  ],
+  "icon": "admin-site-alt3",
+  "apiVersion": 2,
+  "acf": {
+    "renderTemplate": "./accordion.php",
+    "mode": "preview"
+  }
+}
