@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6466465cb6cd9",
-            "label": "Background Color",
+            "label": "Slider Background Color",
             "name": "background_color",
             "aria-label": "",
             "type": "button_group",
@@ -19,7 +19,6 @@
             "show_in_graphql": 1,
             "choices": {
                 "grey": "Grey",
-                "blue": "Blue",
                 "white": "White"
             },
             "default_value": "white",
@@ -238,5 +237,5 @@
     "graphql_field_name": "testimonial_slider",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1695301811
+    "modified": 1695660303
 }
