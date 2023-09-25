@@ -7,18 +7,20 @@
 ?>
 
 <div class=<?php echo $blockName; ?>>
-    <h2>Customer Testimonial</h2>
+<div style="backgroundColor:white; width:500px; padding: 20px 40px; textAlign:center;border-radius:12px">
+    <h2>Testimonial</h2>
     <h3><?php echo $quote; ?></h3>
     <div class="author">
         <?php echo $person; ?> •
         <?php echo $business; ?>
     </div>
 </div>
+</div>
 
 <style>
 
     .<?php echo $blockName; ?>{
-        width: 800px;
+        width: 600px;
         height: 210px;
         display: flex;
         flex-direction: column;
