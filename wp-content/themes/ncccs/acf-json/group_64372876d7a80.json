@@ -49,7 +49,7 @@
         },
         {
             "key": "field_643728777e9be",
-            "label": "Posts",
+            "label": "Related Posts",
             "name": "related_resources",
             "aria-label": "",
             "type": "repeater",
@@ -65,7 +65,7 @@
             "layout": "table",
             "pagination": 0,
             "min": 0,
-            "max": 0,
+            "max": 2,
             "collapsed": "",
             "button_label": "Add Row",
             "rows_per_page": 20,
@@ -196,5 +196,5 @@
     "graphql_field_name": "related_resources_block",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1695301761
+    "modified": 1695674597
 }
