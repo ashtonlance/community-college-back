@@ -3,17 +3,18 @@ $blockName = "button";
 $bg_color = get_field('background');
 $spacing = get_field('component_spacing');
 $link = get_field('button_link');
-$label = get_field('button_label');
 $alignment = get_field('button_alignment');
 $button_color = get_field('button_background');
 ?>
+
+
 
 <div class="<?php echo $blockName . $bg_color; ?> <?php echo $alignment; ?>" data-spacing-bottom=<?php if ($spacing)
     echo $spacing['bottom_spacing'] ?> data-spacing-top=<?php if ($spacing)
     echo $spacing['top_spacing'] ?> >
     <?php if($link): ?>
-        <a href="<?php echo $link; ?>">
-            <?php echo $label; ?>
+        <a href="<?php echo $link['url']; ?>">
+            <?php echo $link['title']; ?>
         </a>
     <?php endif; ?>
 </div>
@@ -52,13 +53,14 @@ $button_color = get_field('button_background');
 
     .buttonwhite {
       background-color: #fff;
+      color: black;
     }
-    .buttonsky {
-      background-color: var(--sky);
+    .buttongrey {
+      background-color: #f5f5f5;
+      color: black;
+
     }
-    .buttonstone {
-      background-color: var(--stone);
-    }
+
 
     .start {
       justify-content: flex-start;
