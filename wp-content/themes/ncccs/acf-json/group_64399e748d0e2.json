@@ -19,8 +19,7 @@
             "show_in_graphql": 1,
             "choices": {
                 "white": "White",
-                "light": "Stone",
-                "dark": "Sky"
+                "grey": "Grey"
             },
             "default_value": "white",
             "return_format": "value",
@@ -140,33 +139,6 @@
                     "ajax": 0,
                     "placeholder": "",
                     "parent_repeater": "field_64399e7417529"
-                },
-                {
-                    "key": "field_643eb03c8523c",
-                    "label": "Card Style",
-                    "name": "card_style",
-                    "aria-label": "",
-                    "type": "radio",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "show_in_graphql": 1,
-                    "choices": {
-                        "default": "Default Card",
-                        "black": "Black Background"
-                    },
-                    "default_value": "default",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "layout": "vertical",
-                    "save_other_choice": 0,
-                    "parent_repeater": "field_64399e7417529"
                 }
             ]
         },
@@ -268,5 +240,5 @@
     "graphql_field_name": "features_and_benefits",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1695301642
+    "modified": 1695760171
 }
