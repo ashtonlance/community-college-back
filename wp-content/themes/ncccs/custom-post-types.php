@@ -20,11 +20,11 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
         'exclude_from_search' => false,
         'capability_type' => 'post',
         'map_meta_cap' => true,
-        'hierarchical' => false,
+        'hierarchical' => true,
         'can_export' => false,
-        'rewrite' => [ 'slug' => $slug, 'with_front' => true ],
+        'rewrite' => [ 'slug' => $slug, 'with_front' => false ],
         'query_var' => true,
-        'supports' => [ 'title', 'editor', 'thumbnail' ],
+        'supports' => [ 'title', 'editor', 'thumbnail', 'page-attributes' ],
         'show_in_graphql' => true,
         'graphql_single_name' => $singular_name_camel,
         'graphql_plural_name' => $plural_name_camel,
@@ -41,12 +41,17 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
         $taxonomy_args = [
             'label' => esc_html__( $taxonomy1_plural_name, 'twentytwentyone' ),
             'public' => true,
+            'publicly_queryable' => true,
             'rewrite' => ['slug' => $taxonomy1_name],
             'hierarchical' => true,
             'show_in_rest' => true,
             'show_in_graphql' => true,
             'graphql_single_name' => $taxonomy1_singular_name_camel,
             'graphql_plural_name' => $taxonomy1_plural_name_camel,
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'query_var' => true,
+            'sort'        => true,
         ];
 
         register_taxonomy( $taxonomy1_name, $post_type_name, $taxonomy_args );
@@ -61,12 +66,17 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
         $taxonomy_args = [
             'label' => esc_html__( $taxonomy2_plural_name, 'twentytwentyone' ),
             'public' => true,
+            'publicly_queryable' => true,
             'rewrite' => ['slug' => $taxonomy2_name],
             'hierarchical' => true,
             'show_in_rest' => true,
             'show_in_graphql' => true,
             'graphql_single_name' => $taxonomy2_singular_name_camel,
             'graphql_plural_name' => $taxonomy2_plural_name_camel,
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'query_var' => true,
+            'sort'        => true,
         ];
 
         register_taxonomy( $taxonomy2_name, $post_type_name, $taxonomy_args );
@@ -74,7 +84,7 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
 }
 
 add_action( 'init', function() {
-    register_custom_post_type('colleges', 'College', 'Colleges', '/students/what-we-offer/colleges', 'dashicons-bank');
+    register_custom_post_type('colleges', 'College', 'Colleges', '/', 'dashicons-bank');
     register_custom_post_type('program-areas', 'Program Area', 'Program Areas', '/students/what-we-offer/program-areas', 'dashicons-clipboard');
     register_custom_post_type('programs', 'Program', 'Programs', '/students/what-we-offer/programs', 'dashicons-book', 'program-areas', 'Program Area', 'Program Areas', 'colleges', 'College', 'Colleges');
     register_custom_post_type('annual-reports', 'Annual Report', 'Annual Reports', '/staff/policy-legal-support/annual-reports', 'dashicons-chart-bar');

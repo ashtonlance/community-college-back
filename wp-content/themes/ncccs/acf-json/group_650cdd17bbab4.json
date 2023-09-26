@@ -25,10 +25,10 @@
         },
         {
             "key": "field_650cdd37fbc50",
-            "label": "Date and Time",
+            "label": "Date",
             "name": "date",
             "aria-label": "",
-            "type": "date_time_picker",
+            "type": "date_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,9 +38,30 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "display_format": "d\/m\/Y g:i a",
-            "return_format": "d\/m\/Y g:i a",
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
             "first_day": 1
+        },
+        {
+            "key": "field_6513135ac64e5",
+            "label": "Time",
+            "name": "time",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
         },
         {
             "key": "field_650cdd78fbc51",
@@ -106,8 +127,6 @@
     "show_in_graphql": 1,
     "graphql_field_name": "eventDetails",
     "map_graphql_types_from_location_rules": 0,
-    "graphql_types": [
-        "Event"
-    ],
-    "modified": 1695341980
+    "graphql_types": "",
+    "modified": 1695748975
 }

@@ -68,9 +68,7 @@
     "graphql_field_name": "utilityNavigation",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": [
-        "Menu",
-        "MenuItem",
         "Settings"
     ],
-    "modified": 1695404351
+    "modified": 1695741770
 }

@@ -177,3 +177,29 @@ function my_acf_google_map_api($api)
   return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+///
+// Set page parents of Custom Post Types - in the Organisation Setting ACF Options page
+// Based upon Joe Sexton's blog post http://www.webtipblog.com/setting-wordpress-custom-post-type-parent-specific-page/
+ 
+// define( 'FRIENDS_PARENT_ID', get_field( 'colleges_parent', 'option' ) );
+ 
+//add_action( 'wp_insert_post_data', 'biscuit_cpt_parent_page', '99', 2  ); 
+ 
+function biscuit_cpt_parent_page( $data, $postarr ) {
+    global $post;
+    // if ( !wp_verify_nonce( $_POST['staff_parent_custom_box'], 'stc_cpt' ) )
+    //     return $data;
+ 
+    // verify if this is an auto save routine.
+    // If it is our form has not been submitted, so we dont want to do anything
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+        return $data;
+ 
+    if ( $post->post_type == "colleges" ){
+	    $data['post_parent'] = FRIENDS_PARENT_ID ;
+	}
+ 
+    return $data;
+}
+
