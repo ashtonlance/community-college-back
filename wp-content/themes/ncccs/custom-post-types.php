@@ -43,7 +43,7 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
             'public' => true,
             'publicly_queryable' => true,
             'rewrite' => ['slug' => $taxonomy1_name],
-            'hierarchical' => true,
+            'hierarchical' => false,
             'show_in_rest' => true,
             'show_in_graphql' => true,
             'graphql_single_name' => $taxonomy1_singular_name_camel,
@@ -51,7 +51,6 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
             'show_ui' => true,
             'show_admin_column' => true,
             'query_var' => true,
-            'sort'        => true,
             'capabilities' => [
                 'manage_terms' => 'edit_posts',
                 'edit_terms' => 'edit_posts',
@@ -74,7 +73,7 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
             'public' => true,
             'publicly_queryable' => true,
             'rewrite' => ['slug' => $taxonomy2_name],
-            'hierarchical' => true,
+            'hierarchical' => false,
             'show_in_rest' => true,
             'show_in_graphql' => true,
             'graphql_single_name' => $taxonomy2_singular_name_camel,
@@ -82,7 +81,6 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
             'show_ui' => true,
             'show_admin_column' => true,
             'query_var' => true,
-            'sort'        => true,
             'capabilities' => [
                 'manage_terms' => 'edit_posts',
                 'edit_terms' => 'edit_posts',
@@ -98,7 +96,7 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
 add_action( 'init', function() {
     register_custom_post_type('colleges', 'College', 'Colleges', '/', 'dashicons-bank');
     register_custom_post_type('program-areas', 'Program Area', 'Program Areas', '/students/what-we-offer/program-areas', 'dashicons-clipboard');
-    register_custom_post_type('programs', 'Program', 'Programs', '/students/what-we-offer/programs', 'dashicons-book', 'program-areas', 'Program Area', 'Program Areas', 'colleges', 'College', 'Colleges');
+    register_custom_post_type('programs', 'Program', 'Programs', '/students/what-we-offer/programs', 'dashicons-book', 'program-areas', 'Tagged Program Area', 'Tagged Program Areas', 'colleges', 'College', 'Colleges');
     register_custom_post_type('annual-reports', 'Annual Report', 'Annual Reports', '/staff/policy-legal-support/annual-reports', 'dashicons-chart-bar');
     register_custom_post_type('numbered-memos', 'Numbered Memo', 'Numbered Memos', '/system-office/about/numbered-memos', 'dashicons-portfolio', 'numbered-memo-categories', 'Numbered Memo Category', 'Numbered Memo Categories');
     register_custom_post_type('staff', 'Staff', 'Staff', '/system-office/about/staff', 'dashicons-groups', 'organization', 'Organization', 'Organizations');
