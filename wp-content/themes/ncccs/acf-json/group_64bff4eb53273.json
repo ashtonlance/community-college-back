@@ -28,8 +28,8 @@
         },
         {
             "key": "field_64c9b3f2aab4c",
-            "label": "Button background",
-            "name": "button_background",
+            "label": "Button Type",
+            "name": "button_type",
             "aria-label": "",
             "type": "button_group",
             "instructions": "",
@@ -42,12 +42,10 @@
             },
             "show_in_graphql": 1,
             "choices": {
-                "navy": "Navy",
-                "grey": "Grey",
-                "gold": "Gold",
-                "white": "White"
+                "primary": "Primary",
+                "secondary": "Secondary"
             },
-            "default_value": "green",
+            "default_value": "primary",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
@@ -195,5 +193,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695763512
+    "modified": 1695765268
 }
