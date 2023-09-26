@@ -86,7 +86,18 @@
                     },
                     "show_in_graphql": 1,
                     "post_type": [
-                        "news"
+                        "news",
+                        "colleges",
+                        "program-areas",
+                        "programs",
+                        "annual-reports",
+                        "numbered-memos",
+                        "staff",
+                        "board-members",
+                        "events",
+                        "board-meetings",
+                        "data-dashboards",
+                        "apprenticeship-opp"
                     ],
                     "post_status": "",
                     "taxonomy": "",
@@ -197,6 +208,24 @@
     "show_in_graphql": 1,
     "graphql_field_name": "related_resources_block",
     "map_graphql_types_from_location_rules": 1,
-    "graphql_types": "",
-    "modified": 1695747216
+    "graphql_types": [
+        "ContentNode",
+        "AnnualReport",
+        "ApprenticeshipOpportunity",
+        "BoardMeeting",
+        "BoardMember",
+        "College",
+        "DataDashboard",
+        "Event",
+        "GraphqlDocument",
+        "MediaItem",
+        "News",
+        "NumberedMemo",
+        "Page",
+        "Post",
+        "Program",
+        "ProgramArea",
+        "Staff"
+    ],
+    "modified": 1695748404
 }
