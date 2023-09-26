@@ -13,7 +13,9 @@
         <h4><?php echo $heading; ?></h4>
         <div class="row">
         <?php foreach ($cards as $card){ ?>
-            <div class="card"><?php echo $card['resource_item']->post_title; ?></div>
+            <?php if($card['resource_item']): ?>
+                <div class="card"><?php echo $card['resource_item']->post_title; ?></div>
+            <?php endif; ?>
         <?php } ?>
         </div>
     <?php endif; ?>

@@ -13,7 +13,9 @@
         <?php if(is_array($cards)): ?>
             <?php foreach ($cards as $card){ ?>
                 <div class="card">
-                    <img style="width:300px" src=<?php echo $card['image']['url']; ?>>
+                    <?php if(is_array($card['image'])): ?>
+                        <img style="width:300px" src=<?php echo $card['image']['url']; ?>>
+                    <?php endif; ?>
                     <h3><?php echo $card['heading']; ?></h3>
                     <p><?php echo $card['body_copy']; ?></p>
                     <a href='<?php echo $card['button']['url']; ?>'>

@@ -85,7 +85,9 @@
                         "id": ""
                     },
                     "show_in_graphql": 1,
-                    "post_type": "",
+                    "post_type": [
+                        "news"
+                    ],
                     "post_status": "",
                     "taxonomy": "",
                     "return_format": "object",
@@ -196,5 +198,5 @@
     "graphql_field_name": "related_resources_block",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1695674597
+    "modified": 1695747216
 }
