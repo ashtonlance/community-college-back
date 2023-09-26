@@ -52,6 +52,12 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
             'show_admin_column' => true,
             'query_var' => true,
             'sort'        => true,
+            'capabilities' => [
+                'manage_terms' => 'edit_posts',
+                'edit_terms' => 'edit_posts',
+                'delete_terms' => 'edit_posts',
+                'assign_terms' => 'edit_posts',
+            ],
         ];
 
         register_taxonomy( $taxonomy1_name, $post_type_name, $taxonomy_args );
@@ -77,6 +83,12 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
             'show_admin_column' => true,
             'query_var' => true,
             'sort'        => true,
+            'capabilities' => [
+                'manage_terms' => 'edit_posts',
+                'edit_terms' => 'edit_posts',
+                'delete_terms' => 'edit_posts',
+                'assign_terms' => 'edit_posts',
+            ],
         ];
 
         register_taxonomy( $taxonomy2_name, $post_type_name, $taxonomy_args );
