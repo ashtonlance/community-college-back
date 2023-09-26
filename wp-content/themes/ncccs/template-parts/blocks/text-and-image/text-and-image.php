@@ -1,30 +1,32 @@
 <?php
-    $blockName = "text-and-image-block";
-    $title = get_field('title');
-    $heading = get_field('heading');
-    $image = get_field('image');
-    $description = get_field('body_copy');
-    $imgPosition = get_field('image_position');
-    $spacing = get_field('component_spacing');
-
+$blockName = "text-and-image-block";
+$title = get_field('title');
+$heading = get_field('heading');
+$media = get_field('media');
+$description = get_field('body_copy');
+$imgPosition = get_field('image_position');
+$spacing = get_field('component_spacing');
 ?>
 
 <div class="<?php echo $blockName; ?> position-image-<?php echo $imgPosition; ?>" data-spacing-bottom=<?php if ($spacing)
-    echo $spacing['bottom_spacing'] ?> data-spacing-top=<?php if ($spacing)
-    echo $spacing['top_spacing'] ?> >
-    <?php if($image): ?>
-        <img class="image" src=<?php echo $image['url']; ?> />
+           echo $spacing['bottom_spacing'] ?> data-spacing-top=<?php if ($spacing)
+           echo $spacing['top_spacing'] ?> >
+    <?php if ($media): ?>
+        <?php if ($media['mime_type'] === 'video/mp4'): ?>
+            <iframe src=<?php echo $media['link']; ?> > </iframe>
+        <?php endif; ?>
+        <?php if ($media['mime_type'] === 'image/jpeg'): ?>
+            <img class="image" src=<?php echo $media['link']; ?> />
+        <?php endif; ?>
     <?php endif; ?>
     <div class="content">
-        <?php if($title): ?>
+        <?php if ($title): ?>
             <small><?php echo $title; ?></small>
         <?php endif; ?>
-
-        <?php if($heading): ?>
+        <?php if ($heading): ?>
             <h2><?php echo $heading; ?></h2>
         <?php endif; ?>
-
-        <?php if($description): ?>
+        <?php if ($description): ?>
             <p><?php echo $description; ?></p>
         <?php endif; ?>
     </div>
@@ -37,6 +39,7 @@
     gap:40px;
     overflow:hidden;
 }
+
 .<?php echo $blockName; ?>.position-image-left{
     flex-direction:row;
 }
@@ -46,12 +49,14 @@
 }
 
 .<?php echo $blockName; ?> .image{
-    width: 500px;
+    width: 300px;
+    object-fit: cover;
 }
 
 .<?php echo $blockName; ?> .content{
     width: 500px;
 }
+
 .<?php echo $blockName; ?> h2{
     font-family: "proxima-nova", sans-serif;
     font-style: normal;
@@ -80,28 +85,30 @@
 }
 
 [data-spacing-bottom='none']{
-        margin-bottom:0;
-    }
+    margin-bottom:0;
+}
 
-    [data-spacing-top='none']{
-        margin-top:0;
-    }
+[data-spacing-top='none']{
+    margin-top:0;
+}
 
-    [data-spacing-bottom='medium']{
-        margin-bottom:40px;
-    }
+[data-spacing-bottom='medium']{
+    margin-bottom:40px;
+}
 
-    [data-spacing-top='medium']{
-        margin-top:40px;
-    }
-    [data-spacing-bottom='large']{
-        margin-bottom:80px;
-    }
+[data-spacing-top='medium']{
+    margin-top:40px;
+}
 
-    [data-spacing-top='large']{
-        margin-top:80px;
-    }
-    .mce-container.mce-menubar.mce-toolbar.mce-first{
-        display:none;
-    }
+[data-spacing-bottom='large']{
+    margin-bottom:80px;
+}
+
+[data-spacing-top='large']{
+    margin-top:80px;
+}
+
+.mce-container.mce-menubar.mce-toolbar.mce-first{
+    display:none;
+}
 </style>
