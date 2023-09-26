@@ -5,7 +5,7 @@ $bg_color = get_field('background_color');
 $spacing = get_field('component_spacing');
 ?>
 
-<div class=<?php echo $blockName . $bg_color; ?> data-spacing-bottom=<?php if ($spacing)
+<div class=<?php echo $blockName . $bg_color?> data-spacing-bottom=<?php if ($spacing)
     echo $spacing['bottom_spacing'] ?> data-spacing-top=<?php if ($spacing)
     echo $spacing['top_spacing'] ?> >
     <?php if (is_array($cards)): ?>
@@ -23,10 +23,23 @@ $spacing = get_field('component_spacing');
 
 <style>
     .<?php echo $blockName . $bg_color; ?> {
+        width:800px;
         display: flex;
         justify-content: space-around;
         gap: 20px;
+        padding: 20px;
         width: 100%;
+    }
+
+    .features-and-benefits-cardswhite,
+    .features-and-benefits-cardsgrey .card-features{
+        background:white;
+    }
+
+    .features-and-benefits-cardsgrey,
+    .features-and-benefits-cardswhite .card-features
+     {
+        background:#F8F8F8;
     }
 
     .<?php echo $blockName . $bg_color; ?> .card-features{
@@ -35,7 +48,6 @@ $spacing = get_field('component_spacing');
         align-items: center;
         padding: 60px 40px;
         border:none;
-        background: #F8F8F8;
         flex-grow:1;
     }
 
@@ -70,21 +82,6 @@ $spacing = get_field('component_spacing');
         color: var(--navy);
     }
 
-    .features-and-benefits-cardslight{
-        background-color: #F8F8F8;
-    }
-
-    .features-and-benefits-cardsdark{
-        background-color: #CCCCCC;
-    }
-
-    .features-and-benefits-cardsdark .card-features{
-        background-color: #F8F8F8;
-    }
-
-    .features-and-benefits-cardslight .card-features{
-        background-color: #FFF;
-    }
 
     [data-spacing-bottom='none']{
         margin-bottom:0;

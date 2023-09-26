@@ -19,8 +19,7 @@
             "show_in_graphql": 1,
             "choices": {
                 "white": "White",
-                "stone": "Stone",
-                "sky": "Sky"
+                "grey": "Grey"
             },
             "default_value": "white",
             "return_format": "value",
@@ -29,8 +28,8 @@
         },
         {
             "key": "field_64c9b3f2aab4c",
-            "label": "Button background",
-            "name": "button_background",
+            "label": "Button Type",
+            "name": "button_type",
             "aria-label": "",
             "type": "button_group",
             "instructions": "",
@@ -43,35 +42,13 @@
             },
             "show_in_graphql": 1,
             "choices": {
-                "green": "Green",
-                "emerald": "Emerald",
-                "blue": "Blue"
+                "primary": "Primary",
+                "secondary": "Secondary"
             },
-            "default_value": "green",
+            "default_value": "primary",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
-        },
-        {
-            "key": "field_64bff52f41153",
-            "label": "Button Label",
-            "name": "button_label",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_64bff54f41154",
@@ -88,7 +65,7 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "return_format": "url"
+            "return_format": "array"
         },
         {
             "key": "field_64bff82b55d6f",
@@ -120,7 +97,7 @@
         },
         {
             "key": "field_64bff59f41155",
-            "label": "Margins",
+            "label": "Spacing",
             "name": "component_spacing",
             "aria-label": "",
             "type": "group",
@@ -216,5 +193,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695301573
+    "modified": 1695765268
 }
