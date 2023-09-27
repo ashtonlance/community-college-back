@@ -43,6 +43,41 @@
             "toolbar": "very_simple",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_651341eb7359c",
+            "label": "Degree Types",
+            "name": "degree_types",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "choices": {
+                "associateInEngineering": "Associate in Engineering",
+                "associateInFineArts": "Associate in Fine Arts",
+                "associateInScience": "Associate in Science",
+                "associateOfAppliedScience": "Associate of Applied Science",
+                "certificate": "Certificate",
+                "diploma": "Diploma",
+                "associatesInArts": "Associates in Arts",
+                "associatesInGeneralEducation": "Associates in General Education",
+                "collegeTransferPathway": "College Transfer Pathway",
+                "continuingEducation": "Continuing Education"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         }
     ],
     "location": [
@@ -66,8 +101,6 @@
     "show_in_graphql": 1,
     "graphql_field_name": "program",
     "map_graphql_types_from_location_rules": 0,
-    "graphql_types": [
-        "Program"
-    ],
-    "modified": 1695307314
+    "graphql_types": "",
+    "modified": 1695760893
 }
