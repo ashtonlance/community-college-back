@@ -53,7 +53,7 @@
             "aria-label": "",
             "type": "date_picker",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -134,24 +134,34 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "numberedmemos"
+                "value": "numbered-memos"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "featured_image",
+        "tags",
+        "send-trackbacks"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
     "show_in_graphql": 1,
     "graphql_field_name": "numberedMemo",
     "map_graphql_types_from_location_rules": 0,
-    "graphql_types": [
-        "Numbered Memo"
-    ],
-    "modified": 1695323493
+    "graphql_types": "",
+    "modified": 1695911417
 }
