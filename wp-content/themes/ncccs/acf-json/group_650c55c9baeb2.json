@@ -24,6 +24,27 @@
             "append": ""
         },
         {
+            "key": "field_6514bc1281873",
+            "label": "Description",
+            "name": "description",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_650c55d8179fa",
             "label": "About",
             "name": "about",
@@ -41,6 +62,27 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "very_simple",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_6514b99bca3fb",
+            "label": "Program Details",
+            "name": "program_details",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "simple",
             "media_upload": 1,
             "delay": 0
         },
@@ -105,5 +147,5 @@
     "graphql_field_name": "program",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695833242
+    "modified": 1695857853
 }

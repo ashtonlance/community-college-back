@@ -203,3 +203,26 @@ function biscuit_cpt_parent_page( $data, $postarr ) {
     return $data;
 }
 
+add_action( 'graphql_register_types', function() {
+
+	register_graphql_connection( [
+		'fromType' => 'Page',
+		'toType' => 'Page',
+		'connectionTypeName' => 'PageSiblings',
+		'fromFieldName' => 'siblings',
+		'resolve' => function( $page, $args, $context, $info ) {
+			$parent = $page->parentDatabaseId ?? null;
+
+			if ( ! $parent ) {
+				return null;
+			}
+
+			$resolver = new \WPGraphQL\Data\Connection\PostObjectConnectionResolver( $page, $args, $context, $info );
+			$resolver->set_query_arg( 'post_parent', $parent );
+			$resolver->set_query_arg( 'post__not_in', $page->databaseId );
+			return $resolver->get_connection();
+		}
+	]);
+
+} );
+

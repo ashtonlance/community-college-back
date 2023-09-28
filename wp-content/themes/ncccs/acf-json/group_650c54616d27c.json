@@ -102,7 +102,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "programareas"
+                "value": "program-areas"
             }
         ]
     ],
@@ -119,5 +119,5 @@
     "graphql_field_name": "programArea",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695307145
+    "modified": 1695856674
 }
