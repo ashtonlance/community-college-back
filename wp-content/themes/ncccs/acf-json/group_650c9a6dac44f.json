@@ -5,7 +5,7 @@
         {
             "key": "field_650c9a6df5b03",
             "label": "Name",
-            "name": "name",
+            "name": "staff_name",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -168,5 +168,5 @@
     "graphql_field_name": "staffDetails",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695933503
+    "modified": 1696001327
 }
