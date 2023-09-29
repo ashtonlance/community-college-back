@@ -181,25 +181,25 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 ///
 // Set page parents of Custom Post Types - in the Organisation Setting ACF Options page
 // Based upon Joe Sexton's blog post http://www.webtipblog.com/setting-wordpress-custom-post-type-parent-specific-page/
- 
+
 // define( 'FRIENDS_PARENT_ID', get_field( 'colleges_parent', 'option' ) );
- 
-//add_action( 'wp_insert_post_data', 'biscuit_cpt_parent_page', '99', 2  ); 
- 
+
+//add_action( 'wp_insert_post_data', 'biscuit_cpt_parent_page', '99', 2  );
+
 function biscuit_cpt_parent_page( $data, $postarr ) {
     global $post;
     // if ( !wp_verify_nonce( $_POST['staff_parent_custom_box'], 'stc_cpt' ) )
     //     return $data;
- 
+
     // verify if this is an auto save routine.
     // If it is our form has not been submitted, so we dont want to do anything
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
         return $data;
- 
+
     if ( $post->post_type == "colleges" ){
 	    $data['post_parent'] = FRIENDS_PARENT_ID ;
 	}
- 
+
     return $data;
 }
 
@@ -226,3 +226,35 @@ add_action( 'graphql_register_types', function() {
 
 } );
 
+add_filter( 'graphql_PostObjectsConnectionOrderbyEnum_values', function( $values ) {
+
+	$values['STAFF_NAME'] = [
+		'value' => 'staff_name',
+		'description' => __( 'The staff name', 'wp-graphql' ),
+	];
+
+	return $values;
+
+} );
+
+add_filter( 'graphql_post_object_connection_query_args', function( $query_args, $source, $input ) {
+
+	if ( isset( $input['where']['orderby'] ) && is_array( $input['where']['orderby'] ) ) {
+
+		foreach( $input['where']['orderby'] as $orderby ) {
+
+			if ( ! isset( $orderby['field'] ) || 'staff_name' !== $orderby['field'] ) {
+				continue;
+			}
+
+			$query_args['meta_type'] = 'TEXT';
+			$query_args['meta_key'] = 'staff_name';
+			$query_args['orderby']['meta_value_num'] = $orderby['order'];
+
+		}
+
+	}
+
+	return $query_args;
+
+}, 10, 3);
