@@ -1,9 +1,13 @@
 {
     "name": "nextword/relatedresourcesblock",
-    "title": "Related Resources",
-    "description": "Allow you to create/edit a related resource to your page.",
+    "title": "Related Posts",
+    "description": "Allow you to create/edit a related post to your page.",
     "category": "design",
-    "keywords": ["related resources", "related", "resources"],
+    "keywords": [
+        "related posts",
+        "related",
+        "posts"
+    ],
     "icon": "images-alt",
     "apiVersion": 2,
     "acf": {

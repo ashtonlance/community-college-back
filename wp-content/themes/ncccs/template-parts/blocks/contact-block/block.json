@@ -1,9 +1,12 @@
 {
     "name": "nextword/contactblock",
-    "title": "Contact Block",
+    "title": "Contact Card",
     "description": "Allow you to create/edit a contact block to your page.",
     "category": "design",
-    "keywords": ["contact block", "contact"],
+    "keywords": [
+        "contact block",
+        "contact"
+    ],
     "icon": "admin-site-alt3",
     "apiVersion": 2,
     "acf": {

@@ -1,9 +1,13 @@
 {
     "name": "nextword/testimonialslider",
-    "title": "Testimonial Slider block",
+    "title": "Testimonial Slider Block",
     "description": "Allow you to create/edit a testimonial slider for your page.",
     "category": "design",
-    "keywords": ["testimonial slider", "testimonial", "slider"],
+    "keywords": [
+        "testimonial slider",
+        "testimonial",
+        "slider"
+    ],
     "icon": "images-alt2",
     "apiVersion": 2,
     "acf": {

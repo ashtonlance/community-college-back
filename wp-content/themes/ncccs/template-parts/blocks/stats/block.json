@@ -1,9 +1,13 @@
 {
     "name": "nextword/stats",
-    "title": "Stats block",
+    "title": "Stats Block",
     "description": "Allow you to create/edit a stats block.",
     "category": "design",
-    "keywords": ["stats", "stats module", "landing stats"],
+    "keywords": [
+        "stats",
+        "stats module",
+        "landing stats"
+    ],
     "icon": "chart-bar",
     "apiVersion": 2,
     "acf": {

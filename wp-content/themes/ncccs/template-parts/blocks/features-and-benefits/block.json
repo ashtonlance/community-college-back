@@ -1,9 +1,13 @@
 {
     "name": "nextword/featuresandbenefits",
-    "title": "Features and Benefits",
+    "title": "Features and Benefits Cards",
     "description": "Allow you to create/edit a features and benefits block on your page.",
     "category": "design",
-    "keywords": ["features and benefits", "features", "benefits"],
+    "keywords": [
+        "features and benefits",
+        "features",
+        "benefits"
+    ],
     "icon": "format-aside",
     "apiVersion": 2,
     "acf": {
