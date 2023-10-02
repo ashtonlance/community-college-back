@@ -13,11 +13,6 @@ $spacing = get_field('component_spacing');
     echo $spacing['top_spacing'] ?> >
     <?php if ($aboveHeader): ?>
         <div class="tag-wrapper">
-            <?php if ($aboveHeader['tags']):
-                foreach ($aboveHeader['tags'] as $tag) {
-                ?>
-                    <small><?php echo $tag['tag']; ?></small>
-            <?php }endif; ?>
             <?php if ($aboveHeader['headline']): ?>
             <small><?php echo $aboveHeader['headline']; ?></small>
             <?php endif; ?>

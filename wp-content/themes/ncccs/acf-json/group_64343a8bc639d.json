@@ -317,6 +317,38 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_651acbcb16a5a",
+            "label": "Show Program Finder?",
+            "name": "show_program_finder",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6466731b98eab",
+                        "operator": "==",
+                        "value": "landing"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "choices": {
+                "false": "Hide",
+                "true": "Show"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
         }
     ],
     "location": [
@@ -343,5 +375,5 @@
     "graphql_types": [
         "Page"
     ],
-    "modified": 1695387745
+    "modified": 1696254984
 }

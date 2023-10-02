@@ -7,6 +7,7 @@ $bgimg = get_field('background_image');
 $ctabtn = get_field('cta_button');
 $type = get_field('hero_design');
 $bgvideo = get_field('background_video');
+echo $bgvideo['url'];
 ?>
 
 <?php if ($type == 'default'): ?>
@@ -34,7 +35,7 @@ $bgvideo = get_field('background_video');
         <?php endif; ?>
     </div>
 <?php else: ?>
-        <?php if ($bgvideo): ?>
+        <?php if ($bgvideo['url'] || $bgvideo['uploaded']): ?>
             <div class="landing-video-bg" >
                 <?php if($bgvideo['file_or_url']=='url'): ?>
                     <?php echo $bgvideo['url']; ?>
@@ -61,7 +62,7 @@ $bgvideo = get_field('background_video');
                 </div>
          </div>
 
-        <?php elseif ($bgimg and $bgvideo == null): ?>
+        <?php elseif (!($bgvideo['url'] || $bgvideo['uploaded'])): ?>
             <div class=<?php echo $blockName . $type; ?> style='background-image: url(<?php echo $bgimg; ?>);'>
                 <?php if ($subheading): ?>
                     <h2><?php echo $subheading; ?></h2>
@@ -105,6 +106,7 @@ $bgvideo = get_field('background_video');
         width: 100%;
         background-repeat:no-repeat;
         background-size:cover;
+        max-width: 78%;
     }
     .hero-blocklanding{
         display: flex;
@@ -117,6 +119,7 @@ $bgvideo = get_field('background_video');
         width: 100%;
         background-repeat:no-repeat;
         background-size:cover;
+        max-width: 78%;
     }
 
     .<?php echo $blockName . $type; ?> h1,  .landing-video-bg h1{
@@ -126,7 +129,7 @@ $bgvideo = get_field('background_video');
         font-size: 72px;
         line-height: 110%;
         letter-spacing: -0.02em;
-        color: black;
+        color: #ffffff;
         margin:0;
         font-family: "proxima-nova", sans-serif;
     }
