@@ -7,7 +7,6 @@ $bgimg = get_field('background_image');
 $ctabtn = get_field('cta_button');
 $type = get_field('hero_design');
 $bgvideo = get_field('background_video');
-echo $bgvideo['url'];
 ?>
 
 <?php if ($type == 'default'): ?>
@@ -107,6 +106,7 @@ echo $bgvideo['url'];
         background-repeat:no-repeat;
         background-size:cover;
         max-width: 78%;
+        background-color: #F2F2F2;
     }
     .hero-blocklanding{
         display: flex;
@@ -120,6 +120,7 @@ echo $bgvideo['url'];
         background-repeat:no-repeat;
         background-size:cover;
         max-width: 78%;
+        background-color: #F2F2F2;
     }
 
     .<?php echo $blockName . $type; ?> h1,  .landing-video-bg h1{

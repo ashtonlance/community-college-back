@@ -88,16 +88,18 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "annualreport"
+                "value": "annual-reports"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
@@ -105,5 +107,5 @@
     "graphql_field_name": "annualReport",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695323040
+    "modified": 1696435517
 }
