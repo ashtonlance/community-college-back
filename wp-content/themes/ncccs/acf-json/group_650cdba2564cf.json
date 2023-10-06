@@ -54,7 +54,7 @@
             "label": "Appointment",
             "name": "appointment",
             "aria-label": "",
-            "type": "text",
+            "type": "date_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -64,11 +64,9 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
+            "first_day": 1
         },
         {
             "key": "field_650cdbc94dca3",
@@ -183,11 +181,13 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
@@ -195,5 +195,5 @@
     "graphql_field_name": "boardMember",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1696601992
+    "modified": 1696602437
 }
