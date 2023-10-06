@@ -11,6 +11,9 @@ $spacing = get_field('component_spacing');
     <?php if (is_array($cards)): ?>
         <?php foreach ($cards as $card) { ?>
             <div class="card-features">
+                <?php if ($card['image']) { ?>
+                    <img src="<?php echo $card['image']['url']; ?>"/>
+                <?php } ?>
                 <h3><?php echo $card['heading']; ?></h3>
                 <p><?php echo $card['body_copy']; ?></p>
                 <?php if ($card['optional_link']) { ?>
