@@ -54,7 +54,7 @@
             "label": "Appointment",
             "name": "appointment",
             "aria-label": "",
-            "type": "date_picker",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -64,9 +64,11 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "display_format": "d\/m\/Y",
-            "return_format": "d\/m\/Y",
-            "first_day": 1
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_650cdbc94dca3",
@@ -192,8 +194,6 @@
     "show_in_graphql": 1,
     "graphql_field_name": "boardMember",
     "map_graphql_types_from_location_rules": 0,
-    "graphql_types": [
-        "Board Member"
-    ],
-    "modified": 1695341688
+    "graphql_types": "",
+    "modified": 1696601992
 }
