@@ -29,6 +29,27 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_65201a539c84d",
+            "label": "Role",
+            "name": "role",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_650cdba24dca1",
             "label": "Name",
             "name": "name",
@@ -54,7 +75,7 @@
             "label": "Appointment",
             "name": "appointment",
             "aria-label": "",
-            "type": "date_picker",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -64,16 +85,18 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "display_format": "d\/m\/Y",
-            "return_format": "d\/m\/Y",
-            "first_day": 1
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_650cdbc94dca3",
             "label": "Term Expiration",
             "name": "term_expiration",
             "aria-label": "",
-            "type": "date_picker",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -83,9 +106,11 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "display_format": "d\/m\/Y",
-            "return_format": "d\/m\/Y",
-            "first_day": 1
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_650cdbeb4dca4",
@@ -195,5 +220,5 @@
     "graphql_field_name": "boardMember",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1696602437
+    "modified": 1696609128
 }
