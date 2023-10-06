@@ -1,11 +1,15 @@
 <?php
     $blockName = "media-embed";
-    $content = get_field('content');
+    $image = get_field('image');
+    $video = get_field('video');
 ?>
 
 <div class=<?php echo $blockName; ?>>
-    <?php if($content): ?>
-        <?php echo $content; ?>
+    <?php if($image): ?>
+        <img src="<?php echo $image['url']; ?>"/>
+    <?php endif; ?>
+    <?php if($video): ?>
+        <?php echo $video; ?>
     <?php endif; ?>
 </div>
 
