@@ -97,7 +97,7 @@ add_action( 'init', function() {
     register_custom_post_type('colleges', 'College', 'Colleges', '/', 'dashicons-bank');
     register_custom_post_type('program-areas', 'Program Area', 'Program Areas', '/students/what-we-offer/program-areas', 'dashicons-clipboard');
     register_custom_post_type('programs', 'Program', 'Programs', '/students/what-we-offer/programs', 'dashicons-book', 'program-areas', 'Tagged Program Area', 'Tagged Program Areas', 'colleges', 'College', 'Colleges');
-    register_custom_post_type('annual-reports', 'Annual Report', 'Annual Reports', '/college-faculty-staff/policy-legal-support/annual-reports', 'dashicons-chart-bar');
+    register_custom_post_type('annual-reports', 'Annual Reporting Plan', 'Annual Reporting Plans', '/college-faculty-staff/policy-legal-support/annual-reporting-plans', 'dashicons-chart-bar');
     register_custom_post_type('numbered-memos', 'Numbered Memo', 'Numbered Memos', '/system-office/about/numbered-memos', 'dashicons-portfolio', 'numbered-memo-categories', 'Numbered Memo Category', 'Numbered Memo Categories');
     register_custom_post_type('staff', 'Staff', 'Staff', '/system-office/about/staff', 'dashicons-groups', 'organization', 'Organization', 'Organizations');
     register_custom_post_type('board-members', 'Board Member', 'Board Members', '/system-office/foundation/board-members', 'dashicons-groups', 'board-members-categories', 'Board Members Category', 'Board Members Categories');
