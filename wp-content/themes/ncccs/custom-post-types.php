@@ -106,6 +106,7 @@ add_action( 'init', function() {
     register_custom_post_type('board-meetings', 'Board Meeting', 'Board Meetings', '/system-office/foundation/board-meetings', 'dashicons-edit-page', 'board-meeting-categories', 'Board Meeting Category', 'Board Meeting Categories');
     register_custom_post_type('data-dashboards', 'Data Dashboard', 'Data Dashboards', '/system-office/resources/data-dashboards', 'dashicons-dashboard', 'data-dashboards-categories', 'Data Dashboard Category', 'Data Dashboards Categories');
     register_custom_post_type('apprenticeship-opp', 'Apprenticeship Opportunity', 'Apprenticeship Opportunities', '/students/what-we-offer/apprenticeships/apprenticeship-opportunities', 'dashicons-hammer', 'app-opp-program-areas', 'Apprenticeship Opportunity Program Area', 'Apprenticeship Opportunities Program Areas');
+    register_custom_post_type('proprietary-schools', 'Proprietary School', 'Proprietary Schools', '/about-us/system-office/state-board/state-board-of-proprietary-schools/proprietary-schools', 'dashicons-building');
     // Add more post types here
 });
 

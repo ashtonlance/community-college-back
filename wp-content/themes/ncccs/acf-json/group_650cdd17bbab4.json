@@ -24,6 +24,23 @@
             "append": ""
         },
         {
+            "key": "field_652eafbc48467",
+            "label": "Hero CTA",
+            "name": "hero_cta",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "return_format": "array"
+        },
+        {
             "key": "field_650cdd37fbc50",
             "label": "Date",
             "name": "date",
@@ -130,5 +147,5 @@
     "graphql_field_name": "eventDetails",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695749272
+    "modified": 1697558516
 }
