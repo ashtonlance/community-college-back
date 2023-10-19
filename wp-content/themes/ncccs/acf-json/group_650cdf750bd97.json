@@ -95,19 +95,19 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
     "show_in_graphql": 1,
     "graphql_field_name": "boardMeetingDetails",
     "map_graphql_types_from_location_rules": 0,
-    "graphql_types": [
-        "Board Meeting"
-    ],
-    "modified": 1695342536
+    "graphql_types": "",
+    "modified": 1697730747
 }
