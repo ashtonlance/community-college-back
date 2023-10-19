@@ -98,13 +98,13 @@ add_action( 'init', function() {
     register_custom_post_type('program-areas', 'Program Area', 'Program Areas', '/students/what-we-offer/program-areas', 'dashicons-clipboard');
     register_custom_post_type('programs', 'Program', 'Programs', '/students/what-we-offer/programs', 'dashicons-book', 'program-areas', 'Tagged Program Area', 'Tagged Program Areas', 'colleges', 'College', 'Colleges');
     register_custom_post_type('annual-reports', 'Annual Reporting Plan', 'Annual Reporting Plans', '/college-faculty-staff/policy-legal-support/annual-reporting-plans', 'dashicons-chart-bar');
-    register_custom_post_type('numbered-memos', 'Numbered Memo', 'Numbered Memos', '/system-office/about/numbered-memos', 'dashicons-portfolio', 'numbered-memo-categories', 'Numbered Memo Category', 'Numbered Memo Categories');
-    register_custom_post_type('staff', 'Staff', 'Staff', '/system-office/about/staff', 'dashicons-groups', 'organization', 'Organization', 'Organizations');
-    register_custom_post_type('board-members', 'Board Member', 'Board Members', '/system-office/foundation/board-members', 'dashicons-groups', 'board-members-categories', 'Board Members Category', 'Board Members Categories');
+    register_custom_post_type('numbered-memos', 'Numbered Memo', 'Numbered Memos', '/about-us/system-office/numbered-memos', 'dashicons-portfolio', 'numbered-memo-categories', 'Numbered Memo Category', 'Numbered Memo Categories');
+    register_custom_post_type('staff', 'Staff', 'Staff', '/about-us/system-office/staff', 'dashicons-groups', 'organization', 'Organization', 'Organizations');
+    register_custom_post_type('board-members', 'Board Member', 'Board Members', '/about-us/board-members', 'dashicons-groups', 'board-members-categories', 'Board Members Category', 'Board Members Categories');
     register_custom_post_type('events', 'Event', 'Events', '/events', 'dashicons-calendar-alt', 'events-categories', 'Event Category', 'Events Categories', 'events-tags', 'Event Tag', 'Events Tags');
     register_custom_post_type('news', 'News Item', 'News Items', '/news', 'dashicons-megaphone', 'news-categories', 'News Category', 'News Categories', 'news-tags', 'News Tag', 'News Tags');
-    register_custom_post_type('board-meetings', 'Board Meeting', 'Board Meetings', '/system-office/foundation/board-meetings', 'dashicons-edit-page', 'board-meeting-categories', 'Board Meeting Category', 'Board Meeting Categories');
-    register_custom_post_type('data-dashboards', 'Data Dashboard', 'Data Dashboards', '/system-office/resources/data-dashboards', 'dashicons-dashboard', 'data-dashboards-categories', 'Data Dashboard Category', 'Data Dashboards Categories');
+    register_custom_post_type('board-meetings', 'Board Meeting', 'Board Meetings', '/about-us/board-meetings', 'dashicons-edit-page', 'board-meeting-categories', 'Board Meeting Category', 'Board Meeting Categories');
+    register_custom_post_type('data-dashboards', 'Data Dashboard', 'Data Dashboards', '/about-us/resources/data-dashboards', 'dashicons-dashboard', 'data-dashboards-categories', 'Data Dashboard Category', 'Data Dashboards Categories');
     register_custom_post_type('apprenticeship-opp', 'Apprenticeship Opportunity', 'Apprenticeship Opportunities', '/students/what-we-offer/apprenticeships/apprenticeship-opportunities', 'dashicons-hammer', 'app-opp-program-areas', 'Apprenticeship Opportunity Program Area', 'Apprenticeship Opportunities Program Areas');
     register_custom_post_type('proprietary-schools', 'Proprietary School', 'Proprietary Schools', '/about-us/system-office/state-board/state-board-of-proprietary-schools/proprietary-schools', 'dashicons-building');
     // Add more post types here
