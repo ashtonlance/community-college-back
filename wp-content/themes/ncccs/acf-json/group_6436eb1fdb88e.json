@@ -77,6 +77,35 @@
                     "parent_repeater": "field_6436eb202bbd7"
                 },
                 {
+                    "key": "field_65369569b1a66",
+                    "label": "Image Position",
+                    "name": "image_position",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "choices": {
+                        "top": "top",
+                        "center": "center",
+                        "bottom": "bottom"
+                    },
+                    "default_value": "center",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_6436eb202bbd7"
+                },
+                {
                     "key": "field_6436ec4a2bbd8",
                     "label": "Heading",
                     "name": "heading",
@@ -279,5 +308,5 @@
     "graphql_field_name": "general_cards",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1695743356
+    "modified": 1698076082
 }
