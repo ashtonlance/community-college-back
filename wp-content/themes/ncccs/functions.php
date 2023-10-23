@@ -258,3 +258,13 @@ add_filter( 'graphql_post_object_connection_query_args', function( $query_args, 
 	return $query_args;
 
 }, 10, 3);
+
+function wds_algolia_set_image_sizes() {
+	return [
+		'cta',
+		'medium',
+		'thumbnail',
+		'hero',
+	];
+}
+add_filter( 'algolia_post_images_sizes', 'wds_algolia_set_image_sizes', 10, 2 );
