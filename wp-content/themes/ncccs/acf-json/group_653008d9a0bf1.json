@@ -49,8 +49,8 @@
                 },
                 {
                     "key": "field_65300911d2629",
-                    "label": "College",
-                    "name": "college",
+                    "label": "Title",
+                    "name": "title",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -71,8 +71,8 @@
                 },
                 {
                     "key": "field_6530091dd262a",
-                    "label": "County",
-                    "name": "county",
+                    "label": "College",
+                    "name": "college",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -139,5 +139,5 @@
     "graphql_field_name": "publicInformationOfficers",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1697646991
+    "modified": 1698157340
 }
