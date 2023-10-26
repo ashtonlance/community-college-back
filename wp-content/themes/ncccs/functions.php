@@ -268,3 +268,7 @@ function wds_algolia_set_image_sizes() {
 	];
 }
 add_filter( 'algolia_post_images_sizes', 'wds_algolia_set_image_sizes', 10, 2 );
+add_filter( 'graphql_connection_max_query_amount', function( $amount, $source, $args, $context, $info  ) {
+  $amount = 1000; // increase post limit to 1000
+  return $amount;
+}, 10, 5 );
