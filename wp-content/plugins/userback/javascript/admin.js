@@ -50,13 +50,16 @@ jQuery(document).ready(function($) {
             // trim
             data.access_token = $.trim(data.access_token);
 
+            // CSRF protection
+            var csrf_token = $('[name="userback_plugin_nonce"]').val();
+
             $('[name="rp-access-token"]').val(data.access_token);
 
             $('#save').prop('disabled', true);
 
             $('.save-success').remove();
 
-            $.post(ajaxurl, {action: 'save_userback', data: data}, function(response) {
+            $.post(ajaxurl, {action: 'save_userback', data: data, csrf_token: csrf_token}, function(response) {
                 $('#save').prop('disabled', false);
                 $('<span>').addClass('save-success').text('Saved!').insertAfter($('#save'));
             });

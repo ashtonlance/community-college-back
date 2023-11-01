@@ -1,3 +1,4 @@
+<?php $nonce = wp_create_nonce('userback_plugin_settings_update'); ?>
 <div class="userback-container">
     <h2>Userback</h2>
     <div class="setting-title">Settings</div>
@@ -43,6 +44,7 @@
             </div>
         </div>
         <br>
+        <input type="hidden" name="userback_plugin_nonce" value="<?php print esc_attr($nonce); ?>">
         <button class="button button-primary" id="save">Save</button>
     </form>
 </div>

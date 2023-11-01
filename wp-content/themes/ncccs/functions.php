@@ -34,6 +34,7 @@ function acf_init_block_types()
     register_block_type(get_template_directory() . "/template-parts/blocks/media-embed/block.json");
     register_block_type(get_template_directory() . "/template-parts/blocks/location/block.json");
     register_block_type(get_template_directory() . "/template-parts/blocks/accordion/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/event-cards/block.json");
   }
 }
 

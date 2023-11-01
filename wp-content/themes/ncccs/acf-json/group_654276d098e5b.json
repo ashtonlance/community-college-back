@@ -1,0 +1,56 @@
+{
+    "key": "group_654276d098e5b",
+    "title": "Event Cards",
+    "fields": [
+        {
+            "key": "field_654276d129d70",
+            "label": "Event",
+            "name": "event",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "post_type": [
+                "events"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "nextword\/eventcards"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "show_in_graphql": 1,
+    "graphql_field_name": "eventCards",
+    "map_graphql_types_from_location_rules": 0,
+    "graphql_types": "",
+    "modified": 1698854789
+}

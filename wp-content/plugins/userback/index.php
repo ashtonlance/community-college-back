@@ -3,7 +3,7 @@
  * Plugin Name:       Userback
  * Plugin URI:        https://www.userback.io
  * Description:       Userback WordPress Plugin
- * Version:           1.0.13
+ * Version:           1.0.14
  * Requires at least: 3.5.0
  * Author:            Lee Le @ Userback
  */
@@ -219,7 +219,7 @@
             'role'            => (isset($data['role'])         ? implode(',', $data['role']) : '0'),
             'page'            => (isset($data['page'])         ? implode(',', $data['page']) : '0'),
             'is_active'       => (isset($data['is_active'])    ? $data['is_active']          : 0),
-            'access_token'    => (isset($data['access_token']) ? $data['access_token']        : '')
+            'access_token'    => (isset($data['access_token']) ? $data['access_token']       : '')
         );
 
         return $userback_data;
@@ -228,6 +228,11 @@
     // save submitted form values into database
     function userback_save() {
         global $wpdb;
+
+        if (!isset($_POST['csrf_token']) || !wp_verify_nonce($_POST['csrf_token'], 'userback_plugin_settings_update') || !current_user_can('manage_options')) {
+            print wp_send_json(false);
+            wp_die(__('Security check failed.'));
+        }
 
         if (isset($_POST['data'])) {
             // $_POST data is sanitized and validated in userback_build_post_data

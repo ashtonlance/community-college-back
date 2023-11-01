@@ -4,7 +4,7 @@ Tags: screenshot, feedback, bug tracking, notification, integration, image, visu
 Requires at least: 3.5.0
 Tested up to: 6.1
 Requires PHP: 5.4
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,9 @@ No, you can also install Userback's browser extension which lets you collect fee
 8. Integrate Slack, Microsoft Teams or your project management system.
 
 == Changelog ==
+
+= 1.0.14 =
+Added CSRF protection to plugin settings update
 
 = 1.0.8 =
 Minor CSS improvements
