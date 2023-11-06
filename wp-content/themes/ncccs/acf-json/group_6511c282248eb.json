@@ -3,6 +3,30 @@
     "title": "Accordion",
     "fields": [
         {
+            "key": "field_65495ef5bd28e",
+            "label": "Component Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "choices": {
+                "white": "White",
+                "grey": "Grey"
+            },
+            "default_value": "white",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_6511c282197b9",
             "label": "Accordion",
             "name": "accordion",
@@ -93,5 +117,5 @@
     "graphql_field_name": "accordion",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1697472949
+    "modified": 1699307422
 }
