@@ -19,8 +19,7 @@
             "show_in_graphql": 1,
             "choices": {
                 "white": "White",
-                "stone": "Stone",
-                "sky": "Sky"
+                "grey": "Grey"
             },
             "default_value": "stone",
             "return_format": "value",
@@ -93,6 +92,7 @@
                     "collapsed": "",
                     "button_label": "Add Row",
                     "rows_per_page": 20,
+                    "parent_repeater": "field_643600b02ef47",
                     "sub_fields": [
                         {
                             "key": "field_6435fab795795",
@@ -138,8 +138,7 @@
                             "append": "",
                             "parent_repeater": "field_6435fa7195794"
                         }
-                    ],
-                    "parent_repeater": "field_643600b02ef47"
+                    ]
                 }
             ]
         },
@@ -241,5 +240,5 @@
     "graphql_field_name": "link_block",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1695673724
+    "modified": 1699389520
 }
