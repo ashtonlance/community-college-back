@@ -19,8 +19,7 @@
             "show_in_graphql": 1,
             "choices": {
                 "white": "White",
-                "light": "Stone",
-                "sky": "Sky"
+                "grey": "Grey"
             },
             "default_value": "white",
             "return_format": "value",
@@ -44,8 +43,7 @@
             "show_in_graphql": 1,
             "choices": {
                 "left": "Left",
-                "center": "Center",
-                "right": "Right"
+                "center": "Center"
             },
             "default_value": "left",
             "return_format": "value",
@@ -109,12 +107,10 @@
                     },
                     "show_in_graphql": 1,
                     "choices": {
-                        "h1": "H1",
                         "h2": "H2",
                         "h3": "H3",
                         "h4": "H4",
-                        "h5": "H5",
-                        "h6": "H6"
+                        "h5": "H5"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -200,6 +196,27 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_654cf8800dce0",
+            "label": "Underline",
+            "name": "underline",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": 0,
+            "message": "",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -224,5 +241,5 @@
     "graphql_field_name": "",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695301680
+    "modified": 1699543193
 }
