@@ -37,15 +37,7 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6466731b98eab",
-                        "operator": "==",
-                        "value": "landing"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -168,7 +160,7 @@
             "aria-label": "",
             "type": "image",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -194,19 +186,13 @@
             "aria-label": "",
             "type": "group",
             "instructions": "Please add your video here using a url OR uploading it directly.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
                 [
                     {
                         "field": "field_6466731b98eab",
                         "operator": "==contains",
                         "value": "landing"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_64343b52d4d29",
-                        "operator": "==empty"
                     }
                 ]
             ],
@@ -363,6 +349,35 @@
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
+        },
+        {
+            "key": "field_654d126b82850",
+            "label": "Program Finder Heading",
+            "name": "program_finder_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_651acbcb16a5a",
+                        "operator": "==",
+                        "value": "true"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "Discover your new career",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -389,5 +404,5 @@
     "graphql_types": [
         "Page"
     ],
-    "modified": 1699368695
+    "modified": 1699549847
 }
