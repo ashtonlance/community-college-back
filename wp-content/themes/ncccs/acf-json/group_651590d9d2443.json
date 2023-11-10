@@ -28,7 +28,7 @@
             "label": "Description",
             "name": "description",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -39,10 +39,10 @@
             },
             "show_in_graphql": 1,
             "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "tabs": "all",
+            "toolbar": "very_simple",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_651590fa123b9",
@@ -125,8 +125,6 @@
     "show_in_graphql": 1,
     "graphql_field_name": "programFinderDetails",
     "map_graphql_types_from_location_rules": 0,
-    "graphql_types": [
-        "Page"
-    ],
-    "modified": 1695912261
+    "graphql_types": "",
+    "modified": 1699638221
 }
