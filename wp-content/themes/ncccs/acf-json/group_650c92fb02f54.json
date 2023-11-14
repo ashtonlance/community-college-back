@@ -38,8 +38,8 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "display_format": "m\/d\/Y",
-            "return_format": "m\/d\/Y",
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
             "first_day": 1
         },
         {
@@ -57,8 +57,8 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "display_format": "m\/d\/Y",
-            "return_format": "m\/d\/Y",
+            "display_format": "d\/m\/Y",
+            "return_format": "d\/m\/Y",
             "first_day": 1
         },
         {
@@ -107,5 +107,5 @@
     "graphql_field_name": "annualReport",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1699913208
+    "modified": 1699979579
 }
