@@ -67,7 +67,7 @@
             "min": 0,
             "max": 2,
             "collapsed": "",
-            "button_label": "Add Row",
+            "button_label": "Add Post",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -210,7 +210,6 @@
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": [
         "ContentNode",
-        "AnnualReport",
         "ApprenticeshipOpportunity",
         "BoardMeeting",
         "BoardMember",
@@ -219,7 +218,6 @@
         "Event",
         "GraphqlDocument",
         "MediaItem",
-        "News",
         "NumberedMemo",
         "Page",
         "Post",
@@ -227,5 +225,5 @@
         "ProgramArea",
         "Staff"
     ],
-    "modified": 1695752194
+    "modified": 1700071701
 }

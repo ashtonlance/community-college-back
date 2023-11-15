@@ -75,7 +75,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "field_641a26cc347b4",
-            "button_label": "Add Row",
+            "button_label": "Add Item",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -228,7 +228,7 @@
             {
                 "param": "nav_menu_item",
                 "operator": "==",
-                "value": "29"
+                "value": "all"
             }
         ]
     ],
@@ -245,5 +245,5 @@
     "graphql_field_name": "navigationMenu",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695301750
+    "modified": 1700071601
 }

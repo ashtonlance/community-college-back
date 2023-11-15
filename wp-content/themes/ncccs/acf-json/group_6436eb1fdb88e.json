@@ -46,7 +46,7 @@
             "min": 1,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Row",
+            "button_label": "Add Card",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -308,5 +308,5 @@
     "graphql_field_name": "general_cards",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1698076082
+    "modified": 1700071546
 }

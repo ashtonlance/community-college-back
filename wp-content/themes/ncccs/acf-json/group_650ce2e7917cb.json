@@ -22,7 +22,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Row",
+            "button_label": "Add Rep",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -164,7 +164,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "935"
+                "value": "5584"
             }
         ]
     ],
@@ -182,8 +182,6 @@
     "show_in_graphql": 1,
     "graphql_field_name": "apprenticeshipRepsDir",
     "map_graphql_types_from_location_rules": 0,
-    "graphql_types": [
-        "Page"
-    ],
-    "modified": 1695343486
+    "graphql_types": "",
+    "modified": 1700071419
 }
