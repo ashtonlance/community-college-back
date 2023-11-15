@@ -2,7 +2,7 @@
   "name": "nextword/location",
   "title": "Location Block",
   "description": "Adds a map and contact info to the page",
-  "category": "Media",
+  "category": "design",
   "keywords": [
     "media"
   ],
@@ -11,5 +11,11 @@
   "acf": {
     "renderTemplate": "./location.php",
     "mode": "preview"
+  },
+  "attributes": {
+    "previewImage": {
+      "type": "string",
+      "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Locations.jpg"
+    }
   }
 }

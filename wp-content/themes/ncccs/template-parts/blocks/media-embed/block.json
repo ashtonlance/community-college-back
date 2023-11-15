@@ -2,7 +2,7 @@
   "name": "nextword/mediaembed",
   "title": "Media Embed Block",
   "description": "Add an Image or Video to your page",
-  "category": "Media",
+  "category": "media",
   "keywords": [
     "media"
   ],
@@ -11,5 +11,11 @@
   "acf": {
     "renderTemplate": "./media-embed.php",
     "mode": "preview"
+  },
+  "attributes": {
+    "previewImage": {
+      "type": "string",
+      "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Image-Embed.jpg"
+    }
   }
 }

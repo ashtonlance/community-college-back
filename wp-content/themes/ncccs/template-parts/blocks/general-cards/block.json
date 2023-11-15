@@ -3,11 +3,21 @@
     "title": "General Cards",
     "description": "Allow you to create/edit a general cards on your page.",
     "category": "design",
-    "keywords": ["general cards", "cards", "general"],
+    "keywords": [
+        "general cards",
+        "cards",
+        "general"
+    ],
     "icon": "screenoptions",
     "apiVersion": 2,
     "acf": {
         "renderTemplate": "./general-cards.php",
         "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_General-Cards.jpg"
+        }
     }
 }

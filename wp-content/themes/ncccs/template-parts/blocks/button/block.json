@@ -12,5 +12,11 @@
   "acf": {
     "renderTemplate": "./button.php",
     "mode": "preview"
+  },
+  "attributes": {
+    "previewImage": {
+      "type": "string",
+      "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Button.jpg"
+    }
   }
 }

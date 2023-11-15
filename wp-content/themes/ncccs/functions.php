@@ -10,6 +10,9 @@
  */
 
 require_once get_template_directory() . '/custom-post-types.php';
+require_once get_template_directory() . '/tax-reorder.php';
+
+new SlashAdmin\TaxonomyOrder();
 
 add_action('acf/init', 'acf_init_block_types');
 
@@ -179,31 +182,6 @@ function my_acf_google_map_api($api)
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
-///
-// Set page parents of Custom Post Types - in the Organisation Setting ACF Options page
-// Based upon Joe Sexton's blog post http://www.webtipblog.com/setting-wordpress-custom-post-type-parent-specific-page/
-
-// define( 'FRIENDS_PARENT_ID', get_field( 'colleges_parent', 'option' ) );
-
-//add_action( 'wp_insert_post_data', 'biscuit_cpt_parent_page', '99', 2  );
-
-function biscuit_cpt_parent_page( $data, $postarr ) {
-    global $post;
-    // if ( !wp_verify_nonce( $_POST['staff_parent_custom_box'], 'stc_cpt' ) )
-    //     return $data;
-
-    // verify if this is an auto save routine.
-    // If it is our form has not been submitted, so we dont want to do anything
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-        return $data;
-
-    if ( $post->post_type == "colleges" ){
-	    $data['post_parent'] = FRIENDS_PARENT_ID ;
-	}
-
-    return $data;
-}
-
 add_action( 'graphql_register_types', function() {
 
 	register_graphql_connection( [
@@ -273,3 +251,57 @@ add_filter( 'graphql_connection_max_query_amount', function( $amount, $source, $
   $amount = 1000; // increase post limit to 1000
   return $amount;
 }, 10, 5 );
+
+// add_filter( 'rest_colleges_collection_params','filter_add_rest_orderby_params', 10, 2 );
+
+// function filter_add_rest_orderby_params( $params, $post_type  ) {
+// $params['orderby']['enum'][] = 'menu_order';
+// if ( $post_type->name === 'colleges' ) {
+//     $params['orderby']['default'] = 'menu_order';
+//     $params['order']['default'] = 'asc';
+// }
+// var_dump($params);
+// return $params;
+// }
+
+function enqueue_admin_scripts_and_styles() {
+	wp_enqueue_script('admin-scripts', get_template_directory_uri() . '/custom-admin.js', array('wp-blocks', 'wp-element', 'wp-hooks'), '', true);
+}
+add_action('admin_enqueue_scripts', 'enqueue_admin_scripts_and_styles');
+
+function wpcc_allowed_block_types() {
+	return array(
+    'core/paragraph',
+    // 'core/image',
+    'core/heading',
+    'core/list',
+    'core/quote',
+    'core/shortcode',
+    'core/gallery',
+    // 'core/video',
+    'core/separator',
+    'nextword/hero',
+    'nextword/text',
+    'nextword/stats',
+    'nextword/featuresandbenefits',
+    'nextword/testimonialslider',
+    'nextword/testimonial',
+    'nextword/relatedresourcesblock',
+    'nextword/links',
+    'nextword/cta',
+    'nextword/generalcards',
+    'nextword/eventcards',
+    'nextword/textandimage',
+    'nextword/teammembercards',
+    'nextword/contactblock',
+    'nextword/pageheading',
+    'nextword/button',
+    'nextword/accordion',
+    'nextword/wysiwyg',
+    'gravityforms/form',
+    'nextword/eventcards',
+    'nextword/location',
+    'nextword/mediaembed'
+  );
+}
+add_filter( 'allowed_block_types', 'wpcc_allowed_block_types' );

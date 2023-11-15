@@ -11,5 +11,11 @@
   "acf": {
     "renderTemplate": "./wysiwyg.php",
     "mode": "preview"
+  },
+  "attributes": {
+    "previewImage": {
+      "type": "string",
+      "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_WYSIWYG.jpg"
+    }
   }
 }

@@ -13,5 +13,11 @@
     "acf": {
         "renderTemplate": "./features-and-benefits.php",
         "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Features-Benefits-Cards.jpg"
+        }
     }
 }

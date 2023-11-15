@@ -28,7 +28,7 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
         'show_in_graphql' => true,
         'graphql_single_name' => $singular_name_camel,
         'graphql_plural_name' => $plural_name_camel,
-        'menu_icon' => $menu_icon,
+        'menu_icon' => $menu_icon
     ];
 
     register_post_type( $post_type_name, $args );
@@ -57,6 +57,7 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
                 'delete_terms' => 'edit_posts',
                 'assign_terms' => 'edit_posts',
             ],
+            'sort' => true
         ];
 
         register_taxonomy( $taxonomy1_name, $post_type_name, $taxonomy_args );
@@ -86,7 +87,7 @@ function register_custom_post_type($post_type_name, $singular_name, $plural_name
                 'edit_terms' => 'edit_posts',
                 'delete_terms' => 'edit_posts',
                 'assign_terms' => 'edit_posts',
-            ],
+            ]
         ];
 
         register_taxonomy( $taxonomy2_name, $post_type_name, $taxonomy_args );

@@ -3,11 +3,21 @@
     "title": "Testimonial Block",
     "description": "Allow you to create/edit a testimonial block.",
     "category": "design",
-    "keywords": ["testimonial", "testimonial module", "landing testimonial"],
+    "keywords": [
+        "testimonial",
+        "testimonial module",
+        "landing testimonial"
+    ],
     "icon": "awards",
     "apiVersion": 2,
     "acf": {
         "renderTemplate": "./testimonial.php",
         "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Testimonial.jpg"
+        }
     }
 }

@@ -3,11 +3,21 @@
     "title": "CTA Banner",
     "description": "Allow you to create/edit a cta banner for your page.",
     "category": "design",
-    "keywords": ["cta", "cta module", "landing cta"],
+    "keywords": [
+        "cta",
+        "cta module",
+        "landing cta"
+    ],
     "icon": "button",
     "apiVersion": 2,
     "acf": {
         "renderTemplate": "./cta.php",
         "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_CTA-Banner.jpg"
+        }
     }
 }
