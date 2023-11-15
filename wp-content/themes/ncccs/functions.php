@@ -176,8 +176,7 @@ function remove_layout_option() {
 
 function my_acf_google_map_api($api)
 {
-  $api['key'] = 'AIzaSyAqTeKtK62XIK_hlHvL8OO31nmDVseH0fk
-  ';
+  $api['key'] = 'AIzaSyAqTeKtK62XIK_hlHvL8OO31nmDVseH0fk';
   return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
@@ -212,6 +211,11 @@ add_filter( 'graphql_PostObjectsConnectionOrderbyEnum_values', function( $values
 		'description' => __( 'The staff name', 'wp-graphql' ),
 	];
 
+  $values['DUE_DATE'] = [
+		'value' => 'due_date',
+		'description' => __( 'The due date', 'wp-graphql' ),
+	];
+
 	return $values;
 
 } );
@@ -228,6 +232,28 @@ add_filter( 'graphql_post_object_connection_query_args', function( $query_args, 
 
 			$query_args['meta_type'] = 'TEXT';
 			$query_args['meta_key'] = 'staff_name';
+			$query_args['orderby']['meta_value_num'] = $orderby['order'];
+
+		}
+
+	}
+
+	return $query_args;
+
+}, 10, 3);
+
+add_filter( 'graphql_post_object_connection_query_args', function( $query_args, $source, $input ) {
+
+	if ( isset( $input['where']['orderby'] ) && is_array( $input['where']['orderby'] ) ) {
+
+		foreach( $input['where']['orderby'] as $orderby ) {
+
+			if ( ! isset( $orderby['field'] ) || 'due_date' !== $orderby['field'] ) {
+				continue;
+			}
+
+			$query_args['meta_type'] = 'TEXT';
+			$query_args['meta_key'] = 'due_date';
 			$query_args['orderby']['meta_value_num'] = $orderby['order'];
 
 		}
