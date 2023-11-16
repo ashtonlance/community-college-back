@@ -364,6 +364,7 @@ class ComposerStaticInite4233d9d1c831bf27939e187620292ff
         'WPGraphQL\\Type\\Enum\\PostObjectsConnectionOrderbyEnum' => __DIR__ . '/../..' . '/src/Type/Enum/PostObjectsConnectionOrderbyEnum.php',
         'WPGraphQL\\Type\\Enum\\PostStatusEnum' => __DIR__ . '/../..' . '/src/Type/Enum/PostStatusEnum.php',
         'WPGraphQL\\Type\\Enum\\RelationEnum' => __DIR__ . '/../..' . '/src/Type/Enum/RelationEnum.php',
+        'WPGraphQL\\Type\\Enum\\ScriptLoadingStrategyEnum' => __DIR__ . '/../..' . '/src/Type/Enum/ScriptLoadingStrategyEnum.php',
         'WPGraphQL\\Type\\Enum\\TaxonomyEnum' => __DIR__ . '/../..' . '/src/Type/Enum/TaxonomyEnum.php',
         'WPGraphQL\\Type\\Enum\\TaxonomyIdTypeEnum' => __DIR__ . '/../..' . '/src/Type/Enum/TaxonomyIdTypeEnum.php',
         'WPGraphQL\\Type\\Enum\\TermNodeIdTypeEnum' => __DIR__ . '/../..' . '/src/Type/Enum/TermNodeIdTypeEnum.php',
