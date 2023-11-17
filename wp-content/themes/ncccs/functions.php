@@ -155,7 +155,7 @@ function my_acf_op_init()
         'page_title' => __('Settings'),
         'menu_title' => __('Global Site Settings'),
         'menu_slug' => 'settings',
-        'capability' => 'edit_posts',
+        'capability' => 'remove_users',
         'redirect' => false,
         'show_in_graphql' => true
       )
