@@ -31,6 +31,7 @@ function acf_init_block_types()
     register_block_type(get_template_directory() . "/template-parts/blocks/contact-block/block.json");
     register_block_type(get_template_directory() . "/template-parts/blocks/features-and-benefits/block.json");
     register_block_type(get_template_directory() . "/template-parts/blocks/testimonial-slider/block.json");
+    register_block_type(get_template_directory() . "/template-parts/blocks/text-and-media-slider/block.json");
     register_block_type(get_template_directory() . "/template-parts/blocks/page-heading/block.json");
     register_block_type(get_template_directory() . "/template-parts/blocks/button/block.json");
     register_block_type(get_template_directory() . "/template-parts/blocks/wysiwyg/block.json");
@@ -311,6 +312,7 @@ function wpcc_allowed_block_types() {
     'nextword/stats',
     'nextword/featuresandbenefits',
     'nextword/testimonialslider',
+    'nextword/textandmediaslider',
     'nextword/testimonial',
     'nextword/relatedresourcesblock',
     'nextword/links',

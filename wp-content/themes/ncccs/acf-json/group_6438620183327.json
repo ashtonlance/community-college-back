@@ -260,6 +260,64 @@
             "layout": "horizontal"
         },
         {
+            "key": "field_65391a0cfb17f",
+            "label": "Video or Image",
+            "name": "video_or_image",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "choices": {
+                "image": "Image",
+                "video": "Video"
+            },
+            "default_value": "image",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65391a32fb180",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65391a0cfb17f",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_65391a32fb180",
             "label": "Image",
             "name": "image",
@@ -318,6 +376,32 @@
             "show_in_graphql": 1,
             "width": "",
             "height": ""
+        },
+        {
+            "key": "field_65391a6afb181",
+            "label": "Video",
+            "name": "video",
+            "aria-label": "",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_65391a0cfb17f",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "width": "",
+            "height": ""
         }
     ],
     "location": [
@@ -342,5 +426,5 @@
     "graphql_field_name": "text_image",
     "map_graphql_types_from_location_rules": 1,
     "graphql_types": "",
-    "modified": 1698242284
+    "modified": 1700606456
 }
