@@ -17,7 +17,7 @@
     "attributes": {
         "previewImage": {
             "type": "string",
-            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Text-Media.jpg"
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Text-Media-Slider.jpg"
         }
     }
 }
