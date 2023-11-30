@@ -129,4 +129,54 @@ function remove_default_post_type($args, $postType) {
     return $args;
 }
 add_filter('register_post_type_args', 'remove_default_post_type', 0, 2);
+
+// Prevent block editor showing on custom post type
+add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);
+ function prefix_disable_gutenberg($gutenberg_filter, $post_type)
+  {
+    switch ($post_type) {
+        case 'programs':
+            false;
+            break;
+        case 'colleges':
+            false;
+            break;
+        case 'program-areas':
+            false;
+            break;
+        case 'annual-reports':
+            false;
+            break;
+        case 'numbered-memos':
+            false;
+            break;
+        case 'staff':
+            false;
+            break;
+        case 'board-members':
+            false;
+            break;
+        case 'events':
+            false;
+            break;
+        case 'news':
+            false;
+            break;
+        case 'board-meetings':
+            false;
+            break;
+        case 'data-dashboards':
+            false;
+            break;
+        case 'apprenticeship-opp':
+            false;
+            break;
+        case 'proprietary-schools':
+            false;
+            break;
+        default:
+            return $gutenberg_filter;
+      }
+  }
 ?>
+
