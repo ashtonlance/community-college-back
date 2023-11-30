@@ -38,7 +38,7 @@
                 "id": ""
             },
             "show_in_graphql": 1,
-            "display_format": "d\/m\/Y",
+            "display_format": "m\/d\/Y",
             "return_format": "d\/m\/Y",
             "first_day": 1
         },
@@ -109,5 +109,5 @@
     "graphql_field_name": "boardMeetingDetails",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1699979595
+    "modified": 1701354451
 }
