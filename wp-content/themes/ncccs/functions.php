@@ -333,3 +333,20 @@ function wpcc_allowed_block_types() {
   );
 }
 add_filter( 'allowed_block_types', 'wpcc_allowed_block_types' );
+
+
+//Add Instructions to Featured Image Box
+
+function change_post_type_labels() {
+  $post_object = get_post_type_object( 'board-members' );
+
+  if ( ! $post_object ) {
+      return false;
+}
+
+  $post_object->labels->set_featured_image = 'Set featured image (800px x 800px)';
+
+  return true;
+}
+
+add_action( 'wp_loaded', 'change_post_type_labels', 20 );
