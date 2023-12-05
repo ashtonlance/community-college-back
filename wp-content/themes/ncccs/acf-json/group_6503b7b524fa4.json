@@ -110,27 +110,6 @@
             "bidirectional_target": []
         },
         {
-            "key": "field_65679e2b706ce",
-            "label": "Show Common Careers Disclaimer",
-            "name": "show_common_careers_disclaimer",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Used to turn on the common careers disclaimer once data for all programs is updated.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_graphql": 1,
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_656a427e8343f",
             "label": "Program Details Header",
             "name": "program_details_header",
@@ -195,5 +174,5 @@
     "graphql_field_name": "siteSettings",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1701462718
+    "modified": 1701731356
 }
