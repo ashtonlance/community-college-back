@@ -350,3 +350,25 @@ function change_post_type_labels() {
 }
 
 add_action( 'wp_loaded', 'change_post_type_labels', 20 );
+
+function register_custom_menu_page() {
+  add_menu_page('Vercel', 'Vercel', 'add_users', 'custompage', '_custom_menu_page', null, 6); 
+}
+add_action('admin_menu', 'register_custom_menu_page');
+
+function _custom_menu_page(){
+  echo '<div style="margin:2rem 0;"><button class="components-button is-primary" id="triggerRedeploy" >Trigger Redeploy</button></div>';
+  echo '<div id="deployStatus"></div>';
+  echo '<script>
+    document.getElementById("triggerRedeploy").addEventListener("click", function() {
+      document.getElementById("deployStatus").innerText = "Pending";
+      fetch("https://api.vercel.com/v1/integrations/deploy/prj_QOdLXdWbrr5DyZhEnEFkG8AT3K5f/6auzicvDFE", { method: "POST" })
+        .then(response => response.json())
+        .then(data => {
+          if(data.job.state === "pending") {
+            document.getElementById("deployStatus").innerText = "Pending";
+          }
+        });
+    });
+  </script>';
+ }
