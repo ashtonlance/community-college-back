@@ -100,17 +100,17 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_graphql": 1,
             "choices": {
-                "associateInEngineering": "Associate in Engineering",
-                "associateInFineArts": "Associate in Fine Arts",
-                "associateInScience": "Associate in Science",
+                "associateOfArts": "Associate of Arts",
+                "associateOfEngineering": "Associate of Engineering",
+                "associateOfFineArts": "Associate of Fine Arts",
+                "associateOfScience": "Associate of Science",
                 "associateOfAppliedScience": "Associate of Applied Science",
+                "associateOfGeneralEducation": "Associate of General Education",
                 "certificate": "Certificate",
-                "diploma": "Diploma",
-                "associatesInArts": "Associates in Arts",
-                "associatesInGeneralEducation": "Associates in General Education",
                 "collegeTransferPathway": "College Transfer Pathway",
-                "continuingEducation": "Continuing Education",
+                "diploma": "Diploma",
                 "workforceContinuingEducation": "Workforce Continuing Education"
             },
             "default_value": [],
@@ -118,10 +118,6 @@
             "allow_custom": 0,
             "layout": "vertical",
             "toggle": 0,
-            "show_in_graphql": 1,
-            "graphql_description": "",
-            "graphql_field_name": "degreeTypes",
-            "graphql_non_null": 0,
             "save_custom": 0,
             "custom_choice_button_text": "Add new choice"
         }
@@ -150,5 +146,5 @@
     "graphql_field_name": "program",
     "map_graphql_types_from_location_rules": 0,
     "graphql_types": "",
-    "modified": 1695941885
+    "modified": 1703112358
 }
