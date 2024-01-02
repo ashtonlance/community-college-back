@@ -20,7 +20,7 @@ if (defined('WP_CLI') && WP_CLI) {
      * 
      * After this script is deployed to production through version control, you can run it with the WP CLI over SSH.
      * For example, you can print the usage info with:
-     * `ssh -t ncccsstg@ncccsstg.ssh.wpengine.net bash -c "cd /sites/ncccsstg && wp db degree_types"
+     * `ssh -t ncccsstg@ncccsstg.ssh.wpengine.net bash -c "cd /sites/ncccsstg && wp degree_types"`
      * 
      */
     class Degree_Types_Command
