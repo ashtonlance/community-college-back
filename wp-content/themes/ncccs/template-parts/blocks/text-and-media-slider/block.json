@@ -1,0 +1,23 @@
+{
+    "name": "nextword/textandmediaslider",
+    "title": "Text & Media Slider",
+    "description": "Allow you to create/edit a text and image block for your page.",
+    "category": "design",
+    "keywords": [
+        "text and media",
+        "text image",
+        "slider"
+    ],
+    "icon": "admin-media",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./text-and-media-slider.php",
+        "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Text-Media-Slider.jpg"
+        }
+    }
+}

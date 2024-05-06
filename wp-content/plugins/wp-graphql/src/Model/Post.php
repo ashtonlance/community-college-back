@@ -8,8 +8,8 @@
 namespace WPGraphQL\Model;
 
 use GraphQLRelay\Relay;
-use WP_Post;
 use WPGraphQL\Utils\Utils;
+use WP_Post;
 
 /**
  * Class Post - Models data for the Post object type
@@ -35,12 +35,12 @@ use WPGraphQL\Utils\Utils;
  * @property string  $pingStatus
  * @property string  $slug
  * @property array   $template
- * @property boolean $isFrontPage
- * @property boolean $isPrivacyPage
- * @property boolean $isPostsPage
- * @property boolean $isPreview
- * @property boolean $isRevision
- * @property boolean $isSticky
+ * @property bool $isFrontPage
+ * @property bool $isPrivacyPage
+ * @property bool $isPostsPage
+ * @property bool $isPreview
+ * @property bool $isRevision
+ * @property bool $isSticky
  * @property string  $toPing
  * @property string  $pinged
  * @property string  $modified
@@ -91,7 +91,7 @@ class Post extends Model {
 	/**
 	 * Stores the incoming post type object for the post being modeled
 	 *
-	 * @var null|\WP_Post_Type $post_type_object
+	 * @var \WP_Post_Type|null $post_type_object
 	 */
 	protected $post_type_object;
 
@@ -108,7 +108,6 @@ class Post extends Model {
 	 * @param \WP_Post $post The incoming WP_Post object that needs modeling.
 	 *
 	 * @return void
-	 * @throws \Exception
 	 */
 	public function __construct( WP_Post $post ) {
 
@@ -165,9 +164,7 @@ class Post extends Model {
 	}
 
 	/**
-	 * Setup the global data for the model to have proper context when resolving
-	 *
-	 * @return void
+	 * {@inheritDoc}
 	 */
 	public function setup() {
 		global $wp_query, $post;
@@ -274,9 +271,7 @@ class Post extends Model {
 	}
 
 	/**
-	 * Determine if the model is private
-	 *
-	 * @return bool
+	 * {@inheritDoc}
 	 */
 	public function is_private() {
 
@@ -396,9 +391,7 @@ class Post extends Model {
 	}
 
 	/**
-	 * Initialize the Post object
-	 *
-	 * @return void
+	 * {@inheritDoc}
 	 */
 	protected function init() {
 		if ( empty( $this->fields ) ) {
@@ -557,14 +550,11 @@ class Post extends Model {
 					}
 
 					if ( ! empty( $registered_templates[ $set_template ] ) ) {
-						$name          = ucwords( $registered_templates[ $set_template ] );
-						$replaced_name = preg_replace( '/[^\w]/', '', $name );
+						$name = Utils::format_type_name_for_wp_template( $registered_templates[ $set_template ], $set_template );
 
-						if ( ! empty( $replaced_name ) ) {
-							$name = $replaced_name;
-						}
-						if ( preg_match( '/^\d/', $name ) || false === strpos( strtolower( $name ), 'template' ) ) {
-							$name = 'Template_' . $name;
+						// If the name is empty, fallback to DefaultTemplate
+						if ( empty( $name ) ) {
+							$name = 'DefaultTemplate';
 						}
 
 						$template = [
@@ -849,8 +839,7 @@ class Post extends Model {
 				$this->fields[ $type_id ] = function () {
 					return absint( $this->data->ID );
 				};
-			};
+			}
 		}
 	}
-
 }

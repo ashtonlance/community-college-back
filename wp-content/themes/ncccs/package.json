@@ -1,0 +1,6 @@
+{
+  "name": "nextword",
+  "devDependencies": {
+    "create-acf-block": "^0.7.3"
+  }
+}

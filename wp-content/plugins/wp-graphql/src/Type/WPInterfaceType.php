@@ -17,14 +17,14 @@ class WPInterfaceType extends InterfaceType {
 	public $type_registry;
 
 	/**
-	 * @var array
+	 * @var array<string,mixed>
 	 */
 	public $config;
 
 	/**
 	 * WPInterfaceType constructor.
 	 *
-	 * @param array        $config
+	 * @param array<string,mixed>              $config
 	 * @param \WPGraphQL\Registry\TypeRegistry $type_registry
 	 *
 	 * @throws \Exception
@@ -78,20 +78,20 @@ class WPInterfaceType extends InterfaceType {
 			return $fields;
 		};
 
-		$config['resolveType'] = function ( $object ) use ( $config ) {
+		$config['resolveType'] = function ( $obj ) use ( $config ) {
 			$type = null;
 			if ( is_callable( $config['resolveType'] ) ) {
-				$type = call_user_func( $config['resolveType'], $object );
+				$type = call_user_func( $config['resolveType'], $obj );
 			}
 
 			/**
 			 * Filter the resolve type method for all interfaces
 			 *
-			 * @param mixed           $type   The Type to resolve to, based on the object being resolved.
-			 * @param mixed           $object The Object being resolved.
+			 * @param mixed $type The Type to resolve to, based on the object being resolved.
+			 * @param mixed $obj  The Object being resolved.
 			 * @param \WPGraphQL\Type\WPInterfaceType $wp_interface_type The WPInterfaceType instance.
 			 */
-			return apply_filters( 'graphql_interface_resolve_type', $type, $object, $this );
+			return apply_filters( 'graphql_interface_resolve_type', $type, $obj, $this );
 		};
 
 		/**
@@ -108,7 +108,7 @@ class WPInterfaceType extends InterfaceType {
 	/**
 	 * Get interfaces implemented by this Interface
 	 *
-	 * @return array
+	 * @return \GraphQL\Type\Definition\InterfaceType[]
 	 */
 	public function getInterfaces(): array {
 		return $this->get_implemented_interfaces();
@@ -118,8 +118,8 @@ class WPInterfaceType extends InterfaceType {
 	 * This function sorts the fields and applies a filter to allow for easily
 	 * extending/modifying the shape of the Schema for the type.
 	 *
-	 * @param array  $fields
-	 * @param string $type_name
+	 * @param array<string,array<string,mixed>> $fields The array of fields for the object config
+	 * @param string                            $type_name
 	 *
 	 * @return mixed
 	 * @since 0.0.5
@@ -171,5 +171,4 @@ class WPInterfaceType extends InterfaceType {
 
 		return $fields;
 	}
-
 }

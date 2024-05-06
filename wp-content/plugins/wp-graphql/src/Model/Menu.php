@@ -31,7 +31,6 @@ class Menu extends Model {
 	 * @param \WP_Term $term The incoming WP_Term object that needs modeling
 	 *
 	 * @return void
-	 * @throws \Exception
 	 */
 	public function __construct( \WP_Term $term ) {
 		$this->data = $term;
@@ -39,13 +38,10 @@ class Menu extends Model {
 	}
 
 	/**
-	 * Determines whether a Menu should be considered private.
+	 * {@inheritDoc}
 	 *
 	 * If a Menu is not connected to a menu that's assigned to a location
-	 * it's not considered a public node
-	 *
-	 * @return bool
-	 * @throws \Exception
+	 * it's not considered a public node.
 	 */
 	public function is_private() {
 
@@ -67,9 +63,7 @@ class Menu extends Model {
 	}
 
 	/**
-	 * Initializes the Menu object
-	 *
-	 * @return void
+	 * {@inheritDoc}
 	 */
 	protected function init() {
 		if ( empty( $this->fields ) ) {
@@ -90,7 +84,7 @@ class Menu extends Model {
 					return ! empty( $this->data->name ) ? $this->data->name : null;
 				},
 				'slug'       => function () {
-					return ! empty( $this->data->slug ) ? $this->data->slug : null;
+					return ! empty( $this->data->slug ) ? urldecode( $this->data->slug ) : null;
 				},
 				'locations'  => function () {
 					$menu_locations = get_theme_mod( 'nav_menu_locations' );
@@ -111,5 +105,4 @@ class Menu extends Model {
 			];
 		}
 	}
-
 }

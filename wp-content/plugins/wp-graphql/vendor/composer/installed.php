@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'wp-graphql/wp-graphql',
-        'pretty_version' => 'v1.15.0',
-        'version' => '1.15.0.0',
-        'reference' => '45a2e9e188fa5b2c6470efb9e53fac3691bbb610',
+        'pretty_version' => 'v1.19.0',
+        'version' => '1.19.0.0',
+        'reference' => '162424b8b1afeb2bf706dd08beca5783f80c1db3',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'ivome/graphql-relay-php' => array(
-            'pretty_version' => 'v0.6.0',
-            'version' => '0.6.0.0',
-            'reference' => '7055fd45b7e552cee4d1290849b84294b0049373',
+            'pretty_version' => 'v0.7.0',
+            'version' => '0.7.0.0',
+            'reference' => '06bd176103618d896197d85d04a3a17c91e39698',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ivome/graphql-relay-php',
             'aliases' => array(),
@@ -38,9 +38,9 @@
             'dev_requirement' => false,
         ),
         'wp-graphql/wp-graphql' => array(
-            'pretty_version' => 'v1.15.0',
-            'version' => '1.15.0.0',
-            'reference' => '45a2e9e188fa5b2c6470efb9e53fac3691bbb610',
+            'pretty_version' => 'v1.19.0',
+            'version' => '1.19.0.0',
+            'reference' => '162424b8b1afeb2bf706dd08beca5783f80c1db3',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

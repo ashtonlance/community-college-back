@@ -9,4 +9,5 @@ return array(
     'WPGraphQL\\SmartCache\\' => array($baseDir . '/src'),
     'WPGraphQL\\PersistedQueries\\' => array($baseDir . '/src'),
     'WPGraphQL\\Cache\\' => array($baseDir . '/src/Cache'),
+    'Appsero\\' => array($vendorDir . '/appsero/client/src'),
 );

@@ -1,17 +1,17 @@
 <?php
 /**
  * Plugin Name: WPGraphQL for Gravity Forms
- * Plugin URI: https://github.com/harness-software/wp-graphql-gravity-forms
- * GitHub Plugin URI: https://github.com/harness-software/wp-graphql-gravity-forms
+ * Plugin URI: https://github.com/axewp/wp-graphql-gravity-forms
+ * GitHub Plugin URI: https://github.com/axewp/wp-graphql-gravity-forms
  * Description: Adds Gravity Forms functionality to the WPGraphQL schema.
- * Author: Harness Software
- * Author URI: https://www.harnessup.com
- * Update URI: https://github.com/harness-software/wp-graphql-gravity-forms/releases
- * Version: 0.12.2
+ * Author: AxePress Development
+ * Author URI: https://axepress.dev
+ * Update URI: https://github.com/axewp/wp-graphql-gravity-forms/releases
+ * Version: 0.12.4
  * Text Domain: wp-graphql-gravity-forms
  * Domain Path: /languages
  * Requires at least: 5.4.1
- * Tested up to: 6.2.2
+ * Tested up to: 6.3.1
  * Requires PHP: 7.4
  * WPGraphQL requires at least: 1.9.0
  * GravityForms requires at least: 2.5.0
@@ -19,7 +19,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  *
  * @package WPGraphQL\GF
- * @author harnessup
+ * @author axepress
  * @license GPL-3
  */
 
@@ -32,10 +32,10 @@ if ( ! function_exists( 'gf_graphql_constants' ) ) {
 	/**
 	 * Define plugin constants.
 	 */
-	function gf_graphql_constants() : void {
+	function gf_graphql_constants(): void {
 		// Plugin version.
 		if ( ! defined( 'WPGRAPHQL_GF_VERSION' ) ) {
-			define( 'WPGRAPHQL_GF_VERSION', '0.12.2' );
+			define( 'WPGRAPHQL_GF_VERSION', '0.12.4' );
 		}
 
 		// Plugin Folder Path.
@@ -70,7 +70,7 @@ if ( ! function_exists( 'graphql_gf_dependencies_not_ready' ) ) {
 	/**
 	 * Checks if all the the required plugins are installed and activated.
 	 */
-	function gf_graphql_dependencies_not_ready() : array {
+	function gf_graphql_dependencies_not_ready(): array {
 		$wpgraphql_version = '1.9.0';
 		$gf_version        = '2.5.0';
 
@@ -92,7 +92,7 @@ if ( ! function_exists( 'gf_graphql_init' ) ) {
 	/**
 	 * Initializes WPGraphQL for GF.
 	 */
-	function gf_graphql_init() : void {
+	function gf_graphql_init(): void {
 		gf_graphql_constants();
 
 		$not_ready = gf_graphql_dependencies_not_ready();

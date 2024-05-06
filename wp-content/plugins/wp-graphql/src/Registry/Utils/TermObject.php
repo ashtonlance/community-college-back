@@ -3,7 +3,6 @@
 namespace WPGraphQL\Registry\Utils;
 
 use GraphQL\Type\Definition\ResolveInfo;
-use WP_Taxonomy;
 use WPGraphQL;
 use WPGraphQL\AppContext;
 use WPGraphQL\Data\Connection\PostObjectConnectionResolver;
@@ -12,6 +11,7 @@ use WPGraphQL\Data\Connection\TermObjectConnectionResolver;
 use WPGraphQL\Model\Term;
 use WPGraphQL\Type\Connection\PostObjects;
 use WPGraphQL\Type\Connection\TermObjects;
+use WP_Taxonomy;
 
 /**
  * Class TermObjectType
@@ -20,6 +20,7 @@ use WPGraphQL\Type\Connection\TermObjects;
  * @since   1.12.0
  */
 class TermObject {
+
 
 	/**
 	 * Registers a taxonomy type to the schema as either a GraphQL object, interface, or union.
@@ -101,7 +102,7 @@ class TermObject {
 	 *
 	 * @param \WP_Taxonomy $tax_object
 	 *
-	 * @return array
+	 * @return array<string,array<string,mixed>>
 	 */
 	protected static function get_connections( WP_Taxonomy $tax_object ) {
 		$connections = [];
@@ -214,12 +215,12 @@ class TermObject {
 										'field'            => 'term_id',
 										'include_children' => false,
 									],
-								] 
+								]
 							);
 
 							return $resolver->get_connection();
 						},
-					] 
+					]
 				);
 
 				// We won't need to register this connection again.
@@ -243,7 +244,7 @@ class TermObject {
 									'field'            => 'term_id',
 									'include_children' => false,
 								],
-							] 
+							]
 						);
 
 						return $resolver->get_connection();
@@ -271,7 +272,7 @@ class TermObject {
 	 *
 	 * @param \WP_Taxonomy $tax_object Taxonomy.
 	 *
-	 * @return array
+	 * @return string[]
 	 */
 	protected static function get_interfaces( WP_Taxonomy $tax_object ) {
 		$interfaces = [ 'Node', 'TermNode', 'DatabaseIdentifier' ];
@@ -306,7 +307,7 @@ class TermObject {
 	 *
 	 * @param \WP_Taxonomy $tax_object Taxonomy.
 	 *
-	 * @return array
+	 * @return array<string,array<string,mixed>>[]
 	 */
 	protected static function get_fields( WP_Taxonomy $tax_object ) {
 		$single_name = $tax_object->graphql_single_name;
@@ -315,22 +316,8 @@ class TermObject {
 				'type'              => 'Int',
 				'deprecationReason' => __( 'Deprecated in favor of databaseId', 'wp-graphql' ),
 				'description'       => __( 'The id field matches the WP_Post->ID field.', 'wp-graphql' ),
-				'resolve'           => static function ( Term $term, $args, $context, $info ) {
+				'resolve'           => static function ( Term $term ) {
 					return absint( $term->term_id );
-				},
-			],
-			'uri'               => [
-				'resolve' => static function ( $term, $args, $context, $info ) {
-					$url = $term->link;
-					if ( ! empty( $url ) ) {
-						$parsed = wp_parse_url( $url );
-						if ( is_array( $parsed ) ) {
-							$path  = isset( $parsed['path'] ) ? $parsed['path'] : '';
-							$query = isset( $parsed['query'] ) ? ( '?' . $parsed['query'] ) : '';
-							return trim( $path . $query );
-						}
-					}
-					return '';
 				},
 			],
 		];

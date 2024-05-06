@@ -10,7 +10,6 @@ class PageInfo {
 	 *
 	 * @param \WPGraphQL\Registry\TypeRegistry $type_registry
 	 *
-	 * @return void
 	 * @throws \Exception
 	 */
 	public static function register_type( TypeRegistry $type_registry ): void {
@@ -20,7 +19,7 @@ class PageInfo {
 				'description' => __( 'Information about pagination in a connection.', 'wp-graphql' ),
 				'interfaces'  => [ 'PageInfo' ],
 				'fields'      => self::get_fields(),
-			] 
+			]
 		);
 
 		register_graphql_interface_type(
@@ -28,14 +27,14 @@ class PageInfo {
 			[
 				'description' => __( 'Information about pagination in a connection.', 'wp-graphql' ),
 				'fields'      => self::get_fields(),
-			] 
+			]
 		);
 	}
 
 	/**
 	 * Get the fields for the PageInfo Type
 	 *
-	 * @return array[]
+	 * @return array<string,array<string,mixed>>
 	 */
 	public static function get_fields(): array {
 		return [

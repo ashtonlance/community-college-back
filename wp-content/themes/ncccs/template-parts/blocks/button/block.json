@@ -1,0 +1,22 @@
+{
+  "name": "nextword/button",
+  "title": "Button",
+  "description": "Allows you to create/edit a standalone button to your page.",
+  "category": "design",
+  "keywords": [
+    "button",
+    "cta"
+  ],
+  "icon": "admin-site-alt3",
+  "apiVersion": 2,
+  "acf": {
+    "renderTemplate": "./button.php",
+    "mode": "preview"
+  },
+  "attributes": {
+    "previewImage": {
+      "type": "string",
+      "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Button.jpg"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "name": "nextword/pageheading",
+    "title": "Page Heading",
+    "description": "Allow you to create/edit a heading on your page.",
+    "category": "design",
+    "keywords": [
+        "heading"
+    ],
+    "icon": "heading",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./page-heading.php",
+        "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Heading.jpg"
+        }
+    }
+}

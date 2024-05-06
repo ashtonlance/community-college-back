@@ -1,0 +1,23 @@
+{
+    "name": "nextword/relatedresourcesblock",
+    "title": "Related Posts",
+    "description": "Allow you to create/edit a related post to your page.",
+    "category": "design",
+    "keywords": [
+        "related posts",
+        "related",
+        "posts"
+    ],
+    "icon": "images-alt",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./related-resources.php",
+        "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Related-Posts.jpg"
+        }
+    }
+}

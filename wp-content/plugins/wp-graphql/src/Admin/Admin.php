@@ -15,14 +15,14 @@ class Admin {
 	/**
 	 * Whether Admin Pages are enabled or not
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $admin_enabled;
 
 	/**
 	 * Whether GraphiQL is enabled or not
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $graphiql_enabled;
 
@@ -49,7 +49,7 @@ class Admin {
 				'admin_menu',
 				static function () {
 					remove_menu_page( 'wp-graphiql/wp-graphiql.php' );
-				} 
+				}
 			);
 		}
 
@@ -67,5 +67,4 @@ class Admin {
 			$graphiql->init();
 		}
 	}
-
 }

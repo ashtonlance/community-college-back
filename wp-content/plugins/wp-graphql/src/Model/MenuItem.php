@@ -42,7 +42,6 @@ class MenuItem extends Model {
 	 * @param \WP_Post $post The incoming WP_Post object that needs modeling
 	 *
 	 * @return void
-	 * @throws \Exception
 	 */
 	public function __construct( WP_Post $post ) {
 		$this->data = wp_setup_nav_menu_item( $post );
@@ -50,12 +49,11 @@ class MenuItem extends Model {
 	}
 
 	/**
-	 * Determines whether a MenuItem should be considered private.
+	 * {@inheritDoc}
 	 *
 	 * If a MenuItem is not connected to a menu that's assigned to a location
-	 * it's not considered a public node
+	 * it's not considered a public node.
 	 *
-	 * @return bool
 	 * @throws \Exception
 	 */
 	public function is_private() {
@@ -84,7 +82,7 @@ class MenuItem extends Model {
 
 		if ( is_wp_error( $menus ) ) {
 			// translators: %s is the menu item ID.
-			throw new Exception( sprintf( __( 'No menus could be found for menu item %s', 'wp-graphql' ), $this->data->ID ) );
+			throw new Exception( esc_html( sprintf( __( 'No menus could be found for menu item %s', 'wp-graphql' ), $this->data->ID ) ) );
 		}
 
 		$menu_id = $menus[0];
@@ -96,9 +94,7 @@ class MenuItem extends Model {
 	}
 
 	/**
-	 * Initialize the MenuItem object
-	 *
-	 * @return void
+	 * {@inheritDoc}
 	 */
 	protected function init() {
 		if ( empty( $this->fields ) ) {
@@ -157,7 +153,7 @@ class MenuItem extends Model {
 					$url = $this->url;
 
 					if ( ! empty( $url ) ) {
-						/** @var array $parsed */
+						/** @var array<string,mixed> $parsed */
 						$parsed = wp_parse_url( $url );
 						if ( isset( $parsed['host'] ) && strpos( home_url(), $parsed['host'] ) ) {
 							return $parsed['path'];
@@ -175,7 +171,7 @@ class MenuItem extends Model {
 				'menuDatabaseId'   => function () {
 					$menus = wp_get_object_terms( $this->data->ID, 'nav_menu' );
 					if ( is_wp_error( $menus ) ) {
-						throw new UserError( $menus->get_error_message() );
+						throw new UserError( esc_html( $menus->get_error_message() ) );
 					}
 
 					return ! empty( $menus[0]->term_id ) ? $menus[0]->term_id : null;
@@ -203,5 +199,4 @@ class MenuItem extends Model {
 			];
 		}
 	}
-
 }

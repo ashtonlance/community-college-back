@@ -1,0 +1,22 @@
+{
+    "name": "nextword/textandimage",
+    "title": "Text & Media Block",
+    "description": "Allow you to create/edit a text and image block for your page.",
+    "category": "design",
+    "keywords": [
+        "text and image",
+        "text image"
+    ],
+    "icon": "admin-media",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./text-and-image.php",
+        "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Text-Media.jpg"
+        }
+    }
+}

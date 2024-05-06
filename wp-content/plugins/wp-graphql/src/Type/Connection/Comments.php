@@ -44,8 +44,8 @@ class Comments {
 						return $resolver->set_query_arg( 'user_id', absint( $user->userId ) )->get_connection();
 					},
 
-				] 
-			) 
+				]
+			)
 		);
 
 		register_graphql_connection(
@@ -61,8 +61,8 @@ class Comments {
 
 						return ! empty( $comment->comment_parent_id ) ? $resolver->one_to_one()->set_query_arg( 'comment__in', [ $comment->comment_parent_id ] )->get_connection() : null;
 					},
-				] 
-			) 
+				]
+			)
 		);
 
 		/**
@@ -87,9 +87,9 @@ class Comments {
 	 * Given an array of $args, this returns the connection config, merging the provided args
 	 * with the defaults
 	 *
-	 * @param array $args
+	 * @param array<string,mixed> $args
 	 *
-	 * @return array
+	 * @return array<string,mixed>
 	 */
 	public static function get_connection_config( $args = [] ) {
 		$defaults = [
@@ -108,7 +108,7 @@ class Comments {
 	/**
 	 * This returns the connection args for the Comment connection
 	 *
-	 * @return array
+	 * @return array<string,array<string,mixed>>
 	 */
 	public static function get_connection_args() {
 		return [

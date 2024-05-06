@@ -18,9 +18,7 @@ class InstrumentSchema {
 
 	/**
 	 * @param \GraphQL\Type\Definition\Type $type Instance of the Schema.
-	 * @param string $type_name Name of the Type
-	 *
-	 * @return \GraphQL\Type\Definition\Type
+	 * @param string                        $type_name Name of the Type
 	 */
 	public static function instrument_resolvers( Type $type, string $type_name ): Type {
 		if ( ! method_exists( $type, 'getFields' ) ) {
@@ -43,8 +41,8 @@ class InstrumentSchema {
 	 * This wraps fields to provide sanitization on fields output by introspection queries
 	 * (description/deprecation reason) and provides hooks to resolvers.
 	 *
-	 * @param array  $fields    The fields configured for a Type
-	 * @param string $type_name The Type name
+	 * @param mixed[] $fields    The fields configured for a Type
+	 * @param string  $type_name The Type name
 	 *
 	 * @return mixed
 	 */
@@ -193,17 +191,17 @@ class InstrumentSchema {
 	 *
 	 * This takes into account auth params defined in the Schema
 	 *
-	 * @param mixed                 $source         The source passed down the Resolve Tree
-	 * @param array                 $args           The args for the field
-	 * @param \WPGraphQL\AppContext $context The AppContext passed down the ResolveTree
-	 * @param \GraphQL\Type\Definition\ResolveInfo $info The ResolveInfo passed down the ResolveTree
-	 * @param mixed|callable|string $field_resolver The Resolve function for the field
-	 * @param string                $type_name      The name of the type the fields belong to
-	 * @param string                $field_key      The name of the field
-	 * @param \GraphQL\Type\Definition\FieldDefinition $field The Field Definition for the resolving field
+	 * @param mixed                                    $source         The source passed down the Resolve Tree
+	 * @param array<string,mixed>                      $args           The args for the field
+	 * @param \WPGraphQL\AppContext                    $context        The AppContext passed down the ResolveTree
+	 * @param \GraphQL\Type\Definition\ResolveInfo     $info           The ResolveInfo passed down the ResolveTree
+	 * @param mixed|callable|string                    $field_resolver The Resolve function for the field
+	 * @param string                                   $type_name      The name of the type the fields belong to
+	 * @param string                                   $field_key      The name of the field
+	 * @param \GraphQL\Type\Definition\FieldDefinition $field          The Field Definition for the resolving field
 	 *
 	 * @return void
-	 *             
+	 *
 	 * @throws \GraphQL\Error\UserError
 	 */
 	public static function check_field_permissions( $source, array $args, AppContext $context, ResolveInfo $info, $field_resolver, string $type_name, string $field_key, FieldDefinition $field ) {
@@ -233,7 +231,7 @@ class InstrumentSchema {
 
 			// If callback returns explicit false throw.
 			if ( false === $authorized ) {
-				throw new UserError( $auth_error );
+				throw new UserError( esc_html( $auth_error ) );
 			}
 
 			return;
@@ -244,7 +242,7 @@ class InstrumentSchema {
 		 * make sure the user is authenticated before resolving the field
 		 */
 		if ( isset( $field->config['isPrivate'] ) && true === $field->config['isPrivate'] && empty( get_current_user_id() ) ) {
-			throw new UserError( $auth_error );
+			throw new UserError( esc_html( $auth_error ) );
 		}
 
 		/**
@@ -254,7 +252,7 @@ class InstrumentSchema {
 		if ( isset( $field->config['auth']['allowedCaps'] ) && is_array( $field->config['auth']['allowedCaps'] ) ) {
 			$caps = ! empty( wp_get_current_user()->allcaps ) ? wp_get_current_user()->allcaps : [];
 			if ( empty( array_intersect( array_keys( $caps ), array_values( $field->config['auth']['allowedCaps'] ) ) ) ) {
-				throw new UserError( $auth_error );
+				throw new UserError( esc_html( $auth_error ) );
 			}
 		}
 
@@ -266,9 +264,8 @@ class InstrumentSchema {
 			$roles         = ! empty( wp_get_current_user()->roles ) ? wp_get_current_user()->roles : [];
 			$allowed_roles = array_values( $field->config['auth']['allowedRoles'] );
 			if ( empty( array_intersect( array_values( $roles ), array_values( $allowed_roles ) ) ) ) {
-				throw new UserError( $auth_error );
+				throw new UserError( esc_html( $auth_error ) );
 			}
 		}
 	}
-
 }

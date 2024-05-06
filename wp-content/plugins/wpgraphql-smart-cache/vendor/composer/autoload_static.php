@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbdecde7c9a647c4c60e874e4d046fe59
+class ComposerStaticInitc55c0dfd19dbbfabc26423a63f9b0871
 {
     public static $prefixLengthsPsr4 = array (
         'W' => 
@@ -12,6 +12,10 @@ class ComposerStaticInitbdecde7c9a647c4c60e874e4d046fe59
             'WPGraphQL\\SmartCache\\' => 21,
             'WPGraphQL\\PersistedQueries\\' => 27,
             'WPGraphQL\\Cache\\' => 16,
+        ),
+        'A' => 
+        array (
+            'Appsero\\' => 8,
         ),
     );
 
@@ -28,9 +32,17 @@ class ComposerStaticInitbdecde7c9a647c4c60e874e4d046fe59
         array (
             0 => __DIR__ . '/../..' . '/src/Cache',
         ),
+        'Appsero\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/appsero/client/src',
+        ),
     );
 
     public static $classMap = array (
+        'Appsero\\Client' => __DIR__ . '/..' . '/appsero/client/src/Client.php',
+        'Appsero\\Insights' => __DIR__ . '/..' . '/appsero/client/src/Insights.php',
+        'Appsero\\License' => __DIR__ . '/..' . '/appsero/client/src/License.php',
+        'Appsero\\Updater' => __DIR__ . '/..' . '/appsero/client/src/Updater.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'WPGraphQL\\SmartCache\\AdminErrors' => __DIR__ . '/../..' . '/src/AdminErrors.php',
         'WPGraphQL\\SmartCache\\Admin\\Editor' => __DIR__ . '/../..' . '/src/Admin/Editor.php',
@@ -41,7 +53,9 @@ class ComposerStaticInitbdecde7c9a647c4c60e874e4d046fe59
         'WPGraphQL\\SmartCache\\Cache\\Results' => __DIR__ . '/../..' . '/src/Cache/Results.php',
         'WPGraphQL\\SmartCache\\Document' => __DIR__ . '/../..' . '/src/Document.php',
         'WPGraphQL\\SmartCache\\Document\\Description' => __DIR__ . '/../..' . '/src/Document/Description.php',
+        'WPGraphQL\\SmartCache\\Document\\GarbageCollection' => __DIR__ . '/../..' . '/src/Document/GarbageCollection.php',
         'WPGraphQL\\SmartCache\\Document\\Grant' => __DIR__ . '/../..' . '/src/Document/Grant.php',
+        'WPGraphQL\\SmartCache\\Document\\Group' => __DIR__ . '/../..' . '/src/Document/Group.php',
         'WPGraphQL\\SmartCache\\Document\\Loader' => __DIR__ . '/../..' . '/src/Document/Loader.php',
         'WPGraphQL\\SmartCache\\Document\\MaxAge' => __DIR__ . '/../..' . '/src/Document/MaxAge.php',
         'WPGraphQL\\SmartCache\\Storage\\Ephemeral' => __DIR__ . '/../..' . '/src/Storage/Ephemeral.php',
@@ -54,9 +68,9 @@ class ComposerStaticInitbdecde7c9a647c4c60e874e4d046fe59
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbdecde7c9a647c4c60e874e4d046fe59::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbdecde7c9a647c4c60e874e4d046fe59::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitbdecde7c9a647c4c60e874e4d046fe59::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc55c0dfd19dbbfabc26423a63f9b0871::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc55c0dfd19dbbfabc26423a63f9b0871::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc55c0dfd19dbbfabc26423a63f9b0871::$classMap;
 
         }, null, ClassLoader::class);
     }

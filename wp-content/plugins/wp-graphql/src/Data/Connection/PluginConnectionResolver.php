@@ -11,7 +11,7 @@ class PluginConnectionResolver extends AbstractConnectionResolver {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @var array
+	 * @var array<string,array<string,mixed>>
 	 */
 	protected $query;
 
@@ -49,7 +49,7 @@ class PluginConnectionResolver extends AbstractConnectionResolver {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @return array
+	 * @return array<string,array<string,mixed>>
 	 */
 	public function get_query() {
 		// File has not loaded.
@@ -140,7 +140,7 @@ class PluginConnectionResolver extends AbstractConnectionResolver {
 			if ( $can_update && isset( $upgradable_list->response[ $plugin_file ] ) ) {
 				// An update is available.
 				$plugin_data['update'] = true;
-				// Exra info if known.
+				// Extra info if known.
 				$plugin_data = array_merge( (array) $upgradable_list->response[ $plugin_file ], [ 'update-supported' => true ], $plugin_data );
 
 				// Populate upgradable list.
@@ -243,7 +243,7 @@ class PluginConnectionResolver extends AbstractConnectionResolver {
 	}
 
 	/**
-	 * @return bool
+	 * {@inheritDoc}
 	 */
 	public function should_execute() {
 		if ( is_multisite() ) {

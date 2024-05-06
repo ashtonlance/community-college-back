@@ -1,0 +1,74 @@
+{
+    "key": "group_64c907f066517",
+    "title": "Utility Navigation",
+    "fields": [
+        {
+            "key": "field_64f8ad35486c7",
+            "label": "Navigation Items",
+            "name": "navigation_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_64f8ad5c486c8",
+            "button_label": "Add Nav Item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64f8ad5c486c8",
+                    "label": "Nav Item",
+                    "name": "nav_item",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 1,
+                    "return_format": "array",
+                    "parent_repeater": "field_64f8ad35486c7"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "settings"
+            }
+        ]
+    ],
+    "menu_order": -1,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "show_in_graphql": 1,
+    "graphql_field_name": "utilityNavigation",
+    "map_graphql_types_from_location_rules": 1,
+    "graphql_types": [
+        "Settings"
+    ],
+    "modified": 1695741770
+}

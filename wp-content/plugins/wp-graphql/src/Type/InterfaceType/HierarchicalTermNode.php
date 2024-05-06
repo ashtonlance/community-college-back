@@ -15,7 +15,6 @@ class HierarchicalTermNode {
 	 *
 	 * @param \WPGraphQL\Registry\TypeRegistry $type_registry
 	 *
-	 * @return void
 	 * @throws \Exception
 	 */
 	public static function register_type( TypeRegistry $type_registry ): void {
@@ -42,5 +41,4 @@ class HierarchicalTermNode {
 			]
 		);
 	}
-
 }

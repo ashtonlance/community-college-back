@@ -1,0 +1,23 @@
+{
+    "name": "nextword/eventcards",
+    "title": "Event Cards",
+    "description": "Allow you to create/edit event cards on your page.",
+    "category": "design",
+    "keywords": [
+        "event cards",
+        "cards",
+        "event"
+    ],
+    "icon": "screenoptions",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./event-cards.php",
+        "mode": "preview"
+    },
+    "attributes": {
+        "previewImage": {
+            "type": "string",
+            "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Events-Cards.jpg"
+        }
+    }
+}

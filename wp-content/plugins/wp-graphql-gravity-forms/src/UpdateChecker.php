@@ -8,8 +8,8 @@
 
 namespace WPGraphQL\GF;
 
-use Puc_v4_Factory;
 use WPGraphQL\GF\Interfaces\Hookable;
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 /**
  * Class - Update Checker
@@ -37,17 +37,16 @@ class UpdateChecker implements Hookable {
 		 *
 		 * @param string           $repo_link The url to the repo.
 		 */
-		$repo_link = apply_filters( 'graphql_gf_update_repo_url', 'https://github.com/harness-software/wp-graphql-gravity-forms/' );
+		$repo_link = apply_filters( 'graphql_gf_update_repo_url', 'https://github.com/AxeWP/wp-graphql-gravity-forms/' );
 
-		/** @var \Puc_v4p13_Vcs_PluginUpdateChecker */
-		$update_checker = Puc_v4_Factory::buildUpdateChecker(
+		$update_checker = PucFactory::buildUpdateChecker(
 			trailingslashit( $repo_link ),
 			WPGRAPHQL_GF_PLUGIN_FILE,
 			'wp-graphql-gravity-forms',
 		);
-
+		
 		// @phpstan-ignore-next-line
-		$update_checker->getVcsApi()->enableReleaseAssets();
+		$update_checker->getVcsApi()->enableReleaseAssets( '/wp-graphql-gravity-forms\.zip/' );
 	}
 
 	/**
@@ -88,7 +87,7 @@ class UpdateChecker implements Hookable {
 		}
 
 		// translators: %s: version number.
-		$message = sprintf( __( '<strong>Warning!</strong> Version %s may contain breaking changes. Please review the <a href="https://github.com/harness-software/wp-graphql-gravity-forms/releases" target="_blank">release notes</a> before upgrading.', 'wp-graphql-gravity-forms' ), $new_version );
+		$message = sprintf( __( '<strong>Warning!</strong> Version %s may contain breaking changes. Please review the <a href="https://github.com/axewp/wp-graphql-gravity-forms/releases" target="_blank">release notes</a> before upgrading.', 'wp-graphql-gravity-forms' ), $new_version );
 
 		echo '</p></div><div class="notice inline notice-error notice-alt"><p>' . wp_kses_post( $message );
 	}

@@ -11,8 +11,8 @@ class SettingGroup {
 	/**
 	 * Register each settings group to the GraphQL Schema
 	 *
-	 * @param string       $group_name    The name of the setting group
-	 * @param string       $group         The settings group config
+	 * @param string                           $group_name    The name of the setting group
+	 * @param string                           $group         The settings group config
 	 * @param \WPGraphQL\Registry\TypeRegistry $type_registry The WPGraphQL TypeRegistry
 	 *
 	 * @return string|null
@@ -43,11 +43,11 @@ class SettingGroup {
 	/**
 	 * Given the name of a registered settings group, retrieve GraphQL fields for the group
 	 *
-	 * @param string $group_name Name of the settings group to retrieve fields for
-	 * @param string $group      The settings group config
+	 * @param string                           $group_name Name of the settings group to retrieve fields for
+	 * @param string                           $group      The settings group config
 	 * @param \WPGraphQL\Registry\TypeRegistry $type_registry The WPGraphQL TypeRegistry
 	 *
-	 * @return array
+	 * @return array<string,array<string,mixed>>|null
 	 */
 	public static function get_settings_group_fields( string $group_name, string $group, TypeRegistry $type_registry ) {
 		$setting_fields = DataSource::get_setting_group_fields( $group, $type_registry );
@@ -70,7 +70,7 @@ class SettingGroup {
 					$field_key = $key;
 				}
 
-				$field_key = lcfirst( preg_replace( '[^a-zA-Z0-9 -]', ' ', $field_key ) );
+				$field_key = graphql_format_name( $field_key, ' ', '/[^a-zA-Z0-9 -]/' );
 				$field_key = lcfirst( str_replace( '_', ' ', ucwords( $field_key, '_' ) ) );
 				$field_key = lcfirst( str_replace( '-', ' ', ucwords( $field_key, '_' ) ) );
 				$field_key = lcfirst( str_replace( ' ', '', ucwords( $field_key, ' ' ) ) );
@@ -85,7 +85,7 @@ class SettingGroup {
 						'type'        => $type_registry->get_type( $setting_field['type'] ),
 						// translators: %s is the name of the setting group.
 						'description' => isset( $setting_field['description'] ) && ! empty( $setting_field['description'] ) ? $setting_field['description'] : sprintf( __( 'The %s Settings Group', 'wp-graphql' ), $setting_field['type'] ),
-						'resolve'     => static function ( $root, array $args, $context, $info ) use ( $setting_field ) {
+						'resolve'     => static function () use ( $setting_field ) {
 
 							/**
 							 * Check to see if the user querying the email field has the 'manage_options' capability
@@ -93,7 +93,7 @@ class SettingGroup {
 							 */
 							if ( 'admin_email' === $setting_field['key'] ) {
 								if ( ! current_user_can( 'manage_options' ) ) {
-									throw new UserError( __( 'Sorry, you do not have permission to view this setting.', 'wp-graphql' ) );
+									throw new UserError( esc_html__( 'Sorry, you do not have permission to view this setting.', 'wp-graphql' ) );
 								}
 							}
 
@@ -122,5 +122,4 @@ class SettingGroup {
 
 		return $fields;
 	}
-
 }

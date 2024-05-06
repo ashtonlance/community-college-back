@@ -3,8 +3,6 @@
 namespace WPGraphQL\Type\Connection;
 
 use GraphQL\Type\Definition\ResolveInfo;
-use WP_Post_Type;
-use WP_Taxonomy;
 use WPGraphQL\AppContext;
 use WPGraphQL\Data\Connection\PostObjectConnectionResolver;
 use WPGraphQL\Data\DataSource;
@@ -13,6 +11,8 @@ use WPGraphQL\Model\Post;
 use WPGraphQL\Model\PostType;
 use WPGraphQL\Model\User;
 use WPGraphQL\Utils\Utils;
+use WP_Post_Type;
+use WP_Taxonomy;
 
 /**
  * Class PostObjects
@@ -43,7 +43,7 @@ class PostObjects {
 
 					return $resolver->get_connection();
 				},
-			] 
+			]
 		);
 
 		register_graphql_connection(
@@ -62,7 +62,7 @@ class PostObjects {
 
 					return $resolver->one_to_one()->set_query_arg( 'p', $id )->set_query_arg( 'post_parent', null )->get_connection();
 				},
-			] 
+			]
 		);
 
 		register_graphql_connection(
@@ -82,7 +82,7 @@ class PostObjects {
 
 					return $resolver->one_to_one()->get_connection();
 				},
-			] 
+			]
 		);
 
 		register_graphql_connection(
@@ -118,7 +118,7 @@ class PostObjects {
 
 					return $resolver->one_to_one()->get_connection();
 				},
-			] 
+			]
 		);
 
 		register_graphql_connection(
@@ -141,7 +141,7 @@ class PostObjects {
 
 					return $resolver->get_connection();
 				},
-			] 
+			]
 		);
 
 		register_graphql_connection(
@@ -164,7 +164,7 @@ class PostObjects {
 
 					return $resolver->get_connection();
 				},
-			] 
+			]
 		);
 
 		/**
@@ -228,10 +228,10 @@ class PostObjects {
 	 * registering a connection.
 	 *
 	 * @param mixed|\WP_Post_Type|\WP_Taxonomy $graphql_object The post type object for the post_type having a
- * connection registered to it
-	 * @param array                          $args           The custom args to modify the connection registration
+	 * connection registered to it
+	 * @param array<string,mixed>              $args           The custom args to modify the connection registration
 	 *
-	 * @return array
+	 * @return array<string,mixed>
 	 */
 	public static function get_connection_config( $graphql_object, $args = [] ) {
 		$connection_args = self::get_connection_args( [], $graphql_object );
@@ -259,10 +259,10 @@ class PostObjects {
 	/**
 	 * Given an optional array of args, this returns the args to be used in the connection
 	 *
-	 * @param array         $args             The args to modify the defaults
-	 * @param mixed|\WP_Post_Type|\WP_Taxonomy $post_type_object The post type the connection is going to
+	 * @param array<string,array<string,mixed>> $args             The args to modify the defaults
+	 * @param mixed|\WP_Post_Type|\WP_Taxonomy  $post_type_object The post type the connection is going to
 	 *
-	 * @return array
+	 * @return array<string,array<string,mixed>>
 	 */
 	public static function get_connection_args( $args = [], $post_type_object = null ) {
 		$fields = [
@@ -382,7 +382,7 @@ class PostObjects {
 				'type'        => [
 					'list_of' => 'PostObjectsConnectionOrderbyInput',
 				],
-				'description' => __( 'What paramater to use to order the objects by.', 'wp-graphql' ),
+				'description' => __( 'What parameter to use to order the objects by.', 'wp-graphql' ),
 			],
 
 			/**

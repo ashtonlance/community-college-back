@@ -1,0 +1,21 @@
+{
+  "name": "nextword/accordion",
+  "title": "Accordion",
+  "description": "Allows you to create/edit an accordion to your page.",
+  "category": "design",
+  "keywords": [
+    "accordion"
+  ],
+  "icon": "admin-site-alt3",
+  "apiVersion": 2,
+  "acf": {
+    "renderTemplate": "./accordion.php",
+    "mode": "preview"
+  },
+  "attributes": {
+    "previewImage": {
+      "type": "string",
+      "default": "/wp-content/themes/ncccs/previews/NCCCS_WP-Block-Preview_Accordions.jpg"
+    }
+  }
+}

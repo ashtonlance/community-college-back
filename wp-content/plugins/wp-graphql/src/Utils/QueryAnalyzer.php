@@ -38,7 +38,7 @@ class QueryAnalyzer {
 	/**
 	 * Types that are referenced in the query
 	 *
-	 * @var array
+	 * @var string[]
 	 */
 	protected $queried_types = [];
 
@@ -50,24 +50,24 @@ class QueryAnalyzer {
 	/**
 	 * Models that are referenced in the query
 	 *
-	 * @var array
+	 * @var string[]
 	 */
 	protected $models = [];
 
 	/**
 	 * Types in the query that are lists
 	 *
-	 * @var array
+	 * @var string[]
 	 */
 	protected $list_types = [];
 
 	/**
-	 * @var array
+	 * @var string[]|int[]
 	 */
 	protected $runtime_nodes = [];
 
 	/**
-	 * @var array
+	 * @var array<string,int[]|string[]>
 	 */
 	protected $runtime_nodes_by_type = [];
 
@@ -92,12 +92,12 @@ class QueryAnalyzer {
 	protected $skipped_keys = '';
 
 	/**
-	 * @var array The GraphQL keys to return in the X-GraphQL-Keys header.
+	 * @var string[] The GraphQL keys to return in the X-GraphQL-Keys header.
 	 */
 	protected $graphql_keys = [];
 
 	/**
-	 * @var array Track all Types that were queried as a list
+	 * @var mixed[] Track all Types that were queried as a list
 	 */
 	protected $queried_list_types = [];
 
@@ -114,14 +114,14 @@ class QueryAnalyzer {
 	}
 
 	/**
-	 * @return \WPGraphQL\Request
+	 * Gets the request object.
 	 */
 	public function get_request(): Request {
 		return $this->request;
 	}
 
 	/**
-	 * @return void
+	 * Initialize the QueryAnalyzer.
 	 */
 	public function init(): void {
 
@@ -176,21 +176,19 @@ class QueryAnalyzer {
 				'show_query_analyzer_in_extensions',
 			],
 			10,
-			5 
+			5
 		);
 	}
 
 	/**
 	 * Determine the keys associated with the GraphQL document being executed
 	 *
-	 * @param ?string         $query     The GraphQL query
-	 * @param ?string         $operation The name of the operation
-	 * @param ?array          $variables Variables to be passed to your GraphQL request
-	 * @param \GraphQL\Server\OperationParams $params The Operation Params. This includes any extra params, such
- * as extenions or any other modifications to the request
- * body
+	 * @param ?string                         $query     The GraphQL query
+	 * @param ?string                         $operation The name of the operation
+	 * @param ?array<string,mixed>            $variables Variables to be passed to your GraphQL request
+	 * @param \GraphQL\Server\OperationParams $params The Operation Params. This includes any extra params,
+	 * such as extensions or any other modifications to the request body
 	 *
-	 * @return void
 	 * @throws \Exception
 	 */
 	public function determine_graphql_keys( ?string $query, ?string $operation, ?array $variables, OperationParams $params ): void {
@@ -223,32 +221,32 @@ class QueryAnalyzer {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function get_list_types(): array {
 		return array_unique( $this->list_types );
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function get_query_types(): array {
 		return array_unique( $this->queried_types );
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function get_query_models(): array {
 		return array_unique( $this->models );
 	}
 
 	/**
-	 * @return array
+	 * @return string[]|int[]
 	 */
 	public function get_runtime_nodes(): array {
 		/**
-		 * @param array $runtime_nodes Nodes that were resolved during execution
+		 * @param string[]|int[] $runtime_nodes Nodes that were resolved during execution
 		 */
 		$runtime_nodes = apply_filters( 'graphql_query_analyzer_get_runtime_nodes', $this->runtime_nodes );
 
@@ -256,7 +254,7 @@ class QueryAnalyzer {
 	}
 
 	/**
-	 * @return string
+	 * Get the root operation of the query.
 	 */
 	public function get_root_operation(): string {
 		return $this->root_operation;
@@ -264,8 +262,6 @@ class QueryAnalyzer {
 
 	/**
 	 * Returns the operation name of the query, if there is one
-	 *
-	 * @return string|null
 	 */
 	public function get_operation_name(): ?string {
 		$operation_name = ! empty( $this->request->params->operation ) ? $this->request->params->operation : null;
@@ -289,7 +285,7 @@ class QueryAnalyzer {
 	}
 
 	/**
-	 * @return string|null
+	 * Get the query id.
 	 */
 	public function get_query_id(): ?string {
 		return $this->query_id;
@@ -297,10 +293,10 @@ class QueryAnalyzer {
 
 
 	/**
-	 * @param \GraphQL\Type\Definition\Type $type The Type of field
+	 * @param \GraphQL\Type\Definition\Type            $type The Type of field
 	 * @param \GraphQL\Type\Definition\FieldDefinition $field_def The field definition the type is for
-	 * @param mixed $parent_type The Parent Type
-	 * @param bool $is_list_type Whether the field is a list type field
+	 * @param mixed                                    $parent_type The Parent Type
+	 * @param bool                                     $is_list_type Whether the field is a list type field
 	 *
 	 * @return  \GraphQL\Type\Definition\Type|String|null
 	 */
@@ -321,10 +317,10 @@ class QueryAnalyzer {
 		if ( $type instanceof ObjectType || $type instanceof InterfaceType ) {
 			$interfaces      = method_exists( $type, 'getInterfaces' ) ? $type->getInterfaces() : [];
 			$interface_names = ! empty( $interfaces ) ? array_map(
-				static function ( InterfaceType $interface ) {
-					return $interface->name;
+				static function ( InterfaceType $interface_obj ) {
+					return $interface_obj->name;
 				},
-				$interfaces 
+				$interfaces
 			) : [];
 
 			if ( array_key_exists( 'Connection', $interface_names ) ) {
@@ -355,9 +351,9 @@ class QueryAnalyzer {
 	 * by the query.
 	 *
 	 * @param ?\GraphQL\Type\Schema $schema The WPGraphQL Schema
-	 * @param ?string $query  The query string
+	 * @param ?string               $query  The query string
 	 *
-	 * @return array
+	 * @return string[]
 	 * @throws \GraphQL\Error\SyntaxError|\Exception
 	 */
 	public function set_list_types( ?Schema $schema, ?string $query ): array {
@@ -388,7 +384,7 @@ class QueryAnalyzer {
 		$type_info = new TypeInfo( $schema );
 
 		$visitor = [
-			'enter' => static function ( $node, $key, $parent, $path, $ancestors ) use ( $type_info, &$type_map, $schema ) {
+			'enter' => static function ( $node, $key, $_parent, $path, $ancestors ) use ( $type_info, &$type_map, $schema ) {
 				$parent_type = $type_info->getParentType();
 
 				if ( 'Field' !== $node->kind ) {
@@ -438,7 +434,7 @@ class QueryAnalyzer {
 					$type_map[] = 'list:' . strtolower( $field_type );
 				}
 			},
-			'leave' => static function ( $node, $key, $parent, $path, $ancestors ) use ( $type_info ) {
+			'leave' => static function ( $node, $key, $_parent, $path, $ancestors ) use ( $type_info ) {
 				$type_info->leave( $node );
 			},
 		];
@@ -446,7 +442,6 @@ class QueryAnalyzer {
 		Visitor::visit( $ast, Visitor::visitWithTypeInfo( $type_info, $visitor ) );
 		$map = array_values( array_unique( array_filter( $type_map ) ) );
 
-		// @phpcs:ignore
 		return apply_filters( 'graphql_cache_collection_get_list_types', $map, $schema, $query, $type_info );
 	}
 
@@ -455,9 +450,9 @@ class QueryAnalyzer {
 	 * by the query.
 	 *
 	 * @param ?\GraphQL\Type\Schema $schema The WPGraphQL Schema
-	 * @param ?string $query  The query string
+	 * @param ?string               $query  The query string
 	 *
-	 * @return array
+	 * @return string[]
 	 * @throws \Exception
 	 */
 	public function set_query_types( ?Schema $schema, ?string $query ): array {
@@ -485,7 +480,7 @@ class QueryAnalyzer {
 		$type_map  = [];
 		$type_info = new TypeInfo( $schema );
 		$visitor   = [
-			'enter' => function ( $node, $key, $parent, $path, $ancestors ) use ( $type_info, &$type_map, $schema ) {
+			'enter' => function ( $node, $key, $_parent, $path, $ancestors ) use ( $type_info, &$type_map, $schema ) {
 				$type_info->enter( $node );
 				$type = $type_info->getType();
 				if ( ! $type ) {
@@ -517,7 +512,7 @@ class QueryAnalyzer {
 					$type_map[] = strtolower( $named_type );
 				}
 			},
-			'leave' => static function ( $node, $key, $parent, $path, $ancestors ) use ( $type_info ) {
+			'leave' => static function ( $node, $key, $_parent, $path, $ancestors ) use ( $type_info ) {
 				$type_info->leave( $node );
 			},
 		];
@@ -525,7 +520,6 @@ class QueryAnalyzer {
 		Visitor::visit( $ast, Visitor::visitWithTypeInfo( $type_info, $visitor ) );
 		$map = array_values( array_unique( array_filter( $type_map ) ) );
 
-		// @phpcs:ignore
 		return apply_filters( 'graphql_cache_collection_get_query_types', $map, $schema, $query, $type_info );
 	}
 
@@ -534,9 +528,9 @@ class QueryAnalyzer {
 	 * asked for by the query.
 	 *
 	 * @param ?\GraphQL\Type\Schema $schema The WPGraphQL Schema
-	 * @param ?string $query  The query string
+	 * @param ?string               $query  The query string
 	 *
-	 * @return array
+	 * @return string[]
 	 * @throws \GraphQL\Error\SyntaxError|\Exception
 	 */
 	public function set_query_models( ?Schema $schema, ?string $query ): array {
@@ -564,7 +558,7 @@ class QueryAnalyzer {
 		$type_map  = [];
 		$type_info = new TypeInfo( $schema );
 		$visitor   = [
-			'enter' => static function ( $node, $key, $parent, $path, $ancestors ) use ( $type_info, &$type_map, $schema ) {
+			'enter' => static function ( $node, $key, $_parent, $path, $ancestors ) use ( $type_info, &$type_map, $schema ) {
 				$type_info->enter( $node );
 				$type = $type_info->getType();
 				if ( ! $type ) {
@@ -588,7 +582,7 @@ class QueryAnalyzer {
 					$type_map[] = $named_type->config['model'];
 				}
 			},
-			'leave' => static function ( $node, $key, $parent, $path, $ancestors ) use ( $type_info ) {
+			'leave' => static function ( $node, $key, $_parent, $path, $ancestors ) use ( $type_info ) {
 				$type_info->leave( $node );
 			},
 		];
@@ -596,7 +590,6 @@ class QueryAnalyzer {
 		Visitor::visit( $ast, Visitor::visitWithTypeInfo( $type_info, $visitor ) );
 		$map = array_values( array_unique( array_filter( $type_map ) ) );
 
-		// @phpcs:ignore
 		return apply_filters( 'graphql_cache_collection_get_query_models', $map, $schema, $query, $type_info );
 	}
 
@@ -636,7 +629,7 @@ class QueryAnalyzer {
 	/**
 	 * Returns graphql keys for use in debugging and headers.
 	 *
-	 * @return array
+	 * @return string[]
 	 */
 	public function get_graphql_keys() {
 		if ( ! empty( $this->graphql_keys ) ) {
@@ -733,7 +726,7 @@ class QueryAnalyzer {
 			$return_keys,
 			$this->skipped_keys,
 			$return_keys_array,
-			$skipped_keys_array 
+			$skipped_keys_array
 		);
 
 		return $this->graphql_keys;
@@ -743,9 +736,9 @@ class QueryAnalyzer {
 	/**
 	 * Return headers
 	 *
-	 * @param array $headers The array of headers being returned
+	 * @param array<string,mixed> $headers The array of headers being returned
 	 *
-	 * @return array
+	 * @return array<string,mixed>
 	 */
 	public function get_headers( array $headers = [] ): array {
 		$keys = $this->get_graphql_keys();
@@ -761,13 +754,13 @@ class QueryAnalyzer {
 	/**
 	 * Outputs Query Analyzer data in the extensions response
 	 *
-	 * @param mixed       $response
-	 * @param \WPGraphQL\WPSchema $schema The WPGraphQL Schema
-	 * @param string|null $operation_name The operation name being executed
-	 * @param string|null $request        The GraphQL Request being made
-	 * @param array|null  $variables      The variables sent with the request
+	 * @param mixed                    $response
+	 * @param \WPGraphQL\WPSchema      $schema         The WPGraphQL Schema
+	 * @param string|null              $operation_name The operation name being executed
+	 * @param string|null              $request        The GraphQL Request being made
+	 * @param array<string,mixed>|null $variables      The variables sent with the request
 	 *
-	 * @return array|object|null
+	 * @return array<string,mixed>|object|null
 	 */
 	public function show_query_analyzer_in_extensions( $response, WPSchema $schema, ?string $operation_name, ?string $request, ?array $variables ) {
 		$should = \WPGraphQL::debug();
@@ -777,7 +770,7 @@ class QueryAnalyzer {
 		 * @param mixed       $response       The response of the WPGraphQL Request being executed
 		 * @param \WPGraphQL\WPSchema $schema The WPGraphQL Schema
 		 * @param string|null $operation_name The operation name being executed
-		 * @param string|null      $request        The GraphQL Request being made
+		 * @param string|null $request        The GraphQL Request being made
 		 * @param array|null  $variables      The variables sent with the request
 		 */
 		$should_show_query_analyzer_in_extensions = apply_filters( 'graphql_should_show_query_analyzer_in_extensions', $should, $response, $schema, $operation_name, $request, $variables );
@@ -801,5 +794,4 @@ class QueryAnalyzer {
 
 		return $response;
 	}
-
 }
